@@ -1,0 +1,9 @@
+flask==2.3.3
+opencv-python==4.11.0.86
+mediapipe==0.10.21
+numpy==1.26.4
+torch==2.0.1
+torchvision==0.15.2
+pillow==11.3.0
+requests==2.32.5
+python-dateutil==2.9.0.post0
