@@ -255,7 +255,7 @@ def calculate_presentation_metrics(emotions, history_buffer=None, brow_furrow_sc
     
     emotion_confusion = (fear * 0.3 + surprise * 0.2 + disgust * 0.1 + sad * 0.1)
     confusion = (emotion_confusion * 0.4 + brow_furrow_score * 0.6)
-    confusion = max(0, min(100, confusion))
+        confusion = max(0, min(100, confusion))
     
     positive_engagement = (happy * 0.5 + surprise * 0.3)
     negative_disengagement = (sad * 0.3 + neutral * 0.2 + disgust * 0.2)
@@ -389,9 +389,9 @@ if __name__ == "__main__":
             t2 = time.time()
             frame = display_FPS(frame, f'FPS: {1 / (t2 - t1):.1f}', box_scale=.5)
             cv2.imshow('FER Dynamic LSTM Demo', frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 
-    cap.release()
-    cv2.destroyAllWindows()
+cap.release()
+cv2.destroyAllWindows()
     print("👋 Demo ended")

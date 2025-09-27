@@ -1,35 +1,45 @@
-from flask import Flask, request, jsonify
-import cv2
-import mediapipe as mp
-import math
-import numpy as np
-import time
-import warnings
-import requests
-import threading
-import queue
-from datetime import datetime
+#!/usr/bin/env python3
+"""
+INTEGRATED EMOTION SERVER - Everything in One File
+Receives H264 chunks, processes emotions, serves API results
+
+IMPORTANT: This version stores ALL frames in MEMORY only.
+No files are saved to disk to avoid computer clogging.
+
+Debug output shows participant names and processing status.
+Uses H264 for better performance and no blocking.
+"""
+
+from flask import Flask, jsonify
+from websocket_server import WebsocketServer
+import json
 import base64
-from io import BytesIO
-from PIL import Image
+import threading
+import time
+import cv2
+import numpy as np
+from datetime import datetime
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
+import mediapipe as mp
+import math
+import warnings
+from PIL import Image
 
 warnings.simplefilter("ignore", UserWarning)
 
+# Flask app
 app = Flask(__name__)
 
-# Global variables for model state
+# Global state
 pth_LSTM_model = None
 pth_backbone_model = None
 mp_face_mesh = None
 face_mesh = None
 lstm_features = []
 metrics_history = []
-
-# Global variables for latest results
 latest_result = {
     "timestamp": "",
     "frustration": 0,
@@ -38,9 +48,103 @@ latest_result = {
     "engagement_spike": False
 }
 
+class LatestH264Manager:
+    def __init__(self):
+        self.latest_frame = None
+        self.frame_lock = threading.Lock()
+        self.h264_buffer = b""  # Accumulate H264 chunks
+
+        # Statistics
+        self.frames_received = 0
+        self.frames_processed = 0
+        self.frames_skipped = 0
+        self.last_receive_time = 0
+        self.receive_fps = 0
+
+    def update_frame(self, h264_data):
+        """Add H264 chunk and try to decode latest frame"""
+        with self.frame_lock:
+            # Count statistics
+            self.frames_received += 1
+            if self.latest_frame is not None:
+                self.frames_skipped += 1  # We're replacing an unprocessed frame
+
+            # Add H264 chunk to buffer
+            try:
+                h264_bytes = base64.b64decode(h264_data)
+                self.h264_buffer += h264_bytes
+
+                # Try to decode frame from accumulated H264 data
+                frame = self.decode_h264_frame()
+                
+                if frame is not None:
+                    # Always replace with latest
+                    self.latest_frame = frame.copy()
+
+                    # Calculate receive FPS
+                    current_time = time.time()
+                    if self.last_receive_time > 0:
+                        time_diff = current_time - self.last_receive_time
+                        if time_diff > 0:
+                            self.receive_fps = 0.9 * self.receive_fps + 0.1 * (1.0 / time_diff)
+                    self.last_receive_time = current_time
+
+                    return True
+
+            except Exception as e:
+                print(f"❌ H264 decode error: {e}")
+                return False
+
+    def decode_h264_frame(self):
+        """Decode H264 buffer to get latest frame"""
+        try:
+            # Use OpenCV to decode H264
+            temp_file = "temp_frame.h264"
+            with open(temp_file, 'wb') as f:
+                f.write(self.h264_buffer)
+            
+            cap = cv2.VideoCapture(temp_file)
+            ret, frame = cap.read()
+            cap.release()
+            
+            # Clean up temp file
+            import os
+            if os.path.exists(temp_file):
+                os.remove(temp_file)
+            
+            return frame if ret else None
+            
+        except Exception as e:
+            return None
+
+    def get_latest_frame(self):
+        """Get the most recent frame for processing"""
+        with self.frame_lock:
+            if self.latest_frame is not None:
+                frame = self.latest_frame.copy()
+                self.frames_processed += 1
+                return frame
+            return None
+
+    def get_stats(self):
+        """Get performance statistics"""
+        with self.frame_lock:
+            return {
+                'frames_received': self.frames_received,
+                'frames_processed': self.frames_processed,
+                'frames_skipped': self.frames_skipped,
+                'receive_fps': round(self.receive_fps, 2),
+                'skip_ratio': round(self.frames_skipped / max(1, self.frames_received) * 100, 1),
+                'has_frame': self.latest_frame is not None
+            }
+
+# Global frame manager
+frame_manager = LatestH264Manager()
+
+# PyTorch Model Classes
 class Bottleneck(nn.Module):
     expansion = 4
-    
+
     def __init__(self, in_channels, out_channels, i_downsample=None, stride=1):
         super(Bottleneck, self).__init__()
         self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=stride, padding=0, bias=False)
@@ -52,7 +156,7 @@ class Bottleneck(nn.Module):
         self.i_downsample = i_downsample
         self.stride = stride
         self.relu = nn.ReLU()
-        
+
     def forward(self, x):
         identity = x.clone()
         x = self.relu(self.batch_norm1(self.conv1(x)))
@@ -105,13 +209,13 @@ class ResNet(nn.Module):
         x = x.reshape(x.shape[0], -1)
         x = self.fc1(x)
         return x
-        
+
     def forward(self, x):
         x = self.extract_features(x)
         x = self.relu1(x)
         x = self.fc2(x)
         return x
-        
+
     def _make_layer(self, ResBlock, blocks, planes, stride=1):
         ii_downsample = None
         layers = []
@@ -139,7 +243,7 @@ class LSTMPyTorch(nn.Module):
 
     def forward(self, x):
         x, _ = self.lstm1(x)
-        x, _ = self.lstm2(x)        
+        x, _ = self.lstm2(x)
         x = self.fc(x[:, -1, :])
         x = self.softmax(x)
         return x
@@ -217,7 +321,7 @@ def analyze_brow_furrow(fl, w, h):
 
 def calculate_presentation_metrics(emotions, history_buffer=None, brow_furrow_score=0):
     global metrics_history
-    
+
     neutral = emotions[0] * 100
     happy = emotions[1] * 100
     sad = emotions[2] * 100
@@ -225,31 +329,31 @@ def calculate_presentation_metrics(emotions, history_buffer=None, brow_furrow_sc
     fear = emotions[4] * 100
     disgust = emotions[5] * 100
     angry = emotions[6] * 100
-    
+
     # Calculate frustration (confusion) and engagement
     emotion_confusion = (fear * 0.3 + surprise * 0.2 + disgust * 0.1 + sad * 0.1)
     frustration = (emotion_confusion * 0.4 + brow_furrow_score * 0.6)
     frustration = max(0, min(100, frustration))
-    
+
     positive_engagement = (happy * 0.5 + surprise * 0.3)
     negative_disengagement = (sad * 0.3 + neutral * 0.2 + disgust * 0.2)
     engagement = positive_engagement - (negative_disengagement * 0.5)
     engagement = max(0, min(100, engagement * 2))
-    
+
     # Calculate spikes
     emotion_confusion_spike = (fear * 0.3 + surprise * 0.2 + disgust * 0.2)
     frustration_spike = (emotion_confusion_spike * 0.2 + brow_furrow_score * 0.8)
     if brow_furrow_score > 30:
         frustration_spike = frustration_spike * (1 + (brow_furrow_score - 30) / 100)
     frustration_spike = max(0, min(100, frustration_spike * 2.0))
-    
+
     excitement_spike = (happy * 0.4 + surprise * 0.6)
     excitement_spike = max(0, min(100, excitement_spike * 2))
-    
+
     # Detect sustained spikes
     frustration_spike_detected = False
     engagement_spike_detected = False
-    
+
     if history_buffer is not None and len(history_buffer) >= 10:
         if len(history_buffer) >= 15:
             baseline_confusion = [h['confusion'] for h in history_buffer[-15:-5]]
@@ -262,48 +366,38 @@ def calculate_presentation_metrics(emotions, history_buffer=None, brow_furrow_sc
             baseline_excitement = [h['excitement'] for h in history_buffer[:mid_point]]
             recent_confusion = [h['confusion'] for h in history_buffer[mid_point:]]
             recent_excitement = [h['excitement'] for h in history_buffer[mid_point:]]
-        
+
         if baseline_confusion and recent_confusion:
             avg_baseline_confusion = sum(baseline_confusion) / len(baseline_confusion)
             sustained_confusion_frames = sum(1 for val in recent_confusion if val > avg_baseline_confusion + 3)
             if sustained_confusion_frames >= len(recent_confusion) * 0.6:
                 frustration_spike_detected = True
-        
+
         if baseline_excitement and recent_excitement:
             avg_baseline_excitement = sum(baseline_excitement) / len(baseline_excitement)
             sustained_excitement_frames = sum(1 for val in recent_excitement if val > avg_baseline_excitement + 8)
             if sustained_excitement_frames >= len(recent_excitement) * 0.6:
                 engagement_spike_detected = True
-    
+
     return frustration, engagement, frustration_spike_detected, engagement_spike_detected, frustration_spike, excitement_spike
 
-def process_image(image_data):
-    """Process a single image and return metrics"""
+def process_frame(frame):
+    """Process a single frame and return metrics"""
     global lstm_features, metrics_history, face_mesh
-    
+
     try:
-        # Convert image data to OpenCV format
-        if isinstance(image_data, str):
-            # Base64 encoded image
-            image_data = base64.b64decode(image_data)
-            image = Image.open(BytesIO(image_data))
-            frame = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
-        else:
-            # Direct image array
-            frame = image_data
-        
         h, w = frame.shape[:2]
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        
+
         # Process with MediaPipe
         results = face_mesh.process(frame_rgb)
-        
+
         if results.multi_face_landmarks:
             for fl in results.multi_face_landmarks:
                 startX, startY, endX, endY = get_box(fl, w, h)
                 cur_face = frame_rgb[startY:endY, startX:endX]
                 brow_furrow_score = analyze_brow_furrow(fl, w, h)
-                
+
                 if cur_face.size > 0:
                     # Process with LSTM model
                     cur_face_pil = Image.fromarray(cur_face)
@@ -319,49 +413,42 @@ def process_image(image_data):
                     lstm_f = torch.unsqueeze(lstm_f, 0)
                     output = pth_LSTM_model(lstm_f).detach().numpy()
                     emotions_array = output[0]
-                    
+
                     # Calculate metrics
                     frustration, engagement, frustration_spike_detected, engagement_spike_detected, frustration_spike, excitement_spike = calculate_presentation_metrics(emotions_array, metrics_history, brow_furrow_score)
-                    
+
                     # Update history
                     current_metrics = {'confusion': frustration_spike, 'excitement': excitement_spike, 'timestamp': time.time()}
                     metrics_history.append(current_metrics)
                     if len(metrics_history) > 20:
                         metrics_history.pop(0)
-                    
+
                     return frustration, engagement, frustration_spike_detected, engagement_spike_detected
-        
+
         # No face detected
         return 0, 0, False, False
-        
+
     except Exception as e:
-        print(f"Error processing image: {e}")
+        print(f"Error processing frame: {e}")
         return 0, 0, False, False
 
-def fetch_and_process_images(backend_url, image_queue):
-    """Fetch images from backend API at 2fps and add to processing queue"""
-    while True:
-        try:
-            response = requests.get(f"{backend_url}/get_image", timeout=5)
-            if response.status_code == 200:
-                image_data = response.content
-                if not image_queue.full():
-                    image_queue.put(image_data)
-            time.sleep(0.5)  # 2fps = 0.5 second intervals
-        except Exception as e:
-            print(f"Error fetching image: {e}")
-            time.sleep(1)
-
-def process_image_queue(image_queue):
-    """Process images from queue and update global results"""
+def process_frames_worker():
+    """Background worker to process frames from memory"""
     global latest_result
-    
+
+    print("🔄 Frame processing worker started - will process frames from memory")
+
     while True:
         try:
-            if not image_queue.empty():
-                image_data = image_queue.get()
-                frustration, engagement, frus_spike, eng_spike = process_image(image_data)
-                
+            # Get latest frame from memory (no disk I/O)
+            frame = frame_manager.get_latest_frame()
+
+            if frame is not None:
+                print(f"🔍 Processing frame from memory (shape: {frame.shape})")
+
+                # Process immediately
+                frustration, engagement, frus_spike, eng_spike = process_frame(frame)
+
                 # Update global result
                 latest_result = {
                     "timestamp": datetime.now().strftime("%Y%m%d_%H%M%S"),
@@ -370,94 +457,149 @@ def process_image_queue(image_queue):
                     "engagement": int(engagement),
                     "engagement_spike": eng_spike
                 }
+
+                print(f"🎯 EMOTION RESULTS: FRUS:{int(frustration):3d} ENG:{int(engagement):3d} "
+                      f"FRUS_SPIKE:{frus_spike} ENG_SPIKE:{eng_spike}")
+
             else:
-                time.sleep(0.1)
+                print("⏳ No frames available to process yet...")
+
+            time.sleep(0.5)  # Process at 2fps
+
         except Exception as e:
-            print(f"Error processing image queue: {e}")
+            print(f"❌ Error in processing worker: {e}")
             time.sleep(1)
 
 def load_models():
     """Load the AI models"""
     global pth_LSTM_model, pth_backbone_model, mp_face_mesh, face_mesh
-    
+
     try:
         pth_LSTM_model = LSTMPyTorch()
         pth_LSTM_model.load_state_dict(torch.load('FER_dinamic_LSTM_Aff-Wild2.pt', map_location='cpu'))
         pth_LSTM_model.eval()
-        
+
         pth_backbone_model = ResNet50(7, channels=3)
         pth_backbone_model.load_state_dict(torch.load('FER_static_ResNet50_AffectNet.pt', map_location='cpu'))
         pth_backbone_model.eval()
-        
+
         mp_face_mesh = mp.solutions.face_mesh
         face_mesh = mp_face_mesh.FaceMesh(max_num_faces=1, refine_landmarks=False, min_detection_confidence=0.5, min_tracking_confidence=0.5)
-        
+
         print("✅ Models loaded successfully!")
         return True
     except Exception as e:
         print(f"❌ Error loading models: {e}")
         return False
 
+# WebSocket handlers
+def new_client(client, server):
+    """Called when a new client connects"""
+    print("🎉 Google Meet bot connected!")
+
+def client_left(client, server):
+    """Called when a client disconnects"""
+    print("❌ Google Meet bot disconnected!")
+
+def message_received(client, server, message):
+    """Called when a message is received"""
+    try:
+        ws_message = json.loads(message)
+
+        if ws_message.get('event') == 'video_separate_h264.data':
+            participant = ws_message['data']['data'].get('participant', {})
+            participant_name = participant.get('name', 'Unknown')
+            recording_id = ws_message['data']['recording']['id']
+
+            print(f"🎬 RECEIVED H264 CHUNK from: {participant_name} (Recording: {recording_id})")
+
+            # Get H264 data
+            h264_buffer = ws_message['data']['data']['buffer']
+
+            # Update latest frame (STORED IN MEMORY ONLY - no disk saving)
+            if frame_manager.update_frame(h264_buffer):
+                stats = frame_manager.get_stats()
+                print(f"✅ H264 CHUNK PROCESSED | Total Received: {stats['frames_received']} | Skipped: {stats['frames_skipped']} | FPS: {stats['receive_fps']}")
+            else:
+                print("❌ Failed to decode/store H264 chunk")
+
+        elif ws_message.get('event') == 'video_separate_png.data':
+            print("⚠️ Received PNG data - but we're configured for H264 only!")
+
+        else:
+            print(f"❓ Unhandled WebSocket event: {ws_message.get('event', 'unknown')}")
+
+    except json.JSONDecodeError as e:
+        print(f'❌ JSON parse error: {e} | Raw message length: {len(message)}')
+    except Exception as e:
+        print(f'❌ WebSocket message error: {e}')
+
+# Flask routes
+@app.route('/')
+def index():
+    """Basic health check"""
+    stats = frame_manager.get_stats()
+    return jsonify({
+        'status': 'running',
+        'message': 'Integrated Emotion Server is running',
+        'websocket_url': 'ws://localhost:5003',
+        'frames_received': stats['frames_received'],
+        'latest_result': latest_result
+    })
+
 @app.route('/get_metrics', methods=['GET'])
 def get_metrics():
     """API endpoint to get current metrics in the specified format"""
-    global latest_result
-    
     # Format: "TIMESTAMP, FRUS: 010, FRUS_HAS_SPIKE: TRUE, ENG: 005, ENG_HAS_SPIKE: FALSE"
     result_string = f"{latest_result['timestamp']}, FRUS: {latest_result['frustration']:03d}, FRUS_HAS_SPIKE: {str(latest_result['frustration_spike']).upper()}, ENG: {latest_result['engagement']:03d}, ENG_HAS_SPIKE: {str(latest_result['engagement_spike']).upper()}"
-    
+
     return result_string
-
-@app.route('/process_image', methods=['POST'])
-def process_single_image():
-    """API endpoint to process a single image (for testing)"""
-    try:
-        if 'image' in request.files:
-            image_file = request.files['image']
-            image = Image.open(image_file.stream)
-            image_array = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
-        elif 'image_data' in request.json:
-            image_data = request.json['image_data']
-            image_array = base64.b64decode(image_data)
-        else:
-            return jsonify({"error": "No image provided"}), 400
-        
-        frustration, engagement, frus_spike, eng_spike = process_image(image_array)
-        
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        result_string = f"{timestamp}, FRUS: {frustration:03d}, FRUS_HAS_SPIKE: {str(frus_spike).upper()}, ENG: {engagement:03d}, ENG_HAS_SPIKE: {str(eng_spike).upper()}"
-        
-        return result_string
-        
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@app.route('/start_processing', methods=['POST'])
-def start_processing():
-    """Start processing images from backend API"""
-    backend_url = request.json.get('backend_url', 'http://localhost:8000')
-    
-    # Create queue for images
-    image_queue = queue.Queue(maxsize=10)
-    
-    # Start background threads
-    fetch_thread = threading.Thread(target=fetch_and_process_images, args=(backend_url, image_queue), daemon=True)
-    process_thread = threading.Thread(target=process_image_queue, args=(image_queue,), daemon=True)
-    
-    fetch_thread.start()
-    process_thread.start()
-    
-    return jsonify({"message": "Started processing images from backend", "backend_url": backend_url})
 
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    return jsonify({"status": "healthy", "models_loaded": pth_LSTM_model is not None})
+    stats = frame_manager.get_stats()
+    return jsonify({
+        "status": "healthy",
+        "models_loaded": pth_LSTM_model is not None,
+        "frames_received": stats['frames_received'],
+        "frames_processed": stats['frames_processed'],
+        "frames_skipped": stats['frames_skipped'],
+        "latest_result": latest_result
+    })
+
+def start_websocket_server():
+    """Start WebSocket server in background thread"""
+    server = WebsocketServer(host='0.0.0.0', port=5003)
+    server.set_fn_new_client(new_client)
+    server.set_fn_client_left(client_left)
+    server.set_fn_message_received(message_received)
+
+    print("🚀 WebSocket server started on port 5003")
+    server.run_forever()
 
 if __name__ == '__main__':
-    print("Loading models...")
-    if load_models():
-        print("🚀 Starting API server on port 5000...")
-        app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
-    else:
-        print("❌ Failed to load models. Exiting.")
+        print("🚀 Starting INTEGRATED Emotion Server...")
+        print("Loading models...")
+
+        if load_models():
+            # Start WebSocket server in background
+            ws_thread = threading.Thread(target=start_websocket_server, daemon=True)
+            ws_thread.start()
+
+            # Start frame processing worker
+            processing_thread = threading.Thread(target=process_frames_worker, daemon=True)
+            processing_thread.start()
+
+            print("🚀 Starting Flask API server on port 5000...")
+            print("📡 WebSocket: ws://localhost:5003")
+            print("🌐 HTTP API: http://localhost:5000")
+            print("🌐 Make WebSocket public with: ngrok http 5003")
+            print("\n🎯 Everything is integrated - no delays!")
+            print("   H264 → Processing → Results (all in one process)")
+            print("   NO FILES SAVED - everything in memory!")
+            print("\n" + "="*50)
+
+            app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
+        else:
+            print("❌ Failed to load models. Exiting.")
