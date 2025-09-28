@@ -1,14 +1,69 @@
 #!/usr/bin/env python3
 """
 INTEGRATED EMOTION SERVER - Everything in One File
-Receives H264 chunks, processes emotions, serves API results
+Receives PNG frames from Google Meet bot, processes emotions, serves API results
 
 IMPORTANT: This version stores ALL frames in MEMORY only.
 No files are saved to disk to avoid computer clogging.
 
 Debug output shows participant names and processing status.
-Uses H264 for better performance and no blocking.
+Uses PNG for maximum reliability and no corruption.
+
+CURRENT STATE SUMMARY:
+=====================
+
+WHAT IT DOES:
+- Receives PNG frames from Google Meet bot via WebSocket (port 5003)
+- Processes frames in real-time using PyTorch LSTM + ResNet50 models
+- Analyzes facial emotions and calculates presentation metrics
+- Serves emotion data via REST API (port 5000) in specified format
+- Displays live preview window with emotion overlays and statistics
+- Handles frame deduplication to prevent processing identical frames
+- Stores all data in memory (no disk I/O) for maximum performance
+
+CAPABILITIES:
+- Real-time emotion detection from video streams
+- Presentation metrics: Frustration (confusion) and Engagement
+- Spike detection for sustained emotional changes
+- MediaPipe face mesh analysis for brow furrow detection
+- Thread-safe frame processing and preview display
+- REST API endpoints: /get_metrics, /health, /websocket_status
+- Live preview window with emotion bars and spike indicators
+- Performance statistics and FPS monitoring
+- Automatic model loading and error handling
+
+LIMITATIONS:
+- Requires PyTorch models: FER_dinamic_LSTM_Aff-Wild2.pt and FER_static_ResNet50_AffectNet.pt
+- Only processes PNG format (no H264 support in current version)
+- Single face detection per frame
+- Emotion analysis limited to 7 basic emotions
+- Spike detection requires 10+ frames of history
+- Preview window must be closed manually (no auto-close)
+- No authentication or rate limiting on API endpoints
+- WebSocket connection drops require manual reconnection
+- No persistent storage of emotion history
+- Limited to local network without ngrok tunneling
+
+TECHNICAL DETAILS:
+- WebSocket server: ws://localhost:5003
+- HTTP API server: http://localhost:5000
+- Frame processing: ~5 FPS (limited by model inference time)
+- Memory usage: ~100-200MB (depends on frame size and history)
+- Dependencies: PyTorch, OpenCV, MediaPipe, Flask, websocket-server
+- Supported platforms: Windows, Linux, macOS
+- Python version: 3.8+
+
+USAGE:
+1. Start server: python integrated_emotion_server.py
+2. Configure Google Meet bot to send PNG frames to WebSocket
+3. Access emotion data via: curl http://localhost:5000/get_metrics
+4. View live preview window for real-time emotion analysis
+5. Use ngrok to expose WebSocket for remote bot connections
+
+API RESPONSE FORMAT:
+"TIMESTAMP, FRUS: 010, FRUS_HAS_SPIKE: TRUE, ENG: 005, ENG_HAS_SPIKE: FALSE"
 """
+
 
 from flask import Flask, jsonify
 from websocket_server import WebsocketServer
@@ -50,11 +105,10 @@ latest_result = {
 latest_preview_frame = None
 preview_lock = threading.Lock()
 
-class LatestH264Manager:
+class LatestFrameManager:
     def __init__(self):
         self.latest_frame = None
         self.frame_lock = threading.Lock()
-        self.h264_buffer = b""  # Accumulate H264 chunks
 
         # Statistics
         self.frames_received = 0
@@ -63,8 +117,8 @@ class LatestH264Manager:
         self.last_receive_time = 0
         self.receive_fps = 0
 
-    def update_frame(self, h264_data):
-        """Decode H264 chunk directly as a complete frame"""
+    def update_frame_png(self, png_data):
+        """Decode PNG frame data"""
         with self.frame_lock:
             # Count statistics
             self.frames_received += 1
@@ -72,11 +126,10 @@ class LatestH264Manager:
                 self.frames_skipped += 1  # We're replacing an unprocessed frame
 
             try:
-                h264_bytes = base64.b64decode(h264_data)
-                print(f"🔍 H264 chunk size: {len(h264_bytes)} bytes")
-
-                # Try to decode this chunk directly as a complete H264 frame
-                frame = self.decode_h264_chunk(h264_bytes)
+                # Decode PNG directly from base64
+                png_bytes = base64.b64decode(png_data)
+                nparr = np.frombuffer(png_bytes, np.uint8)
+                frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
                 if frame is not None:
                     # Always replace with latest
@@ -92,70 +145,12 @@ class LatestH264Manager:
 
                     return True
                 else:
-                    # If direct decode fails, try accumulating approach as fallback
-                    self.h264_buffer += h264_bytes
-                    frame = self.decode_h264_frame()
-
-                    if frame is not None:
-                        self.latest_frame = frame.copy()
-                        self.h264_buffer = b""  # Clear after success
-
-                        current_time = time.time()
-                        if self.last_receive_time > 0:
-                            time_diff = current_time - self.last_receive_time
-                            if time_diff > 0:
-                                self.receive_fps = 0.9 * self.receive_fps + 0.1 * (1.0 / time_diff)
-                        self.last_receive_time = current_time
-
-                        return True
+                    print("❌ Failed to decode PNG frame")
+                    return False
 
             except Exception as e:
-                print(f"❌ H264 decode error: {e}")
+                print(f"❌ PNG decode error: {e}")
                 return False
-
-    def decode_h264_chunk(self, h264_bytes):
-        """Try to decode H264 bytes directly as a complete frame"""
-        try:
-            # Write the chunk directly to a temp file
-            temp_file = f"temp_chunk_{hash(h264_bytes) % 1000}.h264"
-            with open(temp_file, 'wb') as f:
-                f.write(h264_bytes)
-
-            cap = cv2.VideoCapture(temp_file)
-            ret, frame = cap.read()
-            cap.release()
-
-            # Clean up temp file
-            import os
-            if os.path.exists(temp_file):
-                os.remove(temp_file)
-
-            return frame if ret else None
-
-        except Exception as e:
-            return None
-
-    def decode_h264_frame(self):
-        """Decode H264 buffer to get latest frame (fallback method)"""
-        try:
-            # Use OpenCV to decode H264
-            temp_file = "temp_frame.h264"
-            with open(temp_file, 'wb') as f:
-                f.write(self.h264_buffer)
-
-            cap = cv2.VideoCapture(temp_file)
-            ret, frame = cap.read()
-            cap.release()
-
-            # Clean up temp file
-            import os
-            if os.path.exists(temp_file):
-                os.remove(temp_file)
-
-            return frame if ret else None
-
-        except Exception as e:
-            return None
 
     def get_latest_frame(self):
         """Get the most recent frame for processing"""
@@ -179,7 +174,7 @@ class LatestH264Manager:
             }
 
 # Global frame manager
-frame_manager = LatestH264Manager()
+frame_manager = LatestFrameManager()
 
 # PyTorch Model Classes
 class Bottleneck(nn.Module):
@@ -613,62 +608,21 @@ def message_received(client, server, message):
     try:
         ws_message = json.loads(message)
 
-        if ws_message.get('event') == 'video_separate_h264.data':
-            participant = ws_message['data']['data'].get('participant', {})
-            participant_name = participant.get('name', 'Unknown')
-            recording_id = ws_message['data']['recording']['id']
-
-            print(f"🎬 RECEIVED H264 CHUNK from: {participant_name} (Recording: {recording_id})")
-
-            # Get H264 data
-            h264_buffer = ws_message['data']['data']['buffer']
-
-            # Update latest frame (STORED IN MEMORY ONLY - no disk saving)
-            if frame_manager.update_frame(h264_buffer):
-                stats = frame_manager.get_stats()
-                print(f"✅ H264 CHUNK PROCESSED | Total Received: {stats['frames_received']} | Skipped: {stats['frames_skipped']} | FPS: {stats['receive_fps']:.1f}")
-            else:
-                # Don't spam errors for H264 - it's expected to fail often
-                pass
-
-        elif ws_message.get('event') == 'video_separate_png.data':
+        if ws_message.get('event') == 'video_separate_png.data':
             participant = ws_message['data']['data'].get('participant', {})
             participant_name = participant.get('name', 'Unknown')
             recording_id = ws_message['data']['recording']['id']
 
             print(f"🖼️ RECEIVED PNG CHUNK from: {participant_name} (Recording: {recording_id})")
 
-            # Get PNG data
+            # Get PNG data and update frame
             png_buffer = ws_message['data']['data']['buffer']
 
-            # Decode PNG directly
-            try:
-                png_bytes = base64.b64decode(png_buffer)
-                nparr = np.frombuffer(png_bytes, np.uint8)
-                frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-
-                if frame is not None:
-                    # Update latest frame directly
-                    with frame_manager.frame_lock:
-                        frame_manager.latest_frame = frame.copy()
-                        frame_manager.frames_received += 1
-
-                        # Calculate receive FPS
-                        current_time = time.time()
-                        if frame_manager.last_receive_time > 0:
-                            time_diff = current_time - frame_manager.last_receive_time
-                            if time_diff > 0:
-                                frame_manager.receive_fps = 0.9 * frame_manager.receive_fps + 0.1 * (1.0 / time_diff)
-                        frame_manager.last_receive_time = current_time
-
-                    stats = frame_manager.get_stats()
-                    print(f"✅ PNG FRAME PROCESSED | Total Received: {stats['frames_received']} | FPS: {stats['receive_fps']:.1f}")
-                    print(f"🖼️ Frame shape: {frame.shape} | Should appear in preview window now!")
-                else:
-                    print("❌ Failed to decode PNG chunk - frame is None")
-
-            except Exception as e:
-                print(f"❌ PNG decode error: {e}")
+            if frame_manager.update_frame_png(png_buffer):
+                stats = frame_manager.get_stats()
+                print(f"✅ PNG FRAME PROCESSED | Total Received: {stats['frames_received']} | FPS: {stats['receive_fps']:.1f}")
+            else:
+                print("❌ Failed to decode PNG frame")
 
         else:
             print(f"❓ Unhandled WebSocket event: {ws_message.get('event', 'unknown')}")
@@ -777,15 +731,14 @@ if __name__ == '__main__':
             print("📡 WebSocket: ws://localhost:5003")
             print("🌐 HTTP API: http://localhost:5000")
             print("🌐 Make WebSocket public with: ngrok http 5003")
-            print("\n🎯 Everything is integrated - no delays!")
-            print("   PNG/H264 → Processing → Results (all in one process)")
+            print("\n🎯 PNG-ONLY EMOTION SERVER - MAXIMUM RELIABILITY!")
+            print("   PNG → Processing → Results (direct, no corruption)")
             print("   NO FILES SAVED - everything in memory!")
             print("📺 Preview window will show processed frames with emotion stats")
             print("   Press 'q' in preview window to close it")
-            print("\n🚨 CRITICAL: SWITCH TO PNG FORMAT NOW!")
-            print("   Your H264 is 90% corrupted (missing SPS/PPS headers)")
-            print("   PNG works perfectly - change your bot config immediately!")
-            print("   H264 fragmentation cannot be easily fixed with buffering.")
+            print("\n✅ CONFIGURE YOUR BOT FOR PNG FORMAT:")
+            print("   Use 'video_separate_png' in recording_config")
+            print("   Use 'video_separate_png.data' in events")
             print("\n" + "="*50)
 
             try:

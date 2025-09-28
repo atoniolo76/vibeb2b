@@ -483,23 +483,27 @@ def index():
         'latest_result': latest_result
     })
 
-@app.route('/video_mixed_flv.data', methods=['POST'])
+@app.route('/connect_rtmp', methods=['POST'])
 def connect_rtmp():
-    print("connected !!")
     """Connect to RTMP stream"""
     try:
         data = request.get_json()
         rtmp_url = data.get('rtmp_url')
-        
+
         if not rtmp_url:
             return jsonify({"error": "rtmp_url required"}), 400
-        
+
+        print(f"🔗 Attempting to connect to RTMP: {rtmp_url}")
+
         if frame_manager.connect_rtmp(rtmp_url):
+            print(f"✅ Successfully connected to RTMP stream!")
             return jsonify({"message": f"Connected to RTMP stream: {rtmp_url}"})
         else:
+            print(f"❌ Failed to connect to RTMP stream: {rtmp_url}")
             return jsonify({"error": "Failed to connect to RTMP stream"}), 500
-            
+
     except Exception as e:
+        print(f"❌ RTMP connection error: {e}")
         return jsonify({"error": str(e)}), 500
 
 @app.route('/get_metrics', methods=['GET'])
@@ -524,6 +528,39 @@ def health_check():
         "latest_result": latest_result
     })
 
+@app.route('/test_rtmp', methods=['POST'])
+def test_rtmp():
+    """Test RTMP connection endpoint"""
+    try:
+        data = request.get_json()
+        rtmp_url = data.get('rtmp_url', 'rtmp://localhost/live/stream')
+
+        print(f"🧪 Testing RTMP connection to: {rtmp_url}")
+
+        if frame_manager.connect_rtmp(rtmp_url):
+            return jsonify({
+                "status": "success",
+                "message": f"RTMP connection successful: {rtmp_url}",
+                "next_steps": [
+                    "RTMP stream is now connected",
+                    "Frames will be processed automatically",
+                    "Check /get_metrics for emotion results"
+                ]
+            })
+        else:
+            return jsonify({
+                "status": "failed",
+                "error": f"Could not connect to RTMP: {rtmp_url}",
+                "troubleshooting": [
+                    "Check if RTMP source is running",
+                    "Verify RTMP URL format",
+                    "Ensure firewall allows RTMP (port 1935)"
+                ]
+            }), 500
+
+    except Exception as e:
+        return jsonify({"status": "error", "error": str(e)}), 500
+
 if __name__ == '__main__':
     print("🚀 Starting RTMP Emotion Server...")
     print("Loading models...")
@@ -535,11 +572,16 @@ if __name__ == '__main__':
 
         print("🚀 Starting Flask API server on port 5000...")
         print("🌐 HTTP API: http://localhost:5000")
+        print("🌐 Make WebSocket public with: ngrok http 5000")
         print("\n🎯 RTMP Emotion Server Ready!")
-        print("   POST /connect_rtmp with rtmp_url to start")
+        print("   POST /connect_rtmp with rtmp_url to start streaming")
         print("   GET /get_metrics for emotion results")
-        print("   720p 30fps video processing")
+        print("   720p 30fps video processing from RTMP")
         print("   NO FILES SAVED - everything in memory!")
+        print("\n📋 SETUP STEPS:")
+        print("   1. Start RTMP source (OBS/Streamlabs)")
+        print("   2. POST to /connect_rtmp with your RTMP URL")
+        print("   3. Get emotion data from /get_metrics")
         print("\n" + "="*50)
 
         app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
