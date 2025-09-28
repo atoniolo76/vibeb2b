@@ -132,7 +132,7 @@ def run_ai_analysis():
         # Import and run the Gemini analyzer
         from gemini_analyzer import GeminiAnalyzer
         
-        API_KEY = "AIzaSyChau4MVYnQTDahLYnlmT_vt4mN4L_TI2k"
+        API_KEY = "AIzaSyAsJlOxDK9nKLpnKoiAv0DU32Fw5QkVFNQ"
         MODEL = "gemini-2.0-flash-exp"
         
         analyzer = GeminiAnalyzer(API_KEY, MODEL)
@@ -144,7 +144,7 @@ def run_ai_analysis():
         analysis = analyzer.analyze_meeting_performance(synchronized_data)
         
         # Save analysis
-        analyzer.save_analysis(analysis, "gemini_output.txt")
+        analyzer.save_analysis(analysis, "Output/gemini_output.txt")
         
         logger.info("✅ AI analysis completed successfully")
         return True

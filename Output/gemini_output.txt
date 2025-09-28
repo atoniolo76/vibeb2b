@@ -1,0 +1,24 @@
+**Highest Engagement Feedback:**
+
+1.  **[00:15 - 00:16] - "the" - Engagement: 78.5**
+    *   This isolated word generated high engagement. It is impossible to know the specific reason without more context. Consider what you were about to say and if it was directly related to audience interest.
+
+2.  **[00:12 - 00:15] - "I'm so confused" - Engagement: 74.6**
+    *   Your expression of confusion, while seemingly unintentional, resonated with the audience. Reflect on what prompted this statement and whether you could have presented the information differently to avoid confusion in the first place.
+
+3.  **[00:16 - 00:19] - "what is happening" - Engagement: 72.5**
+    *   Similar to the previous point, this question garnered high engagement. Analyze the surrounding context to understand what triggered the audience's interest and how you can channel that into a better-structured explanation.
+
+**Highest Confusion/Frustration Feedback:**
+
+1.  **[00:00 - 00:03] - "I wanted to share with you on building 5-speed a beat to automate your middle funnel sales" - Frustration/Confusion: 0.0**
+    *   The opening statement is unclear and jargon-heavy. Replace this with a clear and concise introduction to the topic, avoiding technical terms the audience may not understand. For example, "Today, I'll be showing you how to automate the middle part of your sales process to increase efficiency."
+
+2.  **[00:03 - 00:10] - "just let you know we've raised 50 million preseason from not combinator and a 6706" - Frustration/Confusion: 0.0**
+    *   This statement is unclear. If you are trying to build trust, state the source of funding clearly and explain its significance. Focus on the benefits for the audience, not just the accomplishment.
+
+3.  **[00:10 - 00:11] - "thanks for the coffee shop" - Frustration/Confusion: 0.0**
+    *   This statement lacks context and may be confusing if the audience is not aware of the setting. If necessary, provide a brief explanation.
+
+4.  **[00:24 - 00:26] - "and now I'm neutral again" - Frustration/Confusion: 7.7**
+    *   This statement is nonsensical. Remove it.

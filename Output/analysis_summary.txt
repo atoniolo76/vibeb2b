@@ -1,15 +1,15 @@
 EMOTION ANALYSIS SUMMARY REPORT
 ==================================================
 
-Total video files processed: 1
-Total sentences analyzed: 8
+Total video files processed: 2
+Total sentences analyzed: 11
 
 FRUSTRATION/CONFUSION STATISTICS:
-  Average: 3.01
-  Median: 2.00
-  Range: 0.60 - 7.70
+  Average: 2.19
+  Median: 1.60
+  Range: 0.00 - 7.70
 
 ENGAGEMENT STATISTICS:
-  Average: 28.20
-  Median: 0.00
+  Average: 25.96
+  Median: 20.00
   Range: 0.00 - 78.50

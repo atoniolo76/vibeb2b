@@ -1,0 +1,3517 @@
+{
+  "video_info": {
+    "file_path": "Upload/coffee_chat.mp4",
+    "total_frames": 967,
+    "processed_frames": 194,
+    "frame_interval": 5,
+    "fps": 30.0,
+    "duration_seconds": 32.233333333333334,
+    "face_detected_frames": 0,
+    "face_detection_rate": 0.0
+  },
+  "summary_metrics": {
+    "average_frustration": 0,
+    "average_engagement": 0,
+    "max_frustration": 0.0,
+    "max_engagement": 20.0
+  },
+  "frame_analysis": [
+    {
+      "frame_number": 0,
+      "timestamp": 0.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 5,
+      "timestamp": 0.16666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 10,
+      "timestamp": 0.3333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 15,
+      "timestamp": 0.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 20,
+      "timestamp": 0.6666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 25,
+      "timestamp": 0.8333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 30,
+      "timestamp": 1.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 35,
+      "timestamp": 1.1666666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 40,
+      "timestamp": 1.3333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 45,
+      "timestamp": 1.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 50,
+      "timestamp": 1.6666666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 55,
+      "timestamp": 1.8333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 60,
+      "timestamp": 2.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 65,
+      "timestamp": 2.1666666666666665,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 70,
+      "timestamp": 2.3333333333333335,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 75,
+      "timestamp": 2.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 80,
+      "timestamp": 2.6666666666666665,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 85,
+      "timestamp": 2.8333333333333335,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 90,
+      "timestamp": 3.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 95,
+      "timestamp": 3.1666666666666665,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 100,
+      "timestamp": 3.3333333333333335,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 105,
+      "timestamp": 3.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 110,
+      "timestamp": 3.6666666666666665,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 115,
+      "timestamp": 3.8333333333333335,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 120,
+      "timestamp": 4.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 125,
+      "timestamp": 4.166666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 130,
+      "timestamp": 4.333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 135,
+      "timestamp": 4.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 140,
+      "timestamp": 4.666666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 145,
+      "timestamp": 4.833333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 150,
+      "timestamp": 5.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 155,
+      "timestamp": 5.166666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 160,
+      "timestamp": 5.333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 165,
+      "timestamp": 5.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 170,
+      "timestamp": 5.666666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 175,
+      "timestamp": 5.833333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 180,
+      "timestamp": 6.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 185,
+      "timestamp": 6.166666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 190,
+      "timestamp": 6.333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 195,
+      "timestamp": 6.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 200,
+      "timestamp": 6.666666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 205,
+      "timestamp": 6.833333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 210,
+      "timestamp": 7.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 215,
+      "timestamp": 7.166666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 220,
+      "timestamp": 7.333333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 225,
+      "timestamp": 7.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 230,
+      "timestamp": 7.666666666666667,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 235,
+      "timestamp": 7.833333333333333,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 240,
+      "timestamp": 8.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 245,
+      "timestamp": 8.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 250,
+      "timestamp": 8.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 255,
+      "timestamp": 8.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 260,
+      "timestamp": 8.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 265,
+      "timestamp": 8.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 270,
+      "timestamp": 9.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 275,
+      "timestamp": 9.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 280,
+      "timestamp": 9.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 285,
+      "timestamp": 9.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 290,
+      "timestamp": 9.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 295,
+      "timestamp": 9.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 300,
+      "timestamp": 10.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 305,
+      "timestamp": 10.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 310,
+      "timestamp": 10.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 315,
+      "timestamp": 10.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 320,
+      "timestamp": 10.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 325,
+      "timestamp": 10.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 330,
+      "timestamp": 11.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 335,
+      "timestamp": 11.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 340,
+      "timestamp": 11.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 345,
+      "timestamp": 11.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 350,
+      "timestamp": 11.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 355,
+      "timestamp": 11.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 360,
+      "timestamp": 12.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 365,
+      "timestamp": 12.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 370,
+      "timestamp": 12.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 375,
+      "timestamp": 12.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 380,
+      "timestamp": 12.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 385,
+      "timestamp": 12.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 390,
+      "timestamp": 13.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 395,
+      "timestamp": 13.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 400,
+      "timestamp": 13.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 405,
+      "timestamp": 13.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 410,
+      "timestamp": 13.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 415,
+      "timestamp": 13.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 420,
+      "timestamp": 14.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 425,
+      "timestamp": 14.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 430,
+      "timestamp": 14.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 435,
+      "timestamp": 14.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 440,
+      "timestamp": 14.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 445,
+      "timestamp": 14.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 450,
+      "timestamp": 15.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 455,
+      "timestamp": 15.166666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 460,
+      "timestamp": 15.333333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 465,
+      "timestamp": 15.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 470,
+      "timestamp": 15.666666666666666,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 475,
+      "timestamp": 15.833333333333334,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 480,
+      "timestamp": 16.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 485,
+      "timestamp": 16.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 490,
+      "timestamp": 16.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 495,
+      "timestamp": 16.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 500,
+      "timestamp": 16.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 505,
+      "timestamp": 16.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 510,
+      "timestamp": 17.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 515,
+      "timestamp": 17.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 520,
+      "timestamp": 17.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 525,
+      "timestamp": 17.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 530,
+      "timestamp": 17.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 535,
+      "timestamp": 17.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 540,
+      "timestamp": 18.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 545,
+      "timestamp": 18.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 550,
+      "timestamp": 18.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 555,
+      "timestamp": 18.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 560,
+      "timestamp": 18.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 565,
+      "timestamp": 18.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 570,
+      "timestamp": 19.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 575,
+      "timestamp": 19.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 580,
+      "timestamp": 19.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 585,
+      "timestamp": 19.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 590,
+      "timestamp": 19.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 595,
+      "timestamp": 19.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 600,
+      "timestamp": 20.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 605,
+      "timestamp": 20.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 610,
+      "timestamp": 20.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 615,
+      "timestamp": 20.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 620,
+      "timestamp": 20.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 625,
+      "timestamp": 20.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 630,
+      "timestamp": 21.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 635,
+      "timestamp": 21.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 640,
+      "timestamp": 21.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 645,
+      "timestamp": 21.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 650,
+      "timestamp": 21.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 655,
+      "timestamp": 21.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 660,
+      "timestamp": 22.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 665,
+      "timestamp": 22.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 670,
+      "timestamp": 22.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 675,
+      "timestamp": 22.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 680,
+      "timestamp": 22.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 685,
+      "timestamp": 22.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 690,
+      "timestamp": 23.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 695,
+      "timestamp": 23.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 700,
+      "timestamp": 23.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 705,
+      "timestamp": 23.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 710,
+      "timestamp": 23.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 715,
+      "timestamp": 23.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 720,
+      "timestamp": 24.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 725,
+      "timestamp": 24.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 730,
+      "timestamp": 24.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 735,
+      "timestamp": 24.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 740,
+      "timestamp": 24.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 745,
+      "timestamp": 24.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 750,
+      "timestamp": 25.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 755,
+      "timestamp": 25.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 760,
+      "timestamp": 25.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 765,
+      "timestamp": 25.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 770,
+      "timestamp": 25.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 775,
+      "timestamp": 25.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 780,
+      "timestamp": 26.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 785,
+      "timestamp": 26.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 790,
+      "timestamp": 26.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 795,
+      "timestamp": 26.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 800,
+      "timestamp": 26.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 805,
+      "timestamp": 26.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 810,
+      "timestamp": 27.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 815,
+      "timestamp": 27.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 820,
+      "timestamp": 27.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 825,
+      "timestamp": 27.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 830,
+      "timestamp": 27.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 835,
+      "timestamp": 27.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 840,
+      "timestamp": 28.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 845,
+      "timestamp": 28.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 850,
+      "timestamp": 28.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 855,
+      "timestamp": 28.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 860,
+      "timestamp": 28.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 865,
+      "timestamp": 28.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 870,
+      "timestamp": 29.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 875,
+      "timestamp": 29.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 880,
+      "timestamp": 29.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 885,
+      "timestamp": 29.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 890,
+      "timestamp": 29.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 895,
+      "timestamp": 29.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 900,
+      "timestamp": 30.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 905,
+      "timestamp": 30.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 910,
+      "timestamp": 30.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 915,
+      "timestamp": 30.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 920,
+      "timestamp": 30.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 925,
+      "timestamp": 30.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 930,
+      "timestamp": 31.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 935,
+      "timestamp": 31.166666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 940,
+      "timestamp": 31.333333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 945,
+      "timestamp": 31.5,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 950,
+      "timestamp": 31.666666666666668,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 955,
+      "timestamp": 31.833333333333332,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 960,
+      "timestamp": 32.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    },
+    {
+      "frame_number": 965,
+      "timestamp": 32.166666666666664,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 80.0,
+        "happy": 10.0,
+        "sad": 5.0,
+        "surprise": 2.0,
+        "fear": 1.0,
+        "disgust": 1.0,
+        "angry": 1.0,
+        "frustration": 0.0,
+        "engagement": 20.0,
+        "brow_furrow_score": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "processed_at": "2025-09-28T06:02:16.755449",
+    "model_used": "FER_static_ResNet50_AffectNet",
+    "processing_version": "1.0"
+  }
+}

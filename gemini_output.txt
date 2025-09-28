@@ -1,21 +1,21 @@
 **Highest Engagement:**
 
-*   **\[00:15 - 00:16] - the** - Engagement: 78.5
-    *   **Feedback:** This is a very short phrase, but it generated the highest engagement. Consider what preceded this word. Was it a setup for something intriguing? If so, lean into that setup more explicitly in future presentations.
+1.  **[00:15 - 00:16] - the** - Engagement: 78.5
+    *   **Feedback:** This single word, "the," garnered the highest engagement. Analyze the context surrounding this moment. What were you about to say? Could you build on this by strategically pausing before key words or phrases to build anticipation?
 
-*   **\[00:12 - 00:15] - I'm so confused** - Engagement: 74.6
-    *   **Feedback:** This statement of vulnerability interestingly sparked engagement. Consider using this as a way to lead into a problem and then a solution.
+2.  **[00:12 - 00:15] - I'm so confused** - Engagement: 74.6
+    *   **Feedback:** While seemingly negative, expressing confusion briefly piqued audience interest. This suggests vulnerability or unexpected honesty can be engaging. However, be cautious about overusing this. If you're *actually* confused, address it quickly and move towards clarity.
 
-*   **\[00:16 - 00:19] - what is happening** - Engagement: 72.5
-    *   **Feedback:** Similar to the previous point, expressing confusion seemed to resonate. However, sustained confusion (as seen later) is detrimental. Use this sparingly to draw people in, then quickly transition to clarity.
+3.  **[00:16 - 00:19] - what is happening** - Engagement: 72.5
+    *   **Feedback:** Similar to the previous point, this question grabbed attention. Asking rhetorical questions or posing a mystery can be a good engagement technique. However, ensure you resolve the "what is happening" quickly, or it will lead to frustration.
 
 **Highest Frustration/Confusion:**
 
-*   **\[00:24 - 00:26] - and now I'm neutral again** - Frustration/Confusion: 7.7
-    *   **Feedback:** This statement likely confused the audience. Avoid making abrupt shifts in tone or emotion without providing context. If you are going to express a neutral position, make sure to explain why you're taking that position.
+1.  **[00:24 - 00:26] - and now I'm neutral again** - Frustration/Confusion: 7.7
+    *   **Feedback:** This statement likely confused the audience. Avoid sudden shifts in tone or unexplained statements. If you are changing direction, clearly signal why and how it connects to the overall topic.
 
-*   **\[00:19 - 00:24] - what what is happening I'm so confused I don't even know what's happening anymore bro** - Frustration/Confusion: 4.7
-    *   **Feedback:** Extended expressions of confusion are detrimental. While initial vulnerability can engage, sustained confusion will frustrate the audience. If you're genuinely lost, pause, collect your thoughts, and clearly articulate what's confusing you.
+2.  **[00:26 - 00:30] - how's it going to beat your ass** - Frustration/Confusion: 4.8
+    *   **Feedback:** This statement is inappropriate for a professional meeting and is likely the source of confusion. Remove aggressive or violent language from your presentations.
 
-*   **\[00:26 - 00:30] - how's it going to beat your ass** - Frustration/Confusion: 4.8
-    *   **Feedback:** This is likely inappropriate for a professional setting and contributed to frustration/confusion. Avoid aggressive or confrontational language. Consider the impact your word choice has on your audience.
+3.  **[00:19 - 00:24] - what what is happening I'm so confused I don't even know what's happening anymore bro** - Frustration/Confusion: 4.7
+    *   **Feedback:** While a brief moment of confusion can be engaging, prolonged expressions of uncertainty are detrimental. If you are lost, acknowledge it concisely, and then state how you plan to regain clarity (e.g., "Let me quickly recap the previous point to ensure we're all on the same page"). Avoid informal language like "bro."

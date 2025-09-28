@@ -1,0 +1,36 @@
+{
+  "transcription": {
+    "full_text": "I wanted to share with you on building 5-speed a beat to automate your middle funnel sales just let you know we've raised 50 million preseason from not combinator and a 6706 thanks for the coffee shop",
+    "language": "en",
+    "total_duration": 11.44,
+    "sentences": [
+      {
+        "start_time": 0,
+        "end_time": 3.62,
+        "duration": 3.62,
+        "text": "I wanted to share with you on building 5-speed a beat to automate your middle funnel sales",
+        "chunk_index": 1
+      },
+      {
+        "start_time": 3.62,
+        "end_time": 10.16,
+        "duration": 6.54,
+        "text": "just let you know we've raised 50 million preseason from not combinator and a 6706",
+        "chunk_index": 7
+      },
+      {
+        "start_time": 10.16,
+        "end_time": 11.44,
+        "duration": 1.27,
+        "text": "thanks for the coffee shop",
+        "chunk_index": 8
+      }
+    ],
+    "total_sentences": 3
+  },
+  "metadata": {
+    "model_used": "google_speech_recognition",
+    "processed_at": "2025-09-28T06:02:12.202933",
+    "total_chunks": 9
+  }
+}

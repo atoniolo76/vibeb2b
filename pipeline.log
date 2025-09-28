@@ -240,3 +240,2400 @@
 2025-09-28 04:44:59,920 - INFO - Gemini analysis saved to gemini_output.txt
 2025-09-28 04:44:59,925 - INFO - ==================================================
 2025-09-28 04:44:59,934 - INFO - ==================================================
+2025-09-28 05:50:12,842 - INFO - 🔍 Checking system requirements...
+2025-09-28 05:50:12,842 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 05:50:12,842 - INFO - ✅ All requirements met
+2025-09-28 05:50:12,843 - INFO - 
+🔄 Running Transcription...
+2025-09-28 05:50:12,843 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 05:50:12,849 - ERROR - ❌ Transcription failed: No module named 'speech_recognition'
+2025-09-28 05:50:12,849 - ERROR - ❌ Transcription failed
+2025-09-28 05:50:12,849 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 05:50:12,849 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 05:50:17,965 - INFO - 
+👋 Pipeline interrupted by user
+2025-09-28 05:50:17,968 - INFO - FakeTensor cache stats:
+2025-09-28 05:50:17,968 - INFO -   cache_hits: 0
+2025-09-28 05:50:17,968 - INFO -   cache_misses: 0
+2025-09-28 05:52:00,033 - INFO - 🔍 Checking system requirements...
+2025-09-28 05:52:00,033 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 05:52:00,033 - INFO - ✅ All requirements met
+2025-09-28 05:52:00,033 - INFO - 
+🔄 Running Transcription...
+2025-09-28 05:52:00,034 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 05:52:00,091 - ERROR - ❌ Transcription failed: No module named 'pydub'
+2025-09-28 05:52:00,092 - ERROR - ❌ Transcription failed
+2025-09-28 05:52:00,092 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 05:52:00,092 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 05:52:02,488 - INFO - 
+👋 Pipeline interrupted by user
+2025-09-28 05:52:11,862 - INFO - 🔍 Checking system requirements...
+2025-09-28 05:52:11,862 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 05:52:11,862 - INFO - ✅ All requirements met
+2025-09-28 05:52:11,862 - INFO - 
+🔄 Running Transcription...
+2025-09-28 05:52:11,862 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 05:52:11,906 - INFO - FFmpeg video processor initialized
+2025-09-28 05:52:11,906 - INFO - Found 1 MP4 file(s) to process
+2025-09-28 05:52:11,906 - INFO - Processing: coffee_chat.mp4
+2025-09-28 05:52:11,906 - INFO - Extracting audio from Upload/coffee_chat.mp4
+2025-09-28 05:52:12,633 - INFO - Audio extracted to Upload/coffee_chat.wav
+2025-09-28 05:52:12,633 - INFO - Transcribing audio: Upload/coffee_chat.wav
+2025-09-28 05:52:13,962 - WARNING - Could not understand audio in chunk 0
+2025-09-28 05:52:15,442 - WARNING - Could not understand audio in chunk 2
+2025-09-28 05:52:16,625 - WARNING - Could not understand audio in chunk 3
+2025-09-28 05:52:16,830 - WARNING - Could not understand audio in chunk 4
+2025-09-28 05:52:18,058 - WARNING - Could not understand audio in chunk 5
+2025-09-28 05:52:18,194 - WARNING - Could not understand audio in chunk 6
+2025-09-28 05:52:20,201 - INFO - Transcription saved to Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:52:20,202 - INFO - Temporary audio file cleaned up
+2025-09-28 05:52:20,202 - INFO - Completed: coffee_chat.mp4 - 3 sentences, 11.44s duration
+2025-09-28 05:52:20,202 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:52:20,202 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:52:20,202 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 05:52:20,202 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 05:52:21,942 - ERROR - ❌ Emotion analysis failed: No module named 'mediapipe'
+2025-09-28 05:52:21,942 - ERROR - ❌ Emotion Analysis failed
+2025-09-28 05:52:21,942 - INFO - 
+🔄 Running Data Synchronization...
+2025-09-28 05:52:21,942 - INFO - 🔄 STEP 3: Starting data synchronization...
+2025-09-28 05:52:21,944 - INFO - JSON Parser initialized
+2025-09-28 05:52:21,945 - WARNING - No emotion analysis file found for coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:52:21,945 - INFO - Found matching pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:52:21,945 - INFO - Processing pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:52:21,945 - INFO - Loaded JSON file: Output/video1777587742_transcription_ffmpeg.json
+2025-09-28 05:52:21,946 - INFO - Loaded JSON file: Output/video1777587742_emotion_analysis.json
+2025-09-28 05:52:21,946 - INFO - Processing 8 sentences from transcription
+2025-09-28 05:52:21,946 - INFO - Processed: 00:00 - 00:07 - hi I'm dancing I'm talking about a really boring t...
+2025-09-28 05:52:21,946 - INFO - Processed: 00:07 - 00:12 - yes this is a very interesting topic
+2025-09-28 05:52:21,946 - INFO - Processed: 00:12 - 00:15 - I'm so confused
+2025-09-28 05:52:21,946 - INFO - Processed: 00:15 - 00:16 - the
+2025-09-28 05:52:21,946 - INFO - Processed: 00:16 - 00:19 - what is happening
+2025-09-28 05:52:21,946 - INFO - Processed: 00:19 - 00:24 - what what is happening I'm so confused I don't eve...
+2025-09-28 05:52:21,946 - INFO - Processed: 00:24 - 00:26 - and now I'm neutral again
+2025-09-28 05:52:21,946 - INFO - Processed: 00:26 - 00:30 - how's it going to beat your ass
+2025-09-28 05:52:21,947 - INFO - Combined output saved to Output/synchronized_analysis.txt
+2025-09-28 05:52:21,947 - INFO - Summary report saved to Output/analysis_summary.txt
+2025-09-28 05:52:21,947 - INFO - ✅ Data synchronization completed successfully
+2025-09-28 05:52:21,947 - INFO - ✅ Data Synchronization completed successfully
+2025-09-28 05:52:21,947 - INFO - 
+🔄 Running AI Analysis...
+2025-09-28 05:52:21,947 - INFO - 🤖 STEP 4: Starting AI performance analysis...
+2025-09-28 05:52:22,058 - INFO - Gemini Analyzer initialized with model: gemini-2.0-flash-exp
+2025-09-28 05:52:22,058 - INFO - Read synchronized analysis from Output/synchronized_analysis.txt
+2025-09-28 05:52:22,058 - INFO - Calling Gemini API...
+2025-09-28 05:52:26,069 - INFO - ✅ Gemini API call successful
+2025-09-28 05:52:26,070 - INFO - Gemini analysis saved to gemini_output.txt
+2025-09-28 05:52:26,070 - INFO - ✅ AI analysis completed successfully
+2025-09-28 05:52:26,071 - INFO - ✅ AI Analysis completed successfully
+2025-09-28 05:52:26,071 - INFO - 📊 PIPELINE SUMMARY
+2025-09-28 05:52:26,071 - INFO - ==================================================
+2025-09-28 05:52:26,071 - INFO - ✅ Transcription: 2 file(s)
+2025-09-28 05:52:26,071 - INFO - ✅ Emotion Analysis: 1 file(s)
+2025-09-28 05:52:26,071 - INFO - ✅ Synchronized Data: Output/synchronized_analysis.txt
+2025-09-28 05:52:26,071 - INFO - ✅ Analysis Summary: Output/analysis_summary.txt
+2025-09-28 05:52:26,071 - INFO - ❌ AI Feedback: Output/gemini_output.txt
+2025-09-28 05:52:26,071 - INFO - ==================================================
+2025-09-28 05:52:26,071 - WARNING - ⚠️ Pipeline completed with 1 failures
+2025-09-28 05:54:23,435 - INFO - 🔍 Checking system requirements...
+2025-09-28 05:54:23,436 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 05:54:23,436 - INFO - ✅ All requirements met
+2025-09-28 05:54:23,436 - INFO - 
+🔄 Running Transcription...
+2025-09-28 05:54:23,436 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 05:54:23,514 - INFO - FFmpeg video processor initialized
+2025-09-28 05:54:23,514 - INFO - Found 1 MP4 file(s) to process
+2025-09-28 05:54:23,514 - INFO - Processing: coffee_chat.mp4
+2025-09-28 05:54:23,515 - INFO - Extracting audio from Upload/coffee_chat.mp4
+2025-09-28 05:54:23,724 - INFO - Audio extracted to Upload/coffee_chat.wav
+2025-09-28 05:54:23,724 - INFO - Transcribing audio: Upload/coffee_chat.wav
+2025-09-28 05:54:24,624 - WARNING - Could not understand audio in chunk 0
+2025-09-28 05:54:26,010 - WARNING - Could not understand audio in chunk 2
+2025-09-28 05:54:27,082 - WARNING - Could not understand audio in chunk 3
+2025-09-28 05:54:27,327 - WARNING - Could not understand audio in chunk 4
+2025-09-28 05:54:28,413 - WARNING - Could not understand audio in chunk 5
+2025-09-28 05:54:28,595 - WARNING - Could not understand audio in chunk 6
+2025-09-28 05:54:30,568 - INFO - Transcription saved to Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:54:30,569 - INFO - Temporary audio file cleaned up
+2025-09-28 05:54:30,569 - INFO - Completed: coffee_chat.mp4 - 3 sentences, 11.44s duration
+2025-09-28 05:54:30,569 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:54:30,570 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:54:30,570 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 05:54:30,570 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 05:54:32,435 - ERROR - ❌ Emotion analysis failed: No module named 'mediapipe'
+2025-09-28 05:54:32,435 - ERROR - ❌ Emotion Analysis failed
+2025-09-28 05:54:32,435 - INFO - 
+🔄 Running Data Synchronization...
+2025-09-28 05:54:32,435 - INFO - 🔄 STEP 3: Starting data synchronization...
+2025-09-28 05:54:32,436 - INFO - JSON Parser initialized
+2025-09-28 05:54:32,436 - WARNING - No emotion analysis file found for coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:54:32,436 - INFO - Found matching pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:54:32,436 - INFO - Processing pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:54:32,436 - INFO - Loaded JSON file: Output/video1777587742_transcription_ffmpeg.json
+2025-09-28 05:54:32,436 - INFO - Loaded JSON file: Output/video1777587742_emotion_analysis.json
+2025-09-28 05:54:32,436 - INFO - Processing 8 sentences from transcription
+2025-09-28 05:54:32,437 - INFO - Processed: 00:00 - 00:07 - hi I'm dancing I'm talking about a really boring t...
+2025-09-28 05:54:32,437 - INFO - Processed: 00:07 - 00:12 - yes this is a very interesting topic
+2025-09-28 05:54:32,437 - INFO - Processed: 00:12 - 00:15 - I'm so confused
+2025-09-28 05:54:32,437 - INFO - Processed: 00:15 - 00:16 - the
+2025-09-28 05:54:32,437 - INFO - Processed: 00:16 - 00:19 - what is happening
+2025-09-28 05:54:32,437 - INFO - Processed: 00:19 - 00:24 - what what is happening I'm so confused I don't eve...
+2025-09-28 05:54:32,437 - INFO - Processed: 00:24 - 00:26 - and now I'm neutral again
+2025-09-28 05:54:32,437 - INFO - Processed: 00:26 - 00:30 - how's it going to beat your ass
+2025-09-28 05:54:32,437 - INFO - Combined output saved to Output/synchronized_analysis.txt
+2025-09-28 05:54:32,437 - INFO - Summary report saved to Output/analysis_summary.txt
+2025-09-28 05:54:32,437 - INFO - ✅ Data synchronization completed successfully
+2025-09-28 05:54:32,437 - INFO - ✅ Data Synchronization completed successfully
+2025-09-28 05:54:32,437 - INFO - 
+🔄 Running AI Analysis...
+2025-09-28 05:54:32,437 - INFO - 🤖 STEP 4: Starting AI performance analysis...
+2025-09-28 05:54:32,481 - INFO - Gemini Analyzer initialized with model: gemini-2.0-flash-exp
+2025-09-28 05:54:32,481 - INFO - Read synchronized analysis from Output/synchronized_analysis.txt
+2025-09-28 05:54:32,481 - INFO - Calling Gemini API...
+2025-09-28 05:54:36,508 - INFO - ✅ Gemini API call successful
+2025-09-28 05:54:36,513 - INFO - Gemini analysis saved to gemini_output.txt
+2025-09-28 05:54:36,514 - INFO - ✅ AI analysis completed successfully
+2025-09-28 05:54:36,514 - INFO - ✅ AI Analysis completed successfully
+2025-09-28 05:54:36,514 - INFO - 📊 PIPELINE SUMMARY
+2025-09-28 05:54:36,514 - INFO - ==================================================
+2025-09-28 05:54:36,515 - INFO - ✅ Transcription: 2 file(s)
+2025-09-28 05:54:36,516 - INFO - ✅ Emotion Analysis: 1 file(s)
+2025-09-28 05:54:36,516 - INFO - ✅ Synchronized Data: Output/synchronized_analysis.txt
+2025-09-28 05:54:36,516 - INFO - ✅ Analysis Summary: Output/analysis_summary.txt
+2025-09-28 05:54:36,516 - INFO - ❌ AI Feedback: Output/gemini_output.txt
+2025-09-28 05:54:36,516 - INFO - ==================================================
+2025-09-28 05:54:36,516 - WARNING - ⚠️ Pipeline completed with 1 failures
+2025-09-28 05:56:10,333 - INFO - 🔍 Checking system requirements...
+2025-09-28 05:56:10,334 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 05:56:10,334 - INFO - ✅ All requirements met
+2025-09-28 05:56:10,334 - INFO - 
+🔄 Running Transcription...
+2025-09-28 05:56:10,334 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 05:56:10,405 - INFO - FFmpeg video processor initialized
+2025-09-28 05:56:10,405 - INFO - Found 1 MP4 file(s) to process
+2025-09-28 05:56:10,405 - INFO - Processing: coffee_chat.mp4
+2025-09-28 05:56:10,405 - INFO - Extracting audio from Upload/coffee_chat.mp4
+2025-09-28 05:56:10,601 - INFO - Audio extracted to Upload/coffee_chat.wav
+2025-09-28 05:56:10,601 - INFO - Transcribing audio: Upload/coffee_chat.wav
+2025-09-28 05:56:11,383 - WARNING - Could not understand audio in chunk 0
+2025-09-28 05:56:12,507 - WARNING - Could not understand audio in chunk 2
+2025-09-28 05:56:13,711 - WARNING - Could not understand audio in chunk 3
+2025-09-28 05:56:13,946 - WARNING - Could not understand audio in chunk 4
+2025-09-28 05:56:15,114 - WARNING - Could not understand audio in chunk 5
+2025-09-28 05:56:15,340 - WARNING - Could not understand audio in chunk 6
+2025-09-28 05:56:17,109 - INFO - Transcription saved to Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:56:17,109 - INFO - Temporary audio file cleaned up
+2025-09-28 05:56:17,109 - INFO - Completed: coffee_chat.mp4 - 3 sentences, 11.44s duration
+2025-09-28 05:56:17,109 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:56:17,109 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:56:17,109 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 05:56:17,109 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 05:56:18,943 - INFO - Loading emotion detection models...
+2025-09-28 05:56:19,109 - WARNING - MediaPipe not available. Face detection will be skipped.
+2025-09-28 05:56:19,109 - INFO - ✅ Models loaded successfully!
+2025-09-28 05:56:19,109 - INFO - Found 1 MP4 file(s) to process for emotion analysis
+2025-09-28 05:56:19,109 - INFO - Processing emotions for: coffee_chat.mp4
+2025-09-28 05:56:19,109 - INFO - Processing video: Upload/coffee_chat.mp4
+2025-09-28 05:56:19,137 - INFO - Video properties: 967 frames, 30.00 FPS, 32.23s duration
+2025-09-28 05:56:19,149 - INFO - Processing frame 0/967 (timestamp: 0.00s)
+2025-09-28 05:56:19,169 - INFO - Processing frame 5/967 (timestamp: 0.17s)
+2025-09-28 05:56:19,182 - INFO - Processing frame 10/967 (timestamp: 0.33s)
+2025-09-28 05:56:19,194 - INFO - Processing frame 15/967 (timestamp: 0.50s)
+2025-09-28 05:56:19,206 - INFO - Processing frame 20/967 (timestamp: 0.67s)
+2025-09-28 05:56:19,220 - INFO - Processing frame 25/967 (timestamp: 0.83s)
+2025-09-28 05:56:19,232 - INFO - Processing frame 30/967 (timestamp: 1.00s)
+2025-09-28 05:56:19,244 - INFO - Processing frame 35/967 (timestamp: 1.17s)
+2025-09-28 05:56:19,256 - INFO - Processing frame 40/967 (timestamp: 1.33s)
+2025-09-28 05:56:19,267 - INFO - Processing frame 45/967 (timestamp: 1.50s)
+2025-09-28 05:56:19,278 - INFO - Processing frame 50/967 (timestamp: 1.67s)
+2025-09-28 05:56:19,290 - INFO - Processing frame 55/967 (timestamp: 1.83s)
+2025-09-28 05:56:19,302 - INFO - Processing frame 60/967 (timestamp: 2.00s)
+2025-09-28 05:56:19,314 - INFO - Processing frame 65/967 (timestamp: 2.17s)
+2025-09-28 05:56:19,325 - INFO - Processing frame 70/967 (timestamp: 2.33s)
+2025-09-28 05:56:19,337 - INFO - Processing frame 75/967 (timestamp: 2.50s)
+2025-09-28 05:56:19,349 - INFO - Processing frame 80/967 (timestamp: 2.67s)
+2025-09-28 05:56:19,361 - INFO - Processing frame 85/967 (timestamp: 2.83s)
+2025-09-28 05:56:19,372 - INFO - Processing frame 90/967 (timestamp: 3.00s)
+2025-09-28 05:56:19,385 - INFO - Processing frame 95/967 (timestamp: 3.17s)
+2025-09-28 05:56:19,418 - INFO - Processing frame 100/967 (timestamp: 3.33s)
+2025-09-28 05:56:19,498 - INFO - Processing frame 105/967 (timestamp: 3.50s)
+2025-09-28 05:56:19,521 - INFO - Processing frame 110/967 (timestamp: 3.67s)
+2025-09-28 05:56:19,535 - INFO - Processing frame 115/967 (timestamp: 3.83s)
+2025-09-28 05:56:19,546 - INFO - Processing frame 120/967 (timestamp: 4.00s)
+2025-09-28 05:56:19,558 - INFO - Processing frame 125/967 (timestamp: 4.17s)
+2025-09-28 05:56:19,569 - INFO - Processing frame 130/967 (timestamp: 4.33s)
+2025-09-28 05:56:19,582 - INFO - Processing frame 135/967 (timestamp: 4.50s)
+2025-09-28 05:56:19,594 - INFO - Processing frame 140/967 (timestamp: 4.67s)
+2025-09-28 05:56:19,606 - INFO - Processing frame 145/967 (timestamp: 4.83s)
+2025-09-28 05:56:19,618 - INFO - Processing frame 150/967 (timestamp: 5.00s)
+2025-09-28 05:56:19,631 - INFO - Processing frame 155/967 (timestamp: 5.17s)
+2025-09-28 05:56:19,643 - INFO - Processing frame 160/967 (timestamp: 5.33s)
+2025-09-28 05:56:19,655 - INFO - Processing frame 165/967 (timestamp: 5.50s)
+2025-09-28 05:56:19,666 - INFO - Processing frame 170/967 (timestamp: 5.67s)
+2025-09-28 05:56:19,679 - INFO - Processing frame 175/967 (timestamp: 5.83s)
+2025-09-28 05:56:19,690 - INFO - Processing frame 180/967 (timestamp: 6.00s)
+2025-09-28 05:56:19,702 - INFO - Processing frame 185/967 (timestamp: 6.17s)
+2025-09-28 05:56:19,714 - INFO - Processing frame 190/967 (timestamp: 6.33s)
+2025-09-28 05:56:19,725 - INFO - Processing frame 195/967 (timestamp: 6.50s)
+2025-09-28 05:56:19,738 - INFO - Processing frame 200/967 (timestamp: 6.67s)
+2025-09-28 05:56:19,752 - INFO - Processing frame 205/967 (timestamp: 6.83s)
+2025-09-28 05:56:19,765 - INFO - Processing frame 210/967 (timestamp: 7.00s)
+2025-09-28 05:56:19,776 - INFO - Processing frame 215/967 (timestamp: 7.17s)
+2025-09-28 05:56:19,788 - INFO - Processing frame 220/967 (timestamp: 7.33s)
+2025-09-28 05:56:19,800 - INFO - Processing frame 225/967 (timestamp: 7.50s)
+2025-09-28 05:56:19,811 - INFO - Processing frame 230/967 (timestamp: 7.67s)
+2025-09-28 05:56:19,823 - INFO - Processing frame 235/967 (timestamp: 7.83s)
+2025-09-28 05:56:19,835 - INFO - Processing frame 240/967 (timestamp: 8.00s)
+2025-09-28 05:56:19,848 - INFO - Processing frame 245/967 (timestamp: 8.17s)
+2025-09-28 05:56:19,860 - INFO - Processing frame 250/967 (timestamp: 8.33s)
+2025-09-28 05:56:19,871 - INFO - Processing frame 255/967 (timestamp: 8.50s)
+2025-09-28 05:56:19,883 - INFO - Processing frame 260/967 (timestamp: 8.67s)
+2025-09-28 05:56:19,895 - INFO - Processing frame 265/967 (timestamp: 8.83s)
+2025-09-28 05:56:19,907 - INFO - Processing frame 270/967 (timestamp: 9.00s)
+2025-09-28 05:56:19,919 - INFO - Processing frame 275/967 (timestamp: 9.17s)
+2025-09-28 05:56:19,930 - INFO - Processing frame 280/967 (timestamp: 9.33s)
+2025-09-28 05:56:19,942 - INFO - Processing frame 285/967 (timestamp: 9.50s)
+2025-09-28 05:56:19,953 - INFO - Processing frame 290/967 (timestamp: 9.67s)
+2025-09-28 05:56:19,966 - INFO - Processing frame 295/967 (timestamp: 9.83s)
+2025-09-28 05:56:19,978 - INFO - Processing frame 300/967 (timestamp: 10.00s)
+2025-09-28 05:56:19,989 - INFO - Processing frame 305/967 (timestamp: 10.17s)
+2025-09-28 05:56:20,001 - INFO - Processing frame 310/967 (timestamp: 10.33s)
+2025-09-28 05:56:20,014 - INFO - Processing frame 315/967 (timestamp: 10.50s)
+2025-09-28 05:56:20,025 - INFO - Processing frame 320/967 (timestamp: 10.67s)
+2025-09-28 05:56:20,038 - INFO - Processing frame 325/967 (timestamp: 10.83s)
+2025-09-28 05:56:20,051 - INFO - Processing frame 330/967 (timestamp: 11.00s)
+2025-09-28 05:56:20,063 - INFO - Processing frame 335/967 (timestamp: 11.17s)
+2025-09-28 05:56:20,075 - INFO - Processing frame 340/967 (timestamp: 11.33s)
+2025-09-28 05:56:20,086 - INFO - Processing frame 345/967 (timestamp: 11.50s)
+2025-09-28 05:56:20,098 - INFO - Processing frame 350/967 (timestamp: 11.67s)
+2025-09-28 05:56:20,110 - INFO - Processing frame 355/967 (timestamp: 11.83s)
+2025-09-28 05:56:20,122 - INFO - Processing frame 360/967 (timestamp: 12.00s)
+2025-09-28 05:56:20,199 - INFO - Processing frame 365/967 (timestamp: 12.17s)
+2025-09-28 05:56:20,225 - INFO - Processing frame 370/967 (timestamp: 12.33s)
+2025-09-28 05:56:20,236 - INFO - Processing frame 375/967 (timestamp: 12.50s)
+2025-09-28 05:56:20,248 - INFO - Processing frame 380/967 (timestamp: 12.67s)
+2025-09-28 05:56:20,260 - INFO - Processing frame 385/967 (timestamp: 12.83s)
+2025-09-28 05:56:20,271 - INFO - Processing frame 390/967 (timestamp: 13.00s)
+2025-09-28 05:56:20,283 - INFO - Processing frame 395/967 (timestamp: 13.17s)
+2025-09-28 05:56:20,295 - INFO - Processing frame 400/967 (timestamp: 13.33s)
+2025-09-28 05:56:20,307 - INFO - Processing frame 405/967 (timestamp: 13.50s)
+2025-09-28 05:56:20,318 - INFO - Processing frame 410/967 (timestamp: 13.67s)
+2025-09-28 05:56:20,330 - INFO - Processing frame 415/967 (timestamp: 13.83s)
+2025-09-28 05:56:20,341 - INFO - Processing frame 420/967 (timestamp: 14.00s)
+2025-09-28 05:56:20,353 - INFO - Processing frame 425/967 (timestamp: 14.17s)
+2025-09-28 05:56:20,365 - INFO - Processing frame 430/967 (timestamp: 14.33s)
+2025-09-28 05:56:20,377 - INFO - Processing frame 435/967 (timestamp: 14.50s)
+2025-09-28 05:56:20,388 - INFO - Processing frame 440/967 (timestamp: 14.67s)
+2025-09-28 05:56:20,400 - INFO - Processing frame 445/967 (timestamp: 14.83s)
+2025-09-28 05:56:20,412 - INFO - Processing frame 450/967 (timestamp: 15.00s)
+2025-09-28 05:56:20,424 - INFO - Processing frame 455/967 (timestamp: 15.17s)
+2025-09-28 05:56:20,436 - INFO - Processing frame 460/967 (timestamp: 15.33s)
+2025-09-28 05:56:20,448 - INFO - Processing frame 465/967 (timestamp: 15.50s)
+2025-09-28 05:56:20,460 - INFO - Processing frame 470/967 (timestamp: 15.67s)
+2025-09-28 05:56:20,472 - INFO - Processing frame 475/967 (timestamp: 15.83s)
+2025-09-28 05:56:20,484 - INFO - Processing frame 480/967 (timestamp: 16.00s)
+2025-09-28 05:56:20,495 - INFO - Processing frame 485/967 (timestamp: 16.17s)
+2025-09-28 05:56:20,507 - INFO - Processing frame 490/967 (timestamp: 16.33s)
+2025-09-28 05:56:20,519 - INFO - Processing frame 495/967 (timestamp: 16.50s)
+2025-09-28 05:56:20,532 - INFO - Processing frame 500/967 (timestamp: 16.67s)
+2025-09-28 05:56:20,543 - INFO - Processing frame 505/967 (timestamp: 16.83s)
+2025-09-28 05:56:20,556 - INFO - Processing frame 510/967 (timestamp: 17.00s)
+2025-09-28 05:56:20,568 - INFO - Processing frame 515/967 (timestamp: 17.17s)
+2025-09-28 05:56:20,581 - INFO - Processing frame 520/967 (timestamp: 17.33s)
+2025-09-28 05:56:20,592 - INFO - Processing frame 525/967 (timestamp: 17.50s)
+2025-09-28 05:56:20,606 - INFO - Processing frame 530/967 (timestamp: 17.67s)
+2025-09-28 05:56:20,619 - INFO - Processing frame 535/967 (timestamp: 17.83s)
+2025-09-28 05:56:20,631 - INFO - Processing frame 540/967 (timestamp: 18.00s)
+2025-09-28 05:56:20,644 - INFO - Processing frame 545/967 (timestamp: 18.17s)
+2025-09-28 05:56:20,658 - INFO - Processing frame 550/967 (timestamp: 18.33s)
+2025-09-28 05:56:20,670 - INFO - Processing frame 555/967 (timestamp: 18.50s)
+2025-09-28 05:56:20,682 - INFO - Processing frame 560/967 (timestamp: 18.67s)
+2025-09-28 05:56:20,693 - INFO - Processing frame 565/967 (timestamp: 18.83s)
+2025-09-28 05:56:20,705 - INFO - Processing frame 570/967 (timestamp: 19.00s)
+2025-09-28 05:56:20,717 - INFO - Processing frame 575/967 (timestamp: 19.17s)
+2025-09-28 05:56:20,728 - INFO - Processing frame 580/967 (timestamp: 19.33s)
+2025-09-28 05:56:20,741 - INFO - Processing frame 585/967 (timestamp: 19.50s)
+2025-09-28 05:56:20,754 - INFO - Processing frame 590/967 (timestamp: 19.67s)
+2025-09-28 05:56:20,766 - INFO - Processing frame 595/967 (timestamp: 19.83s)
+2025-09-28 05:56:20,777 - INFO - Processing frame 600/967 (timestamp: 20.00s)
+2025-09-28 05:56:20,790 - INFO - Processing frame 605/967 (timestamp: 20.17s)
+2025-09-28 05:56:20,801 - INFO - Processing frame 610/967 (timestamp: 20.33s)
+2025-09-28 05:56:20,813 - INFO - Processing frame 615/967 (timestamp: 20.50s)
+2025-09-28 05:56:20,824 - INFO - Processing frame 620/967 (timestamp: 20.67s)
+2025-09-28 05:56:20,837 - INFO - Processing frame 625/967 (timestamp: 20.83s)
+2025-09-28 05:56:20,851 - INFO - Processing frame 630/967 (timestamp: 21.00s)
+2025-09-28 05:56:20,863 - INFO - Processing frame 635/967 (timestamp: 21.17s)
+2025-09-28 05:56:20,874 - INFO - Processing frame 640/967 (timestamp: 21.33s)
+2025-09-28 05:56:20,886 - INFO - Processing frame 645/967 (timestamp: 21.50s)
+2025-09-28 05:56:20,897 - INFO - Processing frame 650/967 (timestamp: 21.67s)
+2025-09-28 05:56:20,909 - INFO - Processing frame 655/967 (timestamp: 21.83s)
+2025-09-28 05:56:20,921 - INFO - Processing frame 660/967 (timestamp: 22.00s)
+2025-09-28 05:56:20,933 - INFO - Processing frame 665/967 (timestamp: 22.17s)
+2025-09-28 05:56:20,944 - INFO - Processing frame 670/967 (timestamp: 22.33s)
+2025-09-28 05:56:20,956 - INFO - Processing frame 675/967 (timestamp: 22.50s)
+2025-09-28 05:56:20,967 - INFO - Processing frame 680/967 (timestamp: 22.67s)
+2025-09-28 05:56:20,978 - INFO - Processing frame 685/967 (timestamp: 22.83s)
+2025-09-28 05:56:20,990 - INFO - Processing frame 690/967 (timestamp: 23.00s)
+2025-09-28 05:56:21,002 - INFO - Processing frame 695/967 (timestamp: 23.17s)
+2025-09-28 05:56:21,014 - INFO - Processing frame 700/967 (timestamp: 23.33s)
+2025-09-28 05:56:21,025 - INFO - Processing frame 705/967 (timestamp: 23.50s)
+2025-09-28 05:56:21,037 - INFO - Processing frame 710/967 (timestamp: 23.67s)
+2025-09-28 05:56:21,049 - INFO - Processing frame 715/967 (timestamp: 23.83s)
+2025-09-28 05:56:21,061 - INFO - Processing frame 720/967 (timestamp: 24.00s)
+2025-09-28 05:56:21,072 - INFO - Processing frame 725/967 (timestamp: 24.17s)
+2025-09-28 05:56:21,084 - INFO - Processing frame 730/967 (timestamp: 24.33s)
+2025-09-28 05:56:21,096 - INFO - Processing frame 735/967 (timestamp: 24.50s)
+2025-09-28 05:56:21,108 - INFO - Processing frame 740/967 (timestamp: 24.67s)
+2025-09-28 05:56:21,120 - INFO - Processing frame 745/967 (timestamp: 24.83s)
+2025-09-28 05:56:21,131 - INFO - Processing frame 750/967 (timestamp: 25.00s)
+2025-09-28 05:56:21,143 - INFO - Processing frame 755/967 (timestamp: 25.17s)
+2025-09-28 05:56:21,155 - INFO - Processing frame 760/967 (timestamp: 25.33s)
+2025-09-28 05:56:21,167 - INFO - Processing frame 765/967 (timestamp: 25.50s)
+2025-09-28 05:56:21,179 - INFO - Processing frame 770/967 (timestamp: 25.67s)
+2025-09-28 05:56:21,192 - INFO - Processing frame 775/967 (timestamp: 25.83s)
+2025-09-28 05:56:21,204 - INFO - Processing frame 780/967 (timestamp: 26.00s)
+2025-09-28 05:56:21,216 - INFO - Processing frame 785/967 (timestamp: 26.17s)
+2025-09-28 05:56:21,227 - INFO - Processing frame 790/967 (timestamp: 26.33s)
+2025-09-28 05:56:21,239 - INFO - Processing frame 795/967 (timestamp: 26.50s)
+2025-09-28 05:56:21,252 - INFO - Processing frame 800/967 (timestamp: 26.67s)
+2025-09-28 05:56:21,266 - INFO - Processing frame 805/967 (timestamp: 26.83s)
+2025-09-28 05:56:21,278 - INFO - Processing frame 810/967 (timestamp: 27.00s)
+2025-09-28 05:56:21,290 - INFO - Processing frame 815/967 (timestamp: 27.17s)
+2025-09-28 05:56:21,304 - INFO - Processing frame 820/967 (timestamp: 27.33s)
+2025-09-28 05:56:21,317 - INFO - Processing frame 825/967 (timestamp: 27.50s)
+2025-09-28 05:56:21,329 - INFO - Processing frame 830/967 (timestamp: 27.67s)
+2025-09-28 05:56:21,342 - INFO - Processing frame 835/967 (timestamp: 27.83s)
+2025-09-28 05:56:21,355 - INFO - Processing frame 840/967 (timestamp: 28.00s)
+2025-09-28 05:56:21,367 - INFO - Processing frame 845/967 (timestamp: 28.17s)
+2025-09-28 05:56:21,378 - INFO - Processing frame 850/967 (timestamp: 28.33s)
+2025-09-28 05:56:21,389 - INFO - Processing frame 855/967 (timestamp: 28.50s)
+2025-09-28 05:56:21,402 - INFO - Processing frame 860/967 (timestamp: 28.67s)
+2025-09-28 05:56:21,414 - INFO - Processing frame 865/967 (timestamp: 28.83s)
+2025-09-28 05:56:21,425 - INFO - Processing frame 870/967 (timestamp: 29.00s)
+2025-09-28 05:56:21,437 - INFO - Processing frame 875/967 (timestamp: 29.17s)
+2025-09-28 05:56:21,448 - INFO - Processing frame 880/967 (timestamp: 29.33s)
+2025-09-28 05:56:21,460 - INFO - Processing frame 885/967 (timestamp: 29.50s)
+2025-09-28 05:56:21,471 - INFO - Processing frame 890/967 (timestamp: 29.67s)
+2025-09-28 05:56:21,485 - INFO - Processing frame 895/967 (timestamp: 29.83s)
+2025-09-28 05:56:21,496 - INFO - Processing frame 900/967 (timestamp: 30.00s)
+2025-09-28 05:56:21,508 - INFO - Processing frame 905/967 (timestamp: 30.17s)
+2025-09-28 05:56:21,519 - INFO - Processing frame 910/967 (timestamp: 30.33s)
+2025-09-28 05:56:21,531 - INFO - Processing frame 915/967 (timestamp: 30.50s)
+2025-09-28 05:56:21,543 - INFO - Processing frame 920/967 (timestamp: 30.67s)
+2025-09-28 05:56:21,555 - INFO - Processing frame 925/967 (timestamp: 30.83s)
+2025-09-28 05:56:21,567 - INFO - Processing frame 930/967 (timestamp: 31.00s)
+2025-09-28 05:56:21,580 - INFO - Processing frame 935/967 (timestamp: 31.17s)
+2025-09-28 05:56:21,592 - INFO - Processing frame 940/967 (timestamp: 31.33s)
+2025-09-28 05:56:21,604 - INFO - Processing frame 945/967 (timestamp: 31.50s)
+2025-09-28 05:56:21,615 - INFO - Processing frame 950/967 (timestamp: 31.67s)
+2025-09-28 05:56:21,627 - INFO - Processing frame 955/967 (timestamp: 31.83s)
+2025-09-28 05:56:21,639 - INFO - Processing frame 960/967 (timestamp: 32.00s)
+2025-09-28 05:56:21,650 - INFO - Processing frame 965/967 (timestamp: 32.17s)
+2025-09-28 05:56:21,658 - INFO - Emotion analysis saved to Output/coffee_chat_emotion_analysis.json
+2025-09-28 05:56:21,658 - INFO - ✅ Processing complete: 194 frames analyzed, 0 with faces detected
+2025-09-28 05:56:21,658 - INFO - Completed: coffee_chat.mp4
+2025-09-28 05:56:21,658 - INFO -   - Processed 194 frames (every 5th frame)
+2025-09-28 05:56:21,658 - INFO -   - Face detection rate: 0.0%
+2025-09-28 05:56:21,658 - INFO -   - Average frustration: 0
+2025-09-28 05:56:21,658 - INFO -   - Average engagement: 0
+2025-09-28 05:56:21,661 - INFO - ✅ Emotion analysis completed successfully
+2025-09-28 05:56:21,661 - INFO - ✅ Emotion Analysis completed successfully
+2025-09-28 05:56:21,661 - INFO - 
+🔄 Running Data Synchronization...
+2025-09-28 05:56:21,661 - INFO - 🔄 STEP 3: Starting data synchronization...
+2025-09-28 05:56:21,663 - INFO - JSON Parser initialized
+2025-09-28 05:56:21,663 - INFO - Found matching pair: coffee_chat_transcription_ffmpeg.json <-> coffee_chat_emotion_analysis.json
+2025-09-28 05:56:21,663 - INFO - Found matching pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:56:21,663 - INFO - Processing pair: coffee_chat_transcription_ffmpeg.json <-> coffee_chat_emotion_analysis.json
+2025-09-28 05:56:21,663 - INFO - Loaded JSON file: Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:56:21,664 - INFO - Loaded JSON file: Output/coffee_chat_emotion_analysis.json
+2025-09-28 05:56:21,664 - INFO - Processing 3 sentences from transcription
+2025-09-28 05:56:21,664 - INFO - Processed: 00:00 - 00:03 - I wanted to share with you on building 5-speed a b...
+2025-09-28 05:56:21,664 - INFO - Processed: 00:03 - 00:10 - just let you know we've raised 50 million preseaso...
+2025-09-28 05:56:21,664 - INFO - Processed: 00:10 - 00:11 - thanks for the coffee shop
+2025-09-28 05:56:21,664 - INFO - Processing pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:56:21,664 - INFO - Loaded JSON file: Output/video1777587742_transcription_ffmpeg.json
+2025-09-28 05:56:21,665 - INFO - Loaded JSON file: Output/video1777587742_emotion_analysis.json
+2025-09-28 05:56:21,665 - INFO - Processing 8 sentences from transcription
+2025-09-28 05:56:21,665 - INFO - Processed: 00:00 - 00:07 - hi I'm dancing I'm talking about a really boring t...
+2025-09-28 05:56:21,665 - INFO - Processed: 00:07 - 00:12 - yes this is a very interesting topic
+2025-09-28 05:56:21,665 - INFO - Processed: 00:12 - 00:15 - I'm so confused
+2025-09-28 05:56:21,665 - INFO - Processed: 00:15 - 00:16 - the
+2025-09-28 05:56:21,665 - INFO - Processed: 00:16 - 00:19 - what is happening
+2025-09-28 05:56:21,665 - INFO - Processed: 00:19 - 00:24 - what what is happening I'm so confused I don't eve...
+2025-09-28 05:56:21,665 - INFO - Processed: 00:24 - 00:26 - and now I'm neutral again
+2025-09-28 05:56:21,665 - INFO - Processed: 00:26 - 00:30 - how's it going to beat your ass
+2025-09-28 05:56:21,665 - INFO - Combined output saved to Output/synchronized_analysis.txt
+2025-09-28 05:56:21,665 - INFO - Summary report saved to Output/analysis_summary.txt
+2025-09-28 05:56:21,665 - INFO - ✅ Data synchronization completed successfully
+2025-09-28 05:56:21,666 - INFO - ✅ Data Synchronization completed successfully
+2025-09-28 05:56:21,666 - INFO - 
+🔄 Running AI Analysis...
+2025-09-28 05:56:21,666 - INFO - 🤖 STEP 4: Starting AI performance analysis...
+2025-09-28 05:56:21,712 - INFO - Gemini Analyzer initialized with model: gemini-2.0-flash-exp
+2025-09-28 05:56:21,712 - INFO - Read synchronized analysis from Output/synchronized_analysis.txt
+2025-09-28 05:56:21,712 - INFO - Calling Gemini API...
+2025-09-28 05:56:25,804 - INFO - ✅ Gemini API call successful
+2025-09-28 05:56:25,806 - INFO - Gemini analysis saved to Output/gemini_output.txt
+2025-09-28 05:56:25,806 - INFO - ✅ AI analysis completed successfully
+2025-09-28 05:56:25,806 - INFO - ✅ AI Analysis completed successfully
+2025-09-28 05:56:25,806 - INFO - 📊 PIPELINE SUMMARY
+2025-09-28 05:56:25,806 - INFO - ==================================================
+2025-09-28 05:56:25,807 - INFO - ✅ Transcription: 2 file(s)
+2025-09-28 05:56:25,807 - INFO - ✅ Emotion Analysis: 2 file(s)
+2025-09-28 05:56:25,807 - INFO - ✅ Synchronized Data: Output/synchronized_analysis.txt
+2025-09-28 05:56:25,807 - INFO - ✅ Analysis Summary: Output/analysis_summary.txt
+2025-09-28 05:56:25,807 - INFO - ✅ AI Feedback: Output/gemini_output.txt
+2025-09-28 05:56:25,807 - INFO - ==================================================
+2025-09-28 05:56:25,807 - INFO - 🎉 All pipeline steps completed successfully!
+2025-09-28 05:59:29,872 - INFO - 🔍 Checking system requirements...
+2025-09-28 05:59:29,872 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 05:59:29,872 - INFO - ✅ All requirements met
+2025-09-28 05:59:29,872 - INFO - 
+🔄 Running Transcription...
+2025-09-28 05:59:29,872 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 05:59:29,938 - INFO - FFmpeg video processor initialized
+2025-09-28 05:59:29,938 - INFO - Found 1 MP4 file(s) to process
+2025-09-28 05:59:29,938 - INFO - Processing: coffee_chat.mp4
+2025-09-28 05:59:29,938 - INFO - Extracting audio from Upload/coffee_chat.mp4
+2025-09-28 05:59:30,615 - INFO - Audio extracted to Upload/coffee_chat.wav
+2025-09-28 05:59:30,615 - INFO - Transcribing audio: Upload/coffee_chat.wav
+2025-09-28 05:59:31,418 - WARNING - Could not understand audio in chunk 0
+2025-09-28 05:59:32,660 - WARNING - Could not understand audio in chunk 2
+2025-09-28 05:59:33,872 - WARNING - Could not understand audio in chunk 3
+2025-09-28 05:59:34,078 - WARNING - Could not understand audio in chunk 4
+2025-09-28 05:59:35,183 - WARNING - Could not understand audio in chunk 5
+2025-09-28 05:59:35,398 - WARNING - Could not understand audio in chunk 6
+2025-09-28 05:59:37,032 - INFO - Transcription saved to Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:59:37,032 - INFO - Temporary audio file cleaned up
+2025-09-28 05:59:37,032 - INFO - Completed: coffee_chat.mp4 - 3 sentences, 11.44s duration
+2025-09-28 05:59:37,032 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:59:37,033 - INFO - ✅ Transcription completed successfully
+2025-09-28 05:59:37,033 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 05:59:37,033 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 05:59:40,366 - INFO - Loading emotion detection models...
+2025-09-28 05:59:40,554 - ERROR - ❌ Error loading models: Failed to parse: node {
+  calculator: "ImagePropertiesCalculator"
+  input_stream: "IMAGE:image"
+  output_stream: "SIZE:image_size"
+}
+node {
+  calculator: "PreviousLoopbackCalculator"
+  input_stream: "MAIN:image"
+  input_stream: "LOOP:face_rects_from_landmarks"
+  output_stream: "PREV_LOOP:prev_face_rects_from_landmarks"
+  input_stream_info {
+    tag_index: "LOOP"
+    back_edge: true
+  }
+}
+node {
+  calculator: "GateCalculator"
+  input_stream: "prev_face_rects_from_landmarks"
+  output_stream: "gated_prev_face_rects_from_landmarks"
+  input_side_packet: "ALLOW:use_prev_landmarks"
+  options {
+    [mediapipe.GateCalculatorOptions.ext] {
+      allow: true
+    }
+  }
+}
+node {
+  calculator: "NormalizedRectVectorHasMinSizeCalculator"
+  input_stream: "ITERABLE:gated_prev_face_rects_from_landmarks"
+  output_stream: "prev_has_enough_faces"
+  input_side_packet: "num_faces"
+}
+node {
+  calculator: "GateCalculator"
+  input_stream: "image"
+  input_stream: "DISALLOW:prev_has_enough_faces"
+  output_stream: "gated_image"
+  options {
+    [mediapipe.GateCalculatorOptions.ext] {
+      empty_packets_as_allow: true
+    }
+  }
+}
+node {
+  calculator: "ImagePropertiesCalculator"
+  input_stream: "IMAGE:gated_image"
+  output_stream: "SIZE:gated_image_size"
+}
+node {
+  name: "facelandmarkcpu__TfLiteCustomOpResolverCalculator"
+  calculator: "TfLiteCustomOpResolverCalculator"
+  output_side_packet: "OP_RESOLVER:facelandmarkcpu__op_resolver"
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__ToImageCalculator"
+  calculator: "ToImageCalculator"
+  input_stream: "IMAGE:gated_image"
+  output_stream: "IMAGE:facedetectionshortrangecpu__facedetectionshortrange__facedetection__multi_backend_image"
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__ImageToTensorCalculator"
+  calculator: "ImageToTensorCalculator"
+  input_stream: "IMAGE:facedetectionshortrangecpu__facedetectionshortrange__facedetection__multi_backend_image"
+  output_stream: "TENSORS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__input_tensors"
+  output_stream: "MATRIX:facedetectionshortrangecpu__facedetectionshortrange__facedetection__transform_matrix"
+  node_options {
+    type_url: "type.googleapis.com/mediapipe.ImageToTensorCalculatorOptions"
+    value: "\030\001"\n\r\000\000\200\277\025\000\000\200?0\001\010\200\001\020\200\001"
+  }
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__SsdAnchorsCalculator"
+  calculator: "SsdAnchorsCalculator"
+  output_side_packet: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__anchors"
+  node_options {
+    type_url: "type.googleapis.com/mediapipe.SsdAnchorsCalculatorOptions"
+    value: "\035\000\000\030>%\000\000@?-\000\000\000?5\000\000\000?]\000\000\200?p\001\010\200\001\020\200\0018\004P\010P\020P\020P\020m\000\000\200?"
+  }
+}
+node {
+  name: "facelandmarkcpu__facelandmarksmodelloader__switchcontainer__SwitchDemuxCalculator"
+  calculator: "SwitchDemuxCalculator"
+  input_side_packet: "ENABLE:with_attention"
+  options {
+    [mediapipe.SwitchContainerOptions.ext] {
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__facelandmarksmodelloader__switchcontainer__ConstantSidePacketCalculator_1"
+  calculator: "ConstantSidePacketCalculator"
+  output_side_packet: "PACKET:facelandmarkcpu__facelandmarksmodelloader__switchcontainer__c0__facelandmarkcpu__facelandmarksmodelloader__model_path"
+  options {
+    [mediapipe.ConstantSidePacketCalculatorOptions.ext] {
+      packet {
+        string_value: "mediapipe/modules/face_landmark/face_landmark.tflite"
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__facelandmarksmodelloader__switchcontainer__ConstantSidePacketCalculator_2"
+  calculator: "ConstantSidePacketCalculator"
+  output_side_packet: "PACKET:facelandmarkcpu__facelandmarksmodelloader__switchcontainer__c1__facelandmarkcpu__facelandmarksmodelloader__model_path"
+  options {
+    [mediapipe.ConstantSidePacketCalculatorOptions.ext] {
+      packet {
+        string_value: "mediapipe/modules/face_landmark/face_landmark_with_attention.tflite"
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__facelandmarksmodelloader__switchcontainer__SwitchMuxCalculator"
+  calculator: "SwitchMuxCalculator"
+  input_side_packet: "ENABLE:with_attention"
+  input_side_packet: "C0__PACKET:facelandmarkcpu__facelandmarksmodelloader__switchcontainer__c0__facelandmarkcpu__facelandmarksmodelloader__model_path"
+  input_side_packet: "C1__PACKET:facelandmarkcpu__facelandmarksmodelloader__switchcontainer__c1__facelandmarkcpu__facelandmarksmodelloader__model_path"
+  output_side_packet: "PACKET:facelandmarkcpu__facelandmarksmodelloader__model_path"
+  options {
+    [mediapipe.SwitchContainerOptions.ext] {
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__facelandmarksmodelloader__ResourceProviderCalculator"
+  calculator: "ResourceProviderCalculator"
+  input_side_packet: "RESOURCE_ID:facelandmarkcpu__facelandmarksmodelloader__model_path"
+  output_side_packet: "RESOURCE:facelandmarkcpu__facelandmarksmodelloader__model_resource"
+}
+node {
+  name: "facelandmarkcpu__facelandmarksmodelloader__TfLiteModelCalculator"
+  calculator: "TfLiteModelCalculator"
+  input_side_packet: "MODEL_RESOURCE:facelandmarkcpu__facelandmarksmodelloader__model_resource"
+  output_side_packet: "MODEL:facelandmarkcpu__model"
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__inferencecalculator__facedetectionshortrangecpu__facedetectionshortrange__facedetection__InferenceCalculator"
+  calculator: "InferenceCalculatorCpu"
+  input_stream: "TENSORS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__input_tensors"
+  output_stream: "TENSORS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__detection_tensors"
+  node_options {
+    type_url: "type.googleapis.com/mediapipe.InferenceCalculatorOptions"
+    value: "*\002"\000\nBmediapipe/modules/face_detection/face_detection_short_range.tflite"
+  }
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__TensorsToDetectionsCalculator"
+  calculator: "TensorsToDetectionsCalculator"
+  input_stream: "TENSORS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__detection_tensors"
+  output_stream: "DETECTIONS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__unfiltered_detections"
+  input_side_packet: "ANCHORS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__anchors"
+  node_options {
+    type_url: "type.googleapis.com/mediapipe.TensorsToDetectionsCalculatorOptions"
+    value: "\010\001\020\200\007\030\020%\000\000\000C-\000\000\000C5\000\000\000C=\000\000\000CH\004P\006X\002`\000p\001x\001\205\001\000\000\310B\235\001\000\000\000?"
+  }
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__NonMaxSuppressionCalculator"
+  calculator: "NonMaxSuppressionCalculator"
+  input_stream: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__unfiltered_detections"
+  output_stream: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__filtered_detections"
+  options {
+    [mediapipe.NonMaxSuppressionCalculatorOptions.ext] {
+      min_suppression_threshold: 0.3
+      overlap_type: INTERSECTION_OVER_UNION
+      algorithm: WEIGHTED
+    }
+  }
+}
+node {
+  name: "facedetectionshortrangecpu__facedetectionshortrange__facedetection__DetectionProjectionCalculator"
+  calculator: "DetectionProjectionCalculator"
+  input_stream: "DETECTIONS:facedetectionshortrangecpu__facedetectionshortrange__facedetection__filtered_detections"
+  input_stream: "PROJECTION_MATRIX:facedetectionshortrangecpu__facedetectionshortrange__facedetection__transform_matrix"
+  output_stream: "DETECTIONS:all_face_detections"
+}
+node {
+  calculator: "ClipDetectionVectorSizeCalculator"
+  input_stream: "all_face_detections"
+  output_stream: "face_detections"
+  input_side_packet: "num_faces"
+}
+node {
+  calculator: "BeginLoopDetectionCalculator"
+  input_stream: "ITERABLE:face_detections"
+  input_stream: "CLONE:gated_image_size"
+  output_stream: "ITEM:face_detection"
+  output_stream: "CLONE:detections_loop_image_size"
+  output_stream: "BATCH_END:detections_loop_end_timestamp"
+}
+node {
+  name: "facedetectionfrontdetectiontoroi__DetectionsToRectsCalculator"
+  calculator: "DetectionsToRectsCalculator"
+  input_stream: "DETECTION:face_detection"
+  input_stream: "IMAGE_SIZE:detections_loop_image_size"
+  output_stream: "NORM_RECT:facedetectionfrontdetectiontoroi__initial_roi"
+  options {
+    [mediapipe.DetectionsToRectsCalculatorOptions.ext] {
+      rotation_vector_start_keypoint_index: 0
+      rotation_vector_end_keypoint_index: 1
+      rotation_vector_target_angle_degrees: 0
+    }
+  }
+}
+node {
+  name: "facedetectionfrontdetectiontoroi__RectTransformationCalculator"
+  calculator: "RectTransformationCalculator"
+  input_stream: "NORM_RECT:facedetectionfrontdetectiontoroi__initial_roi"
+  input_stream: "IMAGE_SIZE:detections_loop_image_size"
+  output_stream: "face_rect_from_detection"
+  options {
+    [mediapipe.RectTransformationCalculatorOptions.ext] {
+      scale_x: 1.5
+      scale_y: 1.5
+      square_long: true
+    }
+  }
+}
+node {
+  calculator: "EndLoopNormalizedRectCalculator"
+  input_stream: "ITEM:face_rect_from_detection"
+  input_stream: "BATCH_END:detections_loop_end_timestamp"
+  output_stream: "ITERABLE:face_rects_from_detections"
+}
+node {
+  calculator: "AssociationNormRectCalculator"
+  input_stream: "face_rects_from_detections"
+  input_stream: "gated_prev_face_rects_from_landmarks"
+  output_stream: "face_rects"
+  options {
+    [mediapipe.AssociationCalculatorOptions.ext] {
+      min_similarity_threshold: 0.5
+    }
+  }
+}
+node {
+  calculator: "BeginLoopNormalizedRectCalculator"
+  input_stream: "ITERABLE:face_rects"
+  input_stream: "CLONE:0:image"
+  input_stream: "CLONE:1:image_size"
+  output_stream: "ITEM:face_rect"
+  output_stream: "CLONE:0:landmarks_loop_image"
+  output_stream: "CLONE:1:landmarks_loop_image_size"
+  output_stream: "BATCH_END:landmarks_loop_end_timestamp"
+}
+node {
+  name: "facelandmarkcpu__ImageToTensorCalculator"
+  calculator: "ImageToTensorCalculator"
+  input_stream: "IMAGE:landmarks_loop_image"
+  input_stream: "NORM_RECT:face_rect"
+  output_stream: "TENSORS:facelandmarkcpu__input_tensors"
+  options {
+    [mediapipe.ImageToTensorCalculatorOptions.ext] {
+      output_tensor_width: 192
+      output_tensor_height: 192
+      output_tensor_float_range {
+        min: 0
+        max: 1
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__inferencecalculator__facelandmarkcpu__InferenceCalculator"
+  calculator: "InferenceCalculatorCpu"
+  input_stream: "TENSORS:facelandmarkcpu__input_tensors"
+  output_stream: "TENSORS:facelandmarkcpu__output_tensors"
+  input_side_packet: "MODEL:facelandmarkcpu__model"
+  input_side_packet: "OP_RESOLVER:facelandmarkcpu__op_resolver"
+  options {
+    [mediapipe.InferenceCalculatorOptions.ext] {
+      delegate {
+        xnnpack {
+        }
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_1__SwitchDemuxCalculator"
+  calculator: "SwitchDemuxCalculator"
+  input_stream: "facelandmarkcpu__output_tensors"
+  output_stream: "C0__:facelandmarkcpu__switchcontainer_1__c0__facelandmarkcpu__output_tensors"
+  output_stream: "C1__:facelandmarkcpu__switchcontainer_1__c1__facelandmarkcpu__output_tensors"
+  input_side_packet: "ENABLE:with_attention"
+  options {
+    [mediapipe.SwitchContainerOptions.ext] {
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_1__SplitTensorVectorCalculator_1"
+  calculator: "SplitTensorVectorCalculator"
+  input_stream: "facelandmarkcpu__switchcontainer_1__c0__facelandmarkcpu__output_tensors"
+  output_stream: "facelandmarkcpu__switchcontainer_1__c0__facelandmarkcpu__landmark_tensors"
+  output_stream: "facelandmarkcpu__switchcontainer_1__c0__facelandmarkcpu__face_flag_tensor"
+  options {
+    [mediapipe.SplitVectorCalculatorOptions.ext] {
+      ranges {
+        begin: 0
+        end: 1
+      }
+      ranges {
+        begin: 1
+        end: 2
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_1__SplitTensorVectorCalculator_2"
+  calculator: "SplitTensorVectorCalculator"
+  input_stream: "facelandmarkcpu__switchcontainer_1__c1__facelandmarkcpu__output_tensors"
+  output_stream: "facelandmarkcpu__switchcontainer_1__c1__facelandmarkcpu__landmark_tensors"
+  output_stream: "facelandmarkcpu__switchcontainer_1__c1__facelandmarkcpu__face_flag_tensor"
+  options {
+    [mediapipe.SplitVectorCalculatorOptions.ext] {
+      ranges {
+        begin: 0
+        end: 6
+      }
+      ranges {
+        begin: 6
+        end: 7
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_1__SwitchMuxCalculator"
+  calculator: "SwitchMuxCalculator"
+  input_stream: "C0__:facelandmarkcpu__switchcontainer_1__c0__facelandmarkcpu__landmark_tensors"
+  input_stream: "C0__:1:facelandmarkcpu__switchcontainer_1__c0__facelandmarkcpu__face_flag_tensor"
+  input_stream: "C1__:facelandmarkcpu__switchcontainer_1__c1__facelandmarkcpu__landmark_tensors"
+  input_stream: "C1__:1:facelandmarkcpu__switchcontainer_1__c1__facelandmarkcpu__face_flag_tensor"
+  output_stream: "facelandmarkcpu__landmark_tensors"
+  output_stream: "facelandmarkcpu__face_flag_tensor"
+  input_side_packet: "ENABLE:with_attention"
+  options {
+    [mediapipe.SwitchContainerOptions.ext] {
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__TensorsToFloatsCalculator"
+  calculator: "TensorsToFloatsCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__face_flag_tensor"
+  output_stream: "FLOAT:facelandmarkcpu__face_presence_score"
+  options {
+    [mediapipe.TensorsToFloatsCalculatorOptions.ext] {
+      activation: SIGMOID
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__ThresholdingCalculator"
+  calculator: "ThresholdingCalculator"
+  input_stream: "FLOAT:facelandmarkcpu__face_presence_score"
+  output_stream: "FLAG:facelandmarkcpu__face_presence"
+  options {
+    [mediapipe.ThresholdingCalculatorOptions.ext] {
+      threshold: 0.5
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__GateCalculator"
+  calculator: "GateCalculator"
+  input_stream: "facelandmarkcpu__landmark_tensors"
+  input_stream: "ALLOW:facelandmarkcpu__face_presence"
+  output_stream: "facelandmarkcpu__ensured_landmark_tensors"
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__SwitchDemuxCalculator"
+  calculator: "SwitchDemuxCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__ensured_landmark_tensors"
+  output_stream: "C0__TENSORS:facelandmarkcpu__switchcontainer_2__c0__facelandmarkcpu__ensured_landmark_tensors"
+  output_stream: "C1__TENSORS:facelandmarkcpu__switchcontainer_2__c1__facelandmarkcpu__ensured_landmark_tensors"
+  input_side_packet: "ENABLE:with_attention"
+  options {
+    [mediapipe.SwitchContainerOptions.ext] {
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarks__TensorsToLandmarksCalculator"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__c0__facelandmarkcpu__ensured_landmark_tensors"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__c0__facelandmarkcpu__landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 468
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__SplitTensorVectorCalculator"
+  calculator: "SplitTensorVectorCalculator"
+  input_stream: "facelandmarkcpu__switchcontainer_2__c1__facelandmarkcpu__ensured_landmark_tensors"
+  output_stream: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__mesh_tensor"
+  output_stream: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__lips_tensor"
+  output_stream: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_eye_tensor"
+  output_stream: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_eye_tensor"
+  output_stream: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_iris_tensor"
+  output_stream: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_iris_tensor"
+  options {
+    [mediapipe.SplitVectorCalculatorOptions.ext] {
+      ranges {
+        begin: 0
+        end: 1
+      }
+      ranges {
+        begin: 1
+        end: 2
+      }
+      ranges {
+        begin: 2
+        end: 3
+      }
+      ranges {
+        begin: 3
+        end: 4
+      }
+      ranges {
+        begin: 4
+        end: 5
+      }
+      ranges {
+        begin: 5
+        end: 6
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__TensorsToLandmarksCalculator_1"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__mesh_tensor"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__mesh_landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 468
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__TensorsToLandmarksCalculator_2"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__lips_tensor"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__lips_landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 80
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__TensorsToLandmarksCalculator_3"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_eye_tensor"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_eye_landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 71
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__TensorsToLandmarksCalculator_4"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_eye_tensor"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_eye_landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 71
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__TensorsToLandmarksCalculator_5"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_iris_tensor"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_iris_landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 5
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__TensorsToLandmarksCalculator_6"
+  calculator: "TensorsToLandmarksCalculator"
+  input_stream: "TENSORS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_iris_tensor"
+  output_stream: "NORM_LANDMARKS:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_iris_landmarks"
+  options {
+    [mediapipe.TensorsToLandmarksCalculatorOptions.ext] {
+      num_landmarks: 5
+      input_image_width: 192
+      input_image_height: 192
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__LandmarksRefinementCalculator"
+  calculator: "LandmarksRefinementCalculator"
+  input_stream: "LANDMARKS:0:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__mesh_landmarks"
+  input_stream: "LANDMARKS:1:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__lips_landmarks"
+  input_stream: "LANDMARKS:2:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_eye_landmarks"
+  input_stream: "LANDMARKS:3:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_eye_landmarks"
+  input_stream: "LANDMARKS:4:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__left_iris_landmarks"
+  input_stream: "LANDMARKS:5:facelandmarkcpu__switchcontainer_2__tensorstofacelandmarkswithattention__right_iris_landmarks"
+  output_stream: "REFINED_LANDMARKS:facelandmarkcpu__switchcontainer_2__c1__facelandmarkcpu__landmarks"
+  options {
+    [mediapipe.LandmarksRefinementCalculatorOptions.ext] {
+      refinement {
+        indexes_mapping: 0
+        indexes_mapping: 1
+        indexes_mapping: 2
+        indexes_mapping: 3
+        indexes_mapping: 4
+        indexes_mapping: 5
+        indexes_mapping: 6
+        indexes_mapping: 7
+        indexes_mapping: 8
+        indexes_mapping: 9
+        indexes_mapping: 10
+        indexes_mapping: 11
+        indexes_mapping: 12
+        indexes_mapping: 13
+        indexes_mapping: 14
+        indexes_mapping: 15
+        indexes_mapping: 16
+        indexes_mapping: 17
+        indexes_mapping: 18
+        indexes_mapping: 19
+        indexes_mapping: 20
+        indexes_mapping: 21
+        indexes_mapping: 22
+        indexes_mapping: 23
+        indexes_mapping: 24
+        indexes_mapping: 25
+        indexes_mapping: 26
+        indexes_mapping: 27
+        indexes_mapping: 28
+        indexes_mapping: 29
+        indexes_mapping: 30
+        indexes_mapping: 31
+        indexes_mapping: 32
+        indexes_mapping: 33
+        indexes_mapping: 34
+        indexes_mapping: 35
+        indexes_mapping: 36
+        indexes_mapping: 37
+        indexes_mapping: 38
+        indexes_mapping: 39
+        indexes_mapping: 40
+        indexes_mapping: 41
+        indexes_mapping: 42
+        indexes_mapping: 43
+        indexes_mapping: 44
+        indexes_mapping: 45
+        indexes_mapping: 46
+        indexes_mapping: 47
+        indexes_mapping: 48
+        indexes_mapping: 49
+        indexes_mapping: 50
+        indexes_mapping: 51
+        indexes_mapping: 52
+        indexes_mapping: 53
+        indexes_mapping: 54
+        indexes_mapping: 55
+        indexes_mapping: 56
+        indexes_mapping: 57
+        indexes_mapping: 58
+        indexes_mapping: 59
+        indexes_mapping: 60
+        indexes_mapping: 61
+        indexes_mapping: 62
+        indexes_mapping: 63
+        indexes_mapping: 64
+        indexes_mapping: 65
+        indexes_mapping: 66
+        indexes_mapping: 67
+        indexes_mapping: 68
+        indexes_mapping: 69
+        indexes_mapping: 70
+        indexes_mapping: 71
+        indexes_mapping: 72
+        indexes_mapping: 73
+        indexes_mapping: 74
+        indexes_mapping: 75
+        indexes_mapping: 76
+        indexes_mapping: 77
+        indexes_mapping: 78
+        indexes_mapping: 79
+        indexes_mapping: 80
+        indexes_mapping: 81
+        indexes_mapping: 82
+        indexes_mapping: 83
+        indexes_mapping: 84
+        indexes_mapping: 85
+        indexes_mapping: 86
+        indexes_mapping: 87
+        indexes_mapping: 88
+        indexes_mapping: 89
+        indexes_mapping: 90
+        indexes_mapping: 91
+        indexes_mapping: 92
+        indexes_mapping: 93
+        indexes_mapping: 94
+        indexes_mapping: 95
+        indexes_mapping: 96
+        indexes_mapping: 97
+        indexes_mapping: 98
+        indexes_mapping: 99
+        indexes_mapping: 100
+        indexes_mapping: 101
+        indexes_mapping: 102
+        indexes_mapping: 103
+        indexes_mapping: 104
+        indexes_mapping: 105
+        indexes_mapping: 106
+        indexes_mapping: 107
+        indexes_mapping: 108
+        indexes_mapping: 109
+        indexes_mapping: 110
+        indexes_mapping: 111
+        indexes_mapping: 112
+        indexes_mapping: 113
+        indexes_mapping: 114
+        indexes_mapping: 115
+        indexes_mapping: 116
+        indexes_mapping: 117
+        indexes_mapping: 118
+        indexes_mapping: 119
+        indexes_mapping: 120
+        indexes_mapping: 121
+        indexes_mapping: 122
+        indexes_mapping: 123
+        indexes_mapping: 124
+        indexes_mapping: 125
+        indexes_mapping: 126
+        indexes_mapping: 127
+        indexes_mapping: 128
+        indexes_mapping: 129
+        indexes_mapping: 130
+        indexes_mapping: 131
+        indexes_mapping: 132
+        indexes_mapping: 133
+        indexes_mapping: 134
+        indexes_mapping: 135
+        indexes_mapping: 136
+        indexes_mapping: 137
+        indexes_mapping: 138
+        indexes_mapping: 139
+        indexes_mapping: 140
+        indexes_mapping: 141
+        indexes_mapping: 142
+        indexes_mapping: 143
+        indexes_mapping: 144
+        indexes_mapping: 145
+        indexes_mapping: 146
+        indexes_mapping: 147
+        indexes_mapping: 148
+        indexes_mapping: 149
+        indexes_mapping: 150
+        indexes_mapping: 151
+        indexes_mapping: 152
+        indexes_mapping: 153
+        indexes_mapping: 154
+        indexes_mapping: 155
+        indexes_mapping: 156
+        indexes_mapping: 157
+        indexes_mapping: 158
+        indexes_mapping: 159
+        indexes_mapping: 160
+        indexes_mapping: 161
+        indexes_mapping: 162
+        indexes_mapping: 163
+        indexes_mapping: 164
+        indexes_mapping: 165
+        indexes_mapping: 166
+        indexes_mapping: 167
+        indexes_mapping: 168
+        indexes_mapping: 169
+        indexes_mapping: 170
+        indexes_mapping: 171
+        indexes_mapping: 172
+        indexes_mapping: 173
+        indexes_mapping: 174
+        indexes_mapping: 175
+        indexes_mapping: 176
+        indexes_mapping: 177
+        indexes_mapping: 178
+        indexes_mapping: 179
+        indexes_mapping: 180
+        indexes_mapping: 181
+        indexes_mapping: 182
+        indexes_mapping: 183
+        indexes_mapping: 184
+        indexes_mapping: 185
+        indexes_mapping: 186
+        indexes_mapping: 187
+        indexes_mapping: 188
+        indexes_mapping: 189
+        indexes_mapping: 190
+        indexes_mapping: 191
+        indexes_mapping: 192
+        indexes_mapping: 193
+        indexes_mapping: 194
+        indexes_mapping: 195
+        indexes_mapping: 196
+        indexes_mapping: 197
+        indexes_mapping: 198
+        indexes_mapping: 199
+        indexes_mapping: 200
+        indexes_mapping: 201
+        indexes_mapping: 202
+        indexes_mapping: 203
+        indexes_mapping: 204
+        indexes_mapping: 205
+        indexes_mapping: 206
+        indexes_mapping: 207
+        indexes_mapping: 208
+        indexes_mapping: 209
+        indexes_mapping: 210
+        indexes_mapping: 211
+        indexes_mapping: 212
+        indexes_mapping: 213
+        indexes_mapping: 214
+        indexes_mapping: 215
+        indexes_mapping: 216
+        indexes_mapping: 217
+        indexes_mapping: 218
+        indexes_mapping: 219
+        indexes_mapping: 220
+        indexes_mapping: 221
+        indexes_mapping: 222
+        indexes_mapping: 223
+        indexes_mapping: 224
+        indexes_mapping: 225
+        indexes_mapping: 226
+        indexes_mapping: 227
+        indexes_mapping: 228
+        indexes_mapping: 229
+        indexes_mapping: 230
+        indexes_mapping: 231
+        indexes_mapping: 232
+        indexes_mapping: 233
+        indexes_mapping: 234
+        indexes_mapping: 235
+        indexes_mapping: 236
+        indexes_mapping: 237
+        indexes_mapping: 238
+        indexes_mapping: 239
+        indexes_mapping: 240
+        indexes_mapping: 241
+        indexes_mapping: 242
+        indexes_mapping: 243
+        indexes_mapping: 244
+        indexes_mapping: 245
+        indexes_mapping: 246
+        indexes_mapping: 247
+        indexes_mapping: 248
+        indexes_mapping: 249
+        indexes_mapping: 250
+        indexes_mapping: 251
+        indexes_mapping: 252
+        indexes_mapping: 253
+        indexes_mapping: 254
+        indexes_mapping: 255
+        indexes_mapping: 256
+        indexes_mapping: 257
+        indexes_mapping: 258
+        indexes_mapping: 259
+        indexes_mapping: 260
+        indexes_mapping: 261
+        indexes_mapping: 262
+        indexes_mapping: 263
+        indexes_mapping: 264
+        indexes_mapping: 265
+        indexes_mapping: 266
+        indexes_mapping: 267
+        indexes_mapping: 268
+        indexes_mapping: 269
+        indexes_mapping: 270
+        indexes_mapping: 271
+        indexes_mapping: 272
+        indexes_mapping: 273
+        indexes_mapping: 274
+        indexes_mapping: 275
+        indexes_mapping: 276
+        indexes_mapping: 277
+        indexes_mapping: 278
+        indexes_mapping: 279
+        indexes_mapping: 280
+        indexes_mapping: 281
+        indexes_mapping: 282
+        indexes_mapping: 283
+        indexes_mapping: 284
+        indexes_mapping: 285
+        indexes_mapping: 286
+        indexes_mapping: 287
+        indexes_mapping: 288
+        indexes_mapping: 289
+        indexes_mapping: 290
+        indexes_mapping: 291
+        indexes_mapping: 292
+        indexes_mapping: 293
+        indexes_mapping: 294
+        indexes_mapping: 295
+        indexes_mapping: 296
+        indexes_mapping: 297
+        indexes_mapping: 298
+        indexes_mapping: 299
+        indexes_mapping: 300
+        indexes_mapping: 301
+        indexes_mapping: 302
+        indexes_mapping: 303
+        indexes_mapping: 304
+        indexes_mapping: 305
+        indexes_mapping: 306
+        indexes_mapping: 307
+        indexes_mapping: 308
+        indexes_mapping: 309
+        indexes_mapping: 310
+        indexes_mapping: 311
+        indexes_mapping: 312
+        indexes_mapping: 313
+        indexes_mapping: 314
+        indexes_mapping: 315
+        indexes_mapping: 316
+        indexes_mapping: 317
+        indexes_mapping: 318
+        indexes_mapping: 319
+        indexes_mapping: 320
+        indexes_mapping: 321
+        indexes_mapping: 322
+        indexes_mapping: 323
+        indexes_mapping: 324
+        indexes_mapping: 325
+        indexes_mapping: 326
+        indexes_mapping: 327
+        indexes_mapping: 328
+        indexes_mapping: 329
+        indexes_mapping: 330
+        indexes_mapping: 331
+        indexes_mapping: 332
+        indexes_mapping: 333
+        indexes_mapping: 334
+        indexes_mapping: 335
+        indexes_mapping: 336
+        indexes_mapping: 337
+        indexes_mapping: 338
+        indexes_mapping: 339
+        indexes_mapping: 340
+        indexes_mapping: 341
+        indexes_mapping: 342
+        indexes_mapping: 343
+        indexes_mapping: 344
+        indexes_mapping: 345
+        indexes_mapping: 346
+        indexes_mapping: 347
+        indexes_mapping: 348
+        indexes_mapping: 349
+        indexes_mapping: 350
+        indexes_mapping: 351
+        indexes_mapping: 352
+        indexes_mapping: 353
+        indexes_mapping: 354
+        indexes_mapping: 355
+        indexes_mapping: 356
+        indexes_mapping: 357
+        indexes_mapping: 358
+        indexes_mapping: 359
+        indexes_mapping: 360
+        indexes_mapping: 361
+        indexes_mapping: 362
+        indexes_mapping: 363
+        indexes_mapping: 364
+        indexes_mapping: 365
+        indexes_mapping: 366
+        indexes_mapping: 367
+        indexes_mapping: 368
+        indexes_mapping: 369
+        indexes_mapping: 370
+        indexes_mapping: 371
+        indexes_mapping: 372
+        indexes_mapping: 373
+        indexes_mapping: 374
+        indexes_mapping: 375
+        indexes_mapping: 376
+        indexes_mapping: 377
+        indexes_mapping: 378
+        indexes_mapping: 379
+        indexes_mapping: 380
+        indexes_mapping: 381
+        indexes_mapping: 382
+        indexes_mapping: 383
+        indexes_mapping: 384
+        indexes_mapping: 385
+        indexes_mapping: 386
+        indexes_mapping: 387
+        indexes_mapping: 388
+        indexes_mapping: 389
+        indexes_mapping: 390
+        indexes_mapping: 391
+        indexes_mapping: 392
+        indexes_mapping: 393
+        indexes_mapping: 394
+        indexes_mapping: 395
+        indexes_mapping: 396
+        indexes_mapping: 397
+        indexes_mapping: 398
+        indexes_mapping: 399
+        indexes_mapping: 400
+        indexes_mapping: 401
+        indexes_mapping: 402
+        indexes_mapping: 403
+        indexes_mapping: 404
+        indexes_mapping: 405
+        indexes_mapping: 406
+        indexes_mapping: 407
+        indexes_mapping: 408
+        indexes_mapping: 409
+        indexes_mapping: 410
+        indexes_mapping: 411
+        indexes_mapping: 412
+        indexes_mapping: 413
+        indexes_mapping: 414
+        indexes_mapping: 415
+        indexes_mapping: 416
+        indexes_mapping: 417
+        indexes_mapping: 418
+        indexes_mapping: 419
+        indexes_mapping: 420
+        indexes_mapping: 421
+        indexes_mapping: 422
+        indexes_mapping: 423
+        indexes_mapping: 424
+        indexes_mapping: 425
+        indexes_mapping: 426
+        indexes_mapping: 427
+        indexes_mapping: 428
+        indexes_mapping: 429
+        indexes_mapping: 430
+        indexes_mapping: 431
+        indexes_mapping: 432
+        indexes_mapping: 433
+        indexes_mapping: 434
+        indexes_mapping: 435
+        indexes_mapping: 436
+        indexes_mapping: 437
+        indexes_mapping: 438
+        indexes_mapping: 439
+        indexes_mapping: 440
+        indexes_mapping: 441
+        indexes_mapping: 442
+        indexes_mapping: 443
+        indexes_mapping: 444
+        indexes_mapping: 445
+        indexes_mapping: 446
+        indexes_mapping: 447
+        indexes_mapping: 448
+        indexes_mapping: 449
+        indexes_mapping: 450
+        indexes_mapping: 451
+        indexes_mapping: 452
+        indexes_mapping: 453
+        indexes_mapping: 454
+        indexes_mapping: 455
+        indexes_mapping: 456
+        indexes_mapping: 457
+        indexes_mapping: 458
+        indexes_mapping: 459
+        indexes_mapping: 460
+        indexes_mapping: 461
+        indexes_mapping: 462
+        indexes_mapping: 463
+        indexes_mapping: 464
+        indexes_mapping: 465
+        indexes_mapping: 466
+        indexes_mapping: 467
+        z_refinement {
+          copy {
+          }
+        }
+      }
+      refinement {
+        indexes_mapping: 61
+        indexes_mapping: 146
+        indexes_mapping: 91
+        indexes_mapping: 181
+        indexes_mapping: 84
+        indexes_mapping: 17
+        indexes_mapping: 314
+        indexes_mapping: 405
+        indexes_mapping: 321
+        indexes_mapping: 375
+        indexes_mapping: 291
+        indexes_mapping: 185
+        indexes_mapping: 40
+        indexes_mapping: 39
+        indexes_mapping: 37
+        indexes_mapping: 0
+        indexes_mapping: 267
+        indexes_mapping: 269
+        indexes_mapping: 270
+        indexes_mapping: 409
+        indexes_mapping: 78
+        indexes_mapping: 95
+        indexes_mapping: 88
+        indexes_mapping: 178
+        indexes_mapping: 87
+        indexes_mapping: 14
+        indexes_mapping: 317
+        indexes_mapping: 402
+        indexes_mapping: 318
+        indexes_mapping: 324
+        indexes_mapping: 308
+        indexes_mapping: 191
+        indexes_mapping: 80
+        indexes_mapping: 81
+        indexes_mapping: 82
+        indexes_mapping: 13
+        indexes_mapping: 312
+        indexes_mapping: 311
+        indexes_mapping: 310
+        indexes_mapping: 415
+        indexes_mapping: 76
+        indexes_mapping: 77
+        indexes_mapping: 90
+        indexes_mapping: 180
+        indexes_mapping: 85
+        indexes_mapping: 16
+        indexes_mapping: 315
+        indexes_mapping: 404
+        indexes_mapping: 320
+        indexes_mapping: 307
+        indexes_mapping: 306
+        indexes_mapping: 184
+        indexes_mapping: 74
+        indexes_mapping: 73
+        indexes_mapping: 72
+        indexes_mapping: 11
+        indexes_mapping: 302
+        indexes_mapping: 303
+        indexes_mapping: 304
+        indexes_mapping: 408
+        indexes_mapping: 62
+        indexes_mapping: 96
+        indexes_mapping: 89
+        indexes_mapping: 179
+        indexes_mapping: 86
+        indexes_mapping: 15
+        indexes_mapping: 316
+        indexes_mapping: 403
+        indexes_mapping: 319
+        indexes_mapping: 325
+        indexes_mapping: 292
+        indexes_mapping: 183
+        indexes_mapping: 42
+        indexes_mapping: 41
+        indexes_mapping: 38
+        indexes_mapping: 12
+        indexes_mapping: 268
+        indexes_mapping: 271
+        indexes_mapping: 272
+        indexes_mapping: 407
+        z_refinement {
+          none {
+          }
+        }
+      }
+      refinement {
+        indexes_mapping: 33
+        indexes_mapping: 7
+        indexes_mapping: 163
+        indexes_mapping: 144
+        indexes_mapping: 145
+        indexes_mapping: 153
+        indexes_mapping: 154
+        indexes_mapping: 155
+        indexes_mapping: 133
+        indexes_mapping: 246
+        indexes_mapping: 161
+        indexes_mapping: 160
+        indexes_mapping: 159
+        indexes_mapping: 158
+        indexes_mapping: 157
+        indexes_mapping: 173
+        indexes_mapping: 130
+        indexes_mapping: 25
+        indexes_mapping: 110
+        indexes_mapping: 24
+        indexes_mapping: 23
+        indexes_mapping: 22
+        indexes_mapping: 26
+        indexes_mapping: 112
+        indexes_mapping: 243
+        indexes_mapping: 247
+        indexes_mapping: 30
+        indexes_mapping: 29
+        indexes_mapping: 27
+        indexes_mapping: 28
+        indexes_mapping: 56
+        indexes_mapping: 190
+        indexes_mapping: 226
+        indexes_mapping: 31
+        indexes_mapping: 228
+        indexes_mapping: 229
+        indexes_mapping: 230
+        indexes_mapping: 231
+        indexes_mapping: 232
+        indexes_mapping: 233
+        indexes_mapping: 244
+        indexes_mapping: 113
+        indexes_mapping: 225
+        indexes_mapping: 224
+        indexes_mapping: 223
+        indexes_mapping: 222
+        indexes_mapping: 221
+        indexes_mapping: 189
+        indexes_mapping: 35
+        indexes_mapping: 124
+        indexes_mapping: 46
+        indexes_mapping: 53
+        indexes_mapping: 52
+        indexes_mapping: 65
+        indexes_mapping: 143
+        indexes_mapping: 111
+        indexes_mapping: 117
+        indexes_mapping: 118
+        indexes_mapping: 119
+        indexes_mapping: 120
+        indexes_mapping: 121
+        indexes_mapping: 128
+        indexes_mapping: 245
+        indexes_mapping: 156
+        indexes_mapping: 70
+        indexes_mapping: 63
+        indexes_mapping: 105
+        indexes_mapping: 66
+        indexes_mapping: 107
+        indexes_mapping: 55
+        indexes_mapping: 193
+        z_refinement {
+          none {
+          }
+        }
+      }
+      refinement {
+        indexes_mapping: 263
+        indexes_mapping: 249
+        indexes_mapping: 390
+        indexes_mapping: 373
+        indexes_mapping: 374
+        indexes_mapping: 380
+        indexes_mapping: 381
+        indexes_mapping: 382
+        indexes_mapping: 362
+        indexes_mapping: 466
+        indexes_mapping: 388
+        indexes_mapping: 387
+        indexes_mapping: 386
+        indexes_mapping: 385
+        indexes_mapping: 384
+        indexes_mapping: 398
+        indexes_mapping: 359
+        indexes_mapping: 255
+        indexes_mapping: 339
+        indexes_mapping: 254
+        indexes_mapping: 253
+        indexes_mapping: 252
+        indexes_mapping: 256
+        indexes_mapping: 341
+        indexes_mapping: 463
+        indexes_mapping: 467
+        indexes_mapping: 260
+        indexes_mapping: 259
+        indexes_mapping: 257
+        indexes_mapping: 258
+        indexes_mapping: 286
+        indexes_mapping: 414
+        indexes_mapping: 446
+        indexes_mapping: 261
+        indexes_mapping: 448
+        indexes_mapping: 449
+        indexes_mapping: 450
+        indexes_mapping: 451
+        indexes_mapping: 452
+        indexes_mapping: 453
+        indexes_mapping: 464
+        indexes_mapping: 342
+        indexes_mapping: 445
+        indexes_mapping: 444
+        indexes_mapping: 443
+        indexes_mapping: 442
+        indexes_mapping: 441
+        indexes_mapping: 413
+        indexes_mapping: 265
+        indexes_mapping: 353
+        indexes_mapping: 276
+        indexes_mapping: 283
+        indexes_mapping: 282
+        indexes_mapping: 295
+        indexes_mapping: 372
+        indexes_mapping: 340
+        indexes_mapping: 346
+        indexes_mapping: 347
+        indexes_mapping: 348
+        indexes_mapping: 349
+        indexes_mapping: 350
+        indexes_mapping: 357
+        indexes_mapping: 465
+        indexes_mapping: 383
+        indexes_mapping: 300
+        indexes_mapping: 293
+        indexes_mapping: 334
+        indexes_mapping: 296
+        indexes_mapping: 336
+        indexes_mapping: 285
+        indexes_mapping: 417
+        z_refinement {
+          none {
+          }
+        }
+      }
+      refinement {
+        indexes_mapping: 468
+        indexes_mapping: 469
+        indexes_mapping: 470
+        indexes_mapping: 471
+        indexes_mapping: 472
+        z_refinement {
+          assign_average {
+            indexes_for_average: 33
+            indexes_for_average: 7
+            indexes_for_average: 163
+            indexes_for_average: 144
+            indexes_for_average: 145
+            indexes_for_average: 153
+            indexes_for_average: 154
+            indexes_for_average: 155
+            indexes_for_average: 133
+            indexes_for_average: 246
+            indexes_for_average: 161
+            indexes_for_average: 160
+            indexes_for_average: 159
+            indexes_for_average: 158
+            indexes_for_average: 157
+            indexes_for_average: 173
+          }
+        }
+      }
+      refinement {
+        indexes_mapping: 473
+        indexes_mapping: 474
+        indexes_mapping: 475
+        indexes_mapping: 476
+        indexes_mapping: 477
+        z_refinement {
+          assign_average {
+            indexes_for_average: 263
+            indexes_for_average: 249
+            indexes_for_average: 390
+            indexes_for_average: 373
+            indexes_for_average: 374
+            indexes_for_average: 380
+            indexes_for_average: 381
+            indexes_for_average: 382
+            indexes_for_average: 362
+            indexes_for_average: 466
+            indexes_for_average: 388
+            indexes_for_average: 387
+            indexes_for_average: 386
+            indexes_for_average: 385
+            indexes_for_average: 384
+            indexes_for_average: 398
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__switchcontainer_2__SwitchMuxCalculator"
+  calculator: "SwitchMuxCalculator"
+  input_stream: "C0__LANDMARKS:facelandmarkcpu__switchcontainer_2__c0__facelandmarkcpu__landmarks"
+  input_stream: "C1__LANDMARKS:facelandmarkcpu__switchcontainer_2__c1__facelandmarkcpu__landmarks"
+  output_stream: "LANDMARKS:facelandmarkcpu__landmarks"
+  input_side_packet: "ENABLE:with_attention"
+  options {
+    [mediapipe.SwitchContainerOptions.ext] {
+    }
+  }
+}
+node {
+  name: "facelandmarkcpu__LandmarkProjectionCalculator"
+  calculator: "LandmarkProjectionCalculator"
+  input_stream: "NORM_LANDMARKS:facelandmarkcpu__landmarks"
+  input_stream: "NORM_RECT:face_rect"
+  output_stream: "NORM_LANDMARKS:face_landmarks"
+}
+node {
+  calculator: "EndLoopNormalizedLandmarkListVectorCalculator"
+  input_stream: "ITEM:face_landmarks"
+  input_stream: "BATCH_END:landmarks_loop_end_timestamp"
+  output_stream: "ITERABLE:multi_face_landmarks"
+}
+node {
+  name: "facelandmarklandmarkstoroi__LandmarksToDetectionCalculator"
+  calculator: "LandmarksToDetectionCalculator"
+  input_stream: "NORM_LANDMARKS:face_landmarks"
+  output_stream: "DETECTION:facelandmarklandmarkstoroi__face_detection"
+}
+node {
+  name: "facelandmarklandmarkstoroi__DetectionsToRectsCalculator"
+  calculator: "DetectionsToRectsCalculator"
+  input_stream: "DETECTION:facelandmarklandmarkstoroi__face_detection"
+  input_stream: "IMAGE_SIZE:landmarks_loop_image_size"
+  output_stream: "NORM_RECT:facelandmarklandmarkstoroi__face_rect_from_landmarks"
+  options {
+    [mediapipe.DetectionsToRectsCalculatorOptions.ext] {
+      rotation_vector_start_keypoint_index: 33
+      rotation_vector_end_keypoint_index: 263
+      rotation_vector_target_angle_degrees: 0
+    }
+  }
+}
+node {
+  name: "facelandmarklandmarkstoroi__RectTransformationCalculator"
+  calculator: "RectTransformationCalculator"
+  input_stream: "NORM_RECT:facelandmarklandmarkstoroi__face_rect_from_landmarks"
+  input_stream: "IMAGE_SIZE:landmarks_loop_image_size"
+  output_stream: "face_rect_from_landmarks"
+  options {
+    [mediapipe.RectTransformationCalculatorOptions.ext] {
+      scale_x: 1.5
+      scale_y: 1.5
+      square_long: true
+    }
+  }
+}
+node {
+  calculator: "EndLoopNormalizedRectCalculator"
+  input_stream: "ITEM:face_rect_from_landmarks"
+  input_stream: "BATCH_END:landmarks_loop_end_timestamp"
+  output_stream: "ITERABLE:face_rects_from_landmarks"
+}
+input_stream: "IMAGE:image"
+executor {
+}
+output_stream: "LANDMARKS:multi_face_landmarks"
+output_stream: "DETECTIONS:face_detections"
+output_stream: "ROIS_FROM_LANDMARKS:face_rects_from_landmarks"
+output_stream: "ROIS_FROM_DETECTIONS:face_rects_from_detections"
+input_side_packet: "NUM_FACES:num_faces"
+input_side_packet: "USE_PREV_LANDMARKS:use_prev_landmarks"
+input_side_packet: "WITH_ATTENTION:with_attention"
+type: "FaceLandmarkFrontCpu"
+
+2025-09-28 05:59:40,555 - INFO - Found 1 MP4 file(s) to process for emotion analysis
+2025-09-28 05:59:40,555 - INFO - Processing emotions for: coffee_chat.mp4
+2025-09-28 05:59:40,555 - INFO - Processing video: Upload/coffee_chat.mp4
+2025-09-28 05:59:40,578 - INFO - Video properties: 967 frames, 30.00 FPS, 32.23s duration
+2025-09-28 05:59:40,590 - INFO - Processing frame 0/967 (timestamp: 0.00s)
+2025-09-28 05:59:40,607 - INFO - Processing frame 5/967 (timestamp: 0.17s)
+2025-09-28 05:59:40,618 - INFO - Processing frame 10/967 (timestamp: 0.33s)
+2025-09-28 05:59:40,629 - INFO - Processing frame 15/967 (timestamp: 0.50s)
+2025-09-28 05:59:40,640 - INFO - Processing frame 20/967 (timestamp: 0.67s)
+2025-09-28 05:59:40,652 - INFO - Processing frame 25/967 (timestamp: 0.83s)
+2025-09-28 05:59:40,663 - INFO - Processing frame 30/967 (timestamp: 1.00s)
+2025-09-28 05:59:40,674 - INFO - Processing frame 35/967 (timestamp: 1.17s)
+2025-09-28 05:59:40,685 - INFO - Processing frame 40/967 (timestamp: 1.33s)
+2025-09-28 05:59:40,696 - INFO - Processing frame 45/967 (timestamp: 1.50s)
+2025-09-28 05:59:40,707 - INFO - Processing frame 50/967 (timestamp: 1.67s)
+2025-09-28 05:59:40,720 - INFO - Processing frame 55/967 (timestamp: 1.83s)
+2025-09-28 05:59:40,731 - INFO - Processing frame 60/967 (timestamp: 2.00s)
+2025-09-28 05:59:40,743 - INFO - Processing frame 65/967 (timestamp: 2.17s)
+2025-09-28 05:59:40,756 - INFO - Processing frame 70/967 (timestamp: 2.33s)
+2025-09-28 05:59:40,767 - INFO - Processing frame 75/967 (timestamp: 2.50s)
+2025-09-28 05:59:40,778 - INFO - Processing frame 80/967 (timestamp: 2.67s)
+2025-09-28 05:59:40,790 - INFO - Processing frame 85/967 (timestamp: 2.83s)
+2025-09-28 05:59:40,801 - INFO - Processing frame 90/967 (timestamp: 3.00s)
+2025-09-28 05:59:40,812 - INFO - Processing frame 95/967 (timestamp: 3.17s)
+2025-09-28 05:59:40,823 - INFO - Processing frame 100/967 (timestamp: 3.33s)
+2025-09-28 05:59:40,834 - INFO - Processing frame 105/967 (timestamp: 3.50s)
+2025-09-28 05:59:40,846 - INFO - Processing frame 110/967 (timestamp: 3.67s)
+2025-09-28 05:59:40,858 - INFO - Processing frame 115/967 (timestamp: 3.83s)
+2025-09-28 05:59:40,869 - INFO - Processing frame 120/967 (timestamp: 4.00s)
+2025-09-28 05:59:40,880 - INFO - Processing frame 125/967 (timestamp: 4.17s)
+2025-09-28 05:59:40,891 - INFO - Processing frame 130/967 (timestamp: 4.33s)
+2025-09-28 05:59:40,902 - INFO - Processing frame 135/967 (timestamp: 4.50s)
+2025-09-28 05:59:40,913 - INFO - Processing frame 140/967 (timestamp: 4.67s)
+2025-09-28 05:59:40,925 - INFO - Processing frame 145/967 (timestamp: 4.83s)
+2025-09-28 05:59:40,936 - INFO - Processing frame 150/967 (timestamp: 5.00s)
+2025-09-28 05:59:40,947 - INFO - Processing frame 155/967 (timestamp: 5.17s)
+2025-09-28 05:59:40,958 - INFO - Processing frame 160/967 (timestamp: 5.33s)
+2025-09-28 05:59:40,969 - INFO - Processing frame 165/967 (timestamp: 5.50s)
+2025-09-28 05:59:40,980 - INFO - Processing frame 170/967 (timestamp: 5.67s)
+2025-09-28 05:59:40,992 - INFO - Processing frame 175/967 (timestamp: 5.83s)
+2025-09-28 05:59:41,003 - INFO - Processing frame 180/967 (timestamp: 6.00s)
+2025-09-28 05:59:41,015 - INFO - Processing frame 185/967 (timestamp: 6.17s)
+2025-09-28 05:59:41,026 - INFO - Processing frame 190/967 (timestamp: 6.33s)
+2025-09-28 05:59:41,037 - INFO - Processing frame 195/967 (timestamp: 6.50s)
+2025-09-28 05:59:41,048 - INFO - Processing frame 200/967 (timestamp: 6.67s)
+2025-09-28 05:59:41,060 - INFO - Processing frame 205/967 (timestamp: 6.83s)
+2025-09-28 05:59:41,072 - INFO - Processing frame 210/967 (timestamp: 7.00s)
+2025-09-28 05:59:41,083 - INFO - Processing frame 215/967 (timestamp: 7.17s)
+2025-09-28 05:59:41,094 - INFO - Processing frame 220/967 (timestamp: 7.33s)
+2025-09-28 05:59:41,105 - INFO - Processing frame 225/967 (timestamp: 7.50s)
+2025-09-28 05:59:41,116 - INFO - Processing frame 230/967 (timestamp: 7.67s)
+2025-09-28 05:59:41,128 - INFO - Processing frame 235/967 (timestamp: 7.83s)
+2025-09-28 05:59:41,139 - INFO - Processing frame 240/967 (timestamp: 8.00s)
+2025-09-28 05:59:41,151 - INFO - Processing frame 245/967 (timestamp: 8.17s)
+2025-09-28 05:59:41,163 - INFO - Processing frame 250/967 (timestamp: 8.33s)
+2025-09-28 05:59:41,174 - INFO - Processing frame 255/967 (timestamp: 8.50s)
+2025-09-28 05:59:41,185 - INFO - Processing frame 260/967 (timestamp: 8.67s)
+2025-09-28 05:59:41,197 - INFO - Processing frame 265/967 (timestamp: 8.83s)
+2025-09-28 05:59:41,208 - INFO - Processing frame 270/967 (timestamp: 9.00s)
+2025-09-28 05:59:41,219 - INFO - Processing frame 275/967 (timestamp: 9.17s)
+2025-09-28 05:59:41,230 - INFO - Processing frame 280/967 (timestamp: 9.33s)
+2025-09-28 05:59:41,241 - INFO - Processing frame 285/967 (timestamp: 9.50s)
+2025-09-28 05:59:41,252 - INFO - Processing frame 290/967 (timestamp: 9.67s)
+2025-09-28 05:59:41,265 - INFO - Processing frame 295/967 (timestamp: 9.83s)
+2025-09-28 05:59:41,277 - INFO - Processing frame 300/967 (timestamp: 10.00s)
+2025-09-28 05:59:41,288 - INFO - Processing frame 305/967 (timestamp: 10.17s)
+2025-09-28 05:59:41,299 - INFO - Processing frame 310/967 (timestamp: 10.33s)
+2025-09-28 05:59:41,310 - INFO - Processing frame 315/967 (timestamp: 10.50s)
+2025-09-28 05:59:41,321 - INFO - Processing frame 320/967 (timestamp: 10.67s)
+2025-09-28 05:59:41,332 - INFO - Processing frame 325/967 (timestamp: 10.83s)
+2025-09-28 05:59:41,343 - INFO - Processing frame 330/967 (timestamp: 11.00s)
+2025-09-28 05:59:41,354 - INFO - Processing frame 335/967 (timestamp: 11.17s)
+2025-09-28 05:59:41,365 - INFO - Processing frame 340/967 (timestamp: 11.33s)
+2025-09-28 05:59:41,377 - INFO - Processing frame 345/967 (timestamp: 11.50s)
+2025-09-28 05:59:41,388 - INFO - Processing frame 350/967 (timestamp: 11.67s)
+2025-09-28 05:59:41,399 - INFO - Processing frame 355/967 (timestamp: 11.83s)
+2025-09-28 05:59:41,410 - INFO - Processing frame 360/967 (timestamp: 12.00s)
+2025-09-28 05:59:41,421 - INFO - Processing frame 365/967 (timestamp: 12.17s)
+2025-09-28 05:59:41,433 - INFO - Processing frame 370/967 (timestamp: 12.33s)
+2025-09-28 05:59:41,444 - INFO - Processing frame 375/967 (timestamp: 12.50s)
+2025-09-28 05:59:41,455 - INFO - Processing frame 380/967 (timestamp: 12.67s)
+2025-09-28 05:59:41,466 - INFO - Processing frame 385/967 (timestamp: 12.83s)
+2025-09-28 05:59:41,477 - INFO - Processing frame 390/967 (timestamp: 13.00s)
+2025-09-28 05:59:41,488 - INFO - Processing frame 395/967 (timestamp: 13.17s)
+2025-09-28 05:59:41,500 - INFO - Processing frame 400/967 (timestamp: 13.33s)
+2025-09-28 05:59:41,511 - INFO - Processing frame 405/967 (timestamp: 13.50s)
+2025-09-28 05:59:41,522 - INFO - Processing frame 410/967 (timestamp: 13.67s)
+2025-09-28 05:59:41,533 - INFO - Processing frame 415/967 (timestamp: 13.83s)
+2025-09-28 05:59:41,544 - INFO - Processing frame 420/967 (timestamp: 14.00s)
+2025-09-28 05:59:41,556 - INFO - Processing frame 425/967 (timestamp: 14.17s)
+2025-09-28 05:59:41,567 - INFO - Processing frame 430/967 (timestamp: 14.33s)
+2025-09-28 05:59:41,579 - INFO - Processing frame 435/967 (timestamp: 14.50s)
+2025-09-28 05:59:41,590 - INFO - Processing frame 440/967 (timestamp: 14.67s)
+2025-09-28 05:59:41,601 - INFO - Processing frame 445/967 (timestamp: 14.83s)
+2025-09-28 05:59:41,612 - INFO - Processing frame 450/967 (timestamp: 15.00s)
+2025-09-28 05:59:41,623 - INFO - Processing frame 455/967 (timestamp: 15.17s)
+2025-09-28 05:59:41,634 - INFO - Processing frame 460/967 (timestamp: 15.33s)
+2025-09-28 05:59:41,646 - INFO - Processing frame 465/967 (timestamp: 15.50s)
+2025-09-28 05:59:41,657 - INFO - Processing frame 470/967 (timestamp: 15.67s)
+2025-09-28 05:59:41,668 - INFO - Processing frame 475/967 (timestamp: 15.83s)
+2025-09-28 05:59:41,680 - INFO - Processing frame 480/967 (timestamp: 16.00s)
+2025-09-28 05:59:41,691 - INFO - Processing frame 485/967 (timestamp: 16.17s)
+2025-09-28 05:59:41,702 - INFO - Processing frame 490/967 (timestamp: 16.33s)
+2025-09-28 05:59:41,713 - INFO - Processing frame 495/967 (timestamp: 16.50s)
+2025-09-28 05:59:41,724 - INFO - Processing frame 500/967 (timestamp: 16.67s)
+2025-09-28 05:59:41,736 - INFO - Processing frame 505/967 (timestamp: 16.83s)
+2025-09-28 05:59:41,747 - INFO - Processing frame 510/967 (timestamp: 17.00s)
+2025-09-28 05:59:41,759 - INFO - Processing frame 515/967 (timestamp: 17.17s)
+2025-09-28 05:59:41,770 - INFO - Processing frame 520/967 (timestamp: 17.33s)
+2025-09-28 05:59:41,781 - INFO - Processing frame 525/967 (timestamp: 17.50s)
+2025-09-28 05:59:41,792 - INFO - Processing frame 530/967 (timestamp: 17.67s)
+2025-09-28 05:59:41,803 - INFO - Processing frame 535/967 (timestamp: 17.83s)
+2025-09-28 05:59:41,814 - INFO - Processing frame 540/967 (timestamp: 18.00s)
+2025-09-28 05:59:41,826 - INFO - Processing frame 545/967 (timestamp: 18.17s)
+2025-09-28 05:59:41,839 - INFO - Processing frame 550/967 (timestamp: 18.33s)
+2025-09-28 05:59:41,850 - INFO - Processing frame 555/967 (timestamp: 18.50s)
+2025-09-28 05:59:41,862 - INFO - Processing frame 560/967 (timestamp: 18.67s)
+2025-09-28 05:59:41,873 - INFO - Processing frame 565/967 (timestamp: 18.83s)
+2025-09-28 05:59:41,884 - INFO - Processing frame 570/967 (timestamp: 19.00s)
+2025-09-28 05:59:41,895 - INFO - Processing frame 575/967 (timestamp: 19.17s)
+2025-09-28 05:59:41,906 - INFO - Processing frame 580/967 (timestamp: 19.33s)
+2025-09-28 05:59:41,917 - INFO - Processing frame 585/967 (timestamp: 19.50s)
+2025-09-28 05:59:41,928 - INFO - Processing frame 590/967 (timestamp: 19.67s)
+2025-09-28 05:59:41,939 - INFO - Processing frame 595/967 (timestamp: 19.83s)
+2025-09-28 05:59:41,950 - INFO - Processing frame 600/967 (timestamp: 20.00s)
+2025-09-28 05:59:41,961 - INFO - Processing frame 605/967 (timestamp: 20.17s)
+2025-09-28 05:59:41,972 - INFO - Processing frame 610/967 (timestamp: 20.33s)
+2025-09-28 05:59:41,983 - INFO - Processing frame 615/967 (timestamp: 20.50s)
+2025-09-28 05:59:41,994 - INFO - Processing frame 620/967 (timestamp: 20.67s)
+2025-09-28 05:59:42,005 - INFO - Processing frame 625/967 (timestamp: 20.83s)
+2025-09-28 05:59:42,016 - INFO - Processing frame 630/967 (timestamp: 21.00s)
+2025-09-28 05:59:42,027 - INFO - Processing frame 635/967 (timestamp: 21.17s)
+2025-09-28 05:59:42,038 - INFO - Processing frame 640/967 (timestamp: 21.33s)
+2025-09-28 05:59:42,049 - INFO - Processing frame 645/967 (timestamp: 21.50s)
+2025-09-28 05:59:42,060 - INFO - Processing frame 650/967 (timestamp: 21.67s)
+2025-09-28 05:59:42,071 - INFO - Processing frame 655/967 (timestamp: 21.83s)
+2025-09-28 05:59:42,082 - INFO - Processing frame 660/967 (timestamp: 22.00s)
+2025-09-28 05:59:42,093 - INFO - Processing frame 665/967 (timestamp: 22.17s)
+2025-09-28 05:59:42,104 - INFO - Processing frame 670/967 (timestamp: 22.33s)
+2025-09-28 05:59:42,115 - INFO - Processing frame 675/967 (timestamp: 22.50s)
+2025-09-28 05:59:42,126 - INFO - Processing frame 680/967 (timestamp: 22.67s)
+2025-09-28 05:59:42,137 - INFO - Processing frame 685/967 (timestamp: 22.83s)
+2025-09-28 05:59:42,148 - INFO - Processing frame 690/967 (timestamp: 23.00s)
+2025-09-28 05:59:42,159 - INFO - Processing frame 695/967 (timestamp: 23.17s)
+2025-09-28 05:59:42,170 - INFO - Processing frame 700/967 (timestamp: 23.33s)
+2025-09-28 05:59:42,181 - INFO - Processing frame 705/967 (timestamp: 23.50s)
+2025-09-28 05:59:42,192 - INFO - Processing frame 710/967 (timestamp: 23.67s)
+2025-09-28 05:59:42,203 - INFO - Processing frame 715/967 (timestamp: 23.83s)
+2025-09-28 05:59:42,214 - INFO - Processing frame 720/967 (timestamp: 24.00s)
+2025-09-28 05:59:42,225 - INFO - Processing frame 725/967 (timestamp: 24.17s)
+2025-09-28 05:59:42,236 - INFO - Processing frame 730/967 (timestamp: 24.33s)
+2025-09-28 05:59:42,247 - INFO - Processing frame 735/967 (timestamp: 24.50s)
+2025-09-28 05:59:42,258 - INFO - Processing frame 740/967 (timestamp: 24.67s)
+2025-09-28 05:59:42,270 - INFO - Processing frame 745/967 (timestamp: 24.83s)
+2025-09-28 05:59:42,281 - INFO - Processing frame 750/967 (timestamp: 25.00s)
+2025-09-28 05:59:42,292 - INFO - Processing frame 755/967 (timestamp: 25.17s)
+2025-09-28 05:59:42,303 - INFO - Processing frame 760/967 (timestamp: 25.33s)
+2025-09-28 05:59:42,314 - INFO - Processing frame 765/967 (timestamp: 25.50s)
+2025-09-28 05:59:42,325 - INFO - Processing frame 770/967 (timestamp: 25.67s)
+2025-09-28 05:59:42,336 - INFO - Processing frame 775/967 (timestamp: 25.83s)
+2025-09-28 05:59:42,347 - INFO - Processing frame 780/967 (timestamp: 26.00s)
+2025-09-28 05:59:42,358 - INFO - Processing frame 785/967 (timestamp: 26.17s)
+2025-09-28 05:59:42,369 - INFO - Processing frame 790/967 (timestamp: 26.33s)
+2025-09-28 05:59:42,381 - INFO - Processing frame 795/967 (timestamp: 26.50s)
+2025-09-28 05:59:42,392 - INFO - Processing frame 800/967 (timestamp: 26.67s)
+2025-09-28 05:59:42,404 - INFO - Processing frame 805/967 (timestamp: 26.83s)
+2025-09-28 05:59:42,415 - INFO - Processing frame 810/967 (timestamp: 27.00s)
+2025-09-28 05:59:42,426 - INFO - Processing frame 815/967 (timestamp: 27.17s)
+2025-09-28 05:59:42,437 - INFO - Processing frame 820/967 (timestamp: 27.33s)
+2025-09-28 05:59:42,448 - INFO - Processing frame 825/967 (timestamp: 27.50s)
+2025-09-28 05:59:42,459 - INFO - Processing frame 830/967 (timestamp: 27.67s)
+2025-09-28 05:59:42,471 - INFO - Processing frame 835/967 (timestamp: 27.83s)
+2025-09-28 05:59:42,482 - INFO - Processing frame 840/967 (timestamp: 28.00s)
+2025-09-28 05:59:42,493 - INFO - Processing frame 845/967 (timestamp: 28.17s)
+2025-09-28 05:59:42,504 - INFO - Processing frame 850/967 (timestamp: 28.33s)
+2025-09-28 05:59:42,515 - INFO - Processing frame 855/967 (timestamp: 28.50s)
+2025-09-28 05:59:42,526 - INFO - Processing frame 860/967 (timestamp: 28.67s)
+2025-09-28 05:59:42,538 - INFO - Processing frame 865/967 (timestamp: 28.83s)
+2025-09-28 05:59:42,549 - INFO - Processing frame 870/967 (timestamp: 29.00s)
+2025-09-28 05:59:42,560 - INFO - Processing frame 875/967 (timestamp: 29.17s)
+2025-09-28 05:59:42,571 - INFO - Processing frame 880/967 (timestamp: 29.33s)
+2025-09-28 05:59:42,582 - INFO - Processing frame 885/967 (timestamp: 29.50s)
+2025-09-28 05:59:42,593 - INFO - Processing frame 890/967 (timestamp: 29.67s)
+2025-09-28 05:59:42,604 - INFO - Processing frame 895/967 (timestamp: 29.83s)
+2025-09-28 05:59:42,615 - INFO - Processing frame 900/967 (timestamp: 30.00s)
+2025-09-28 05:59:42,626 - INFO - Processing frame 905/967 (timestamp: 30.17s)
+2025-09-28 05:59:42,637 - INFO - Processing frame 910/967 (timestamp: 30.33s)
+2025-09-28 05:59:42,648 - INFO - Processing frame 915/967 (timestamp: 30.50s)
+2025-09-28 05:59:42,659 - INFO - Processing frame 920/967 (timestamp: 30.67s)
+2025-09-28 05:59:42,671 - INFO - Processing frame 925/967 (timestamp: 30.83s)
+2025-09-28 05:59:42,682 - INFO - Processing frame 930/967 (timestamp: 31.00s)
+2025-09-28 05:59:42,695 - INFO - Processing frame 935/967 (timestamp: 31.17s)
+2025-09-28 05:59:42,706 - INFO - Processing frame 940/967 (timestamp: 31.33s)
+2025-09-28 05:59:42,717 - INFO - Processing frame 945/967 (timestamp: 31.50s)
+2025-09-28 05:59:42,728 - INFO - Processing frame 950/967 (timestamp: 31.67s)
+2025-09-28 05:59:42,740 - INFO - Processing frame 955/967 (timestamp: 31.83s)
+2025-09-28 05:59:42,752 - INFO - Processing frame 960/967 (timestamp: 32.00s)
+2025-09-28 05:59:42,763 - INFO - Processing frame 965/967 (timestamp: 32.17s)
+2025-09-28 05:59:42,770 - INFO - Emotion analysis saved to Output/coffee_chat_emotion_analysis.json
+2025-09-28 05:59:42,770 - INFO - ✅ Processing complete: 194 frames analyzed, 0 with faces detected
+2025-09-28 05:59:42,770 - INFO - Completed: coffee_chat.mp4
+2025-09-28 05:59:42,770 - INFO -   - Processed 194 frames (every 5th frame)
+2025-09-28 05:59:42,770 - INFO -   - Face detection rate: 0.0%
+2025-09-28 05:59:42,770 - INFO -   - Average frustration: 0
+2025-09-28 05:59:42,770 - INFO -   - Average engagement: 0
+2025-09-28 05:59:42,772 - INFO - ✅ Emotion analysis completed successfully
+2025-09-28 05:59:42,772 - INFO - ✅ Emotion Analysis completed successfully
+2025-09-28 05:59:42,772 - INFO - 
+🔄 Running Data Synchronization...
+2025-09-28 05:59:42,772 - INFO - 🔄 STEP 3: Starting data synchronization...
+2025-09-28 05:59:42,777 - INFO - JSON Parser initialized
+2025-09-28 05:59:42,778 - INFO - Found matching pair: coffee_chat_transcription_ffmpeg.json <-> coffee_chat_emotion_analysis.json
+2025-09-28 05:59:42,778 - INFO - Found matching pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:59:42,778 - INFO - Processing pair: coffee_chat_transcription_ffmpeg.json <-> coffee_chat_emotion_analysis.json
+2025-09-28 05:59:42,778 - INFO - Loaded JSON file: Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 05:59:42,778 - INFO - Loaded JSON file: Output/coffee_chat_emotion_analysis.json
+2025-09-28 05:59:42,778 - INFO - Processing 3 sentences from transcription
+2025-09-28 05:59:42,778 - INFO - Processed: 00:00 - 00:03 - I wanted to share with you on building 5-speed a b...
+2025-09-28 05:59:42,778 - INFO - Processed: 00:03 - 00:10 - just let you know we've raised 50 million preseaso...
+2025-09-28 05:59:42,778 - INFO - Processed: 00:10 - 00:11 - thanks for the coffee shop
+2025-09-28 05:59:42,778 - INFO - Processing pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 05:59:42,779 - INFO - Loaded JSON file: Output/video1777587742_transcription_ffmpeg.json
+2025-09-28 05:59:42,779 - INFO - Loaded JSON file: Output/video1777587742_emotion_analysis.json
+2025-09-28 05:59:42,779 - INFO - Processing 8 sentences from transcription
+2025-09-28 05:59:42,779 - INFO - Processed: 00:00 - 00:07 - hi I'm dancing I'm talking about a really boring t...
+2025-09-28 05:59:42,779 - INFO - Processed: 00:07 - 00:12 - yes this is a very interesting topic
+2025-09-28 05:59:42,779 - INFO - Processed: 00:12 - 00:15 - I'm so confused
+2025-09-28 05:59:42,779 - INFO - Processed: 00:15 - 00:16 - the
+2025-09-28 05:59:42,779 - INFO - Processed: 00:16 - 00:19 - what is happening
+2025-09-28 05:59:42,779 - INFO - Processed: 00:19 - 00:24 - what what is happening I'm so confused I don't eve...
+2025-09-28 05:59:42,779 - INFO - Processed: 00:24 - 00:26 - and now I'm neutral again
+2025-09-28 05:59:42,779 - INFO - Processed: 00:26 - 00:30 - how's it going to beat your ass
+2025-09-28 05:59:42,780 - INFO - Combined output saved to Output/synchronized_analysis.txt
+2025-09-28 05:59:42,780 - INFO - Summary report saved to Output/analysis_summary.txt
+2025-09-28 05:59:42,780 - INFO - ✅ Data synchronization completed successfully
+2025-09-28 05:59:42,780 - INFO - ✅ Data Synchronization completed successfully
+2025-09-28 05:59:42,780 - INFO - 
+🔄 Running AI Analysis...
+2025-09-28 05:59:42,780 - INFO - 🤖 STEP 4: Starting AI performance analysis...
+2025-09-28 05:59:42,781 - INFO - Gemini Analyzer initialized with model: gemini-2.0-flash-exp
+2025-09-28 05:59:42,781 - INFO - Read synchronized analysis from Output/synchronized_analysis.txt
+2025-09-28 05:59:42,781 - INFO - Calling Gemini API...
+2025-09-28 05:59:46,571 - INFO - ✅ Gemini API call successful
+2025-09-28 05:59:46,575 - INFO - Gemini analysis saved to Output/gemini_output.txt
+2025-09-28 05:59:46,575 - INFO - ✅ AI analysis completed successfully
+2025-09-28 05:59:46,575 - INFO - ✅ AI Analysis completed successfully
+2025-09-28 05:59:46,575 - INFO - 📊 PIPELINE SUMMARY
+2025-09-28 05:59:46,575 - INFO - ==================================================
+2025-09-28 05:59:46,575 - INFO - ✅ Transcription: 2 file(s)
+2025-09-28 05:59:46,576 - INFO - ✅ Emotion Analysis: 2 file(s)
+2025-09-28 05:59:46,576 - INFO - ✅ Synchronized Data: Output/synchronized_analysis.txt
+2025-09-28 05:59:46,576 - INFO - ✅ Analysis Summary: Output/analysis_summary.txt
+2025-09-28 05:59:46,576 - INFO - ✅ AI Feedback: Output/gemini_output.txt
+2025-09-28 05:59:46,576 - INFO - ==================================================
+2025-09-28 05:59:46,576 - INFO - 🎉 All pipeline steps completed successfully!
+2025-09-28 06:02:05,093 - INFO - 🔍 Checking system requirements...
+2025-09-28 06:02:05,094 - INFO - ✅ Found 1 MP4 file(s) to process
+2025-09-28 06:02:05,094 - INFO - ✅ All requirements met
+2025-09-28 06:02:05,094 - INFO - 
+🔄 Running Transcription...
+2025-09-28 06:02:05,094 - INFO - 🎤 STEP 1: Starting video transcription...
+2025-09-28 06:02:05,146 - INFO - FFmpeg video processor initialized
+2025-09-28 06:02:05,146 - INFO - Found 1 MP4 file(s) to process
+2025-09-28 06:02:05,146 - INFO - Processing: coffee_chat.mp4
+2025-09-28 06:02:05,146 - INFO - Extracting audio from Upload/coffee_chat.mp4
+2025-09-28 06:02:05,343 - INFO - Audio extracted to Upload/coffee_chat.wav
+2025-09-28 06:02:05,343 - INFO - Transcribing audio: Upload/coffee_chat.wav
+2025-09-28 06:02:06,109 - WARNING - Could not understand audio in chunk 0
+2025-09-28 06:02:07,519 - WARNING - Could not understand audio in chunk 2
+2025-09-28 06:02:08,666 - WARNING - Could not understand audio in chunk 3
+2025-09-28 06:02:08,853 - WARNING - Could not understand audio in chunk 4
+2025-09-28 06:02:09,928 - WARNING - Could not understand audio in chunk 5
+2025-09-28 06:02:10,152 - WARNING - Could not understand audio in chunk 6
+2025-09-28 06:02:12,203 - INFO - Transcription saved to Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 06:02:12,204 - INFO - Temporary audio file cleaned up
+2025-09-28 06:02:12,204 - INFO - Completed: coffee_chat.mp4 - 3 sentences, 11.44s duration
+2025-09-28 06:02:12,204 - INFO - ✅ Transcription completed successfully
+2025-09-28 06:02:12,204 - INFO - ✅ Transcription completed successfully
+2025-09-28 06:02:12,204 - INFO - 
+🔄 Running Emotion Analysis...
+2025-09-28 06:02:12,204 - INFO - 😊 STEP 2: Starting emotion analysis...
+2025-09-28 06:02:14,062 - INFO - Loading emotion detection models...
+2025-09-28 06:02:14,228 - ERROR - ❌ Error loading models: ValidatedGraphConfig Initialization failed.
+ConstantSidePacketCalculator: ; RET_CHECK failure (mediapipe/calculators/core/constant_side_packet_calculator.cc:66) (cc->OutputSidePackets().NumEntries(kPacketTag))==(options.packet_size())Number of output side packets has to be same as number of packets configured in options.
+ConstantSidePacketCalculator: ; RET_CHECK failure (mediapipe/calculators/core/constant_side_packet_calculator.cc:66) (cc->OutputSidePackets().NumEntries(kPacketTag))==(options.packet_size())Number of output side packets has to be same as number of packets configured in options.
+ImageToTensorCalculator: ; RET_CHECK failure (mediapipe/calculators/tensor/image_to_tensor_calculator.cc:155) ValidateOptionOutputDims(options) returned INTERNAL: ; RET_CHECK failure (./mediapipe/calculators/tensor/image_to_tensor_utils.h:136) options.has_output_tensor_float_range() || options.has_output_tensor_int_range() || options.has_output_tensor_uint_range()Output tensor range is required. 
+SplitTensorVectorCalculator: The number of output streams should match the number of ranges specified in the CalculatorOptions.
+SplitTensorVectorCalculator: The number of output streams should match the number of ranges specified in the CalculatorOptions.
+SplitTensorVectorCalculator: The number of output streams should match the number of ranges specified in the CalculatorOptions.
+2025-09-28 06:02:14,229 - INFO - Found 1 MP4 file(s) to process for emotion analysis
+2025-09-28 06:02:14,229 - INFO - Processing emotions for: coffee_chat.mp4
+2025-09-28 06:02:14,229 - INFO - Processing video: Upload/coffee_chat.mp4
+2025-09-28 06:02:14,255 - INFO - Video properties: 967 frames, 30.00 FPS, 32.23s duration
+2025-09-28 06:02:14,267 - INFO - Processing frame 0/967 (timestamp: 0.00s)
+2025-09-28 06:02:14,284 - INFO - Processing frame 5/967 (timestamp: 0.17s)
+2025-09-28 06:02:14,296 - INFO - Processing frame 10/967 (timestamp: 0.33s)
+2025-09-28 06:02:14,307 - INFO - Processing frame 15/967 (timestamp: 0.50s)
+2025-09-28 06:02:14,320 - INFO - Processing frame 20/967 (timestamp: 0.67s)
+2025-09-28 06:02:14,334 - INFO - Processing frame 25/967 (timestamp: 0.83s)
+2025-09-28 06:02:14,345 - INFO - Processing frame 30/967 (timestamp: 1.00s)
+2025-09-28 06:02:14,357 - INFO - Processing frame 35/967 (timestamp: 1.17s)
+2025-09-28 06:02:14,370 - INFO - Processing frame 40/967 (timestamp: 1.33s)
+2025-09-28 06:02:14,382 - INFO - Processing frame 45/967 (timestamp: 1.50s)
+2025-09-28 06:02:14,393 - INFO - Processing frame 50/967 (timestamp: 1.67s)
+2025-09-28 06:02:14,406 - INFO - Processing frame 55/967 (timestamp: 1.83s)
+2025-09-28 06:02:14,418 - INFO - Processing frame 60/967 (timestamp: 2.00s)
+2025-09-28 06:02:14,429 - INFO - Processing frame 65/967 (timestamp: 2.17s)
+2025-09-28 06:02:14,441 - INFO - Processing frame 70/967 (timestamp: 2.33s)
+2025-09-28 06:02:14,453 - INFO - Processing frame 75/967 (timestamp: 2.50s)
+2025-09-28 06:02:14,465 - INFO - Processing frame 80/967 (timestamp: 2.67s)
+2025-09-28 06:02:14,477 - INFO - Processing frame 85/967 (timestamp: 2.83s)
+2025-09-28 06:02:14,489 - INFO - Processing frame 90/967 (timestamp: 3.00s)
+2025-09-28 06:02:14,501 - INFO - Processing frame 95/967 (timestamp: 3.17s)
+2025-09-28 06:02:14,512 - INFO - Processing frame 100/967 (timestamp: 3.33s)
+2025-09-28 06:02:14,525 - INFO - Processing frame 105/967 (timestamp: 3.50s)
+2025-09-28 06:02:14,539 - INFO - Processing frame 110/967 (timestamp: 3.67s)
+2025-09-28 06:02:14,555 - INFO - Processing frame 115/967 (timestamp: 3.83s)
+2025-09-28 06:02:14,567 - INFO - Processing frame 120/967 (timestamp: 4.00s)
+2025-09-28 06:02:14,578 - INFO - Processing frame 125/967 (timestamp: 4.17s)
+2025-09-28 06:02:14,591 - INFO - Processing frame 130/967 (timestamp: 4.33s)
+2025-09-28 06:02:14,602 - INFO - Processing frame 135/967 (timestamp: 4.50s)
+2025-09-28 06:02:14,614 - INFO - Processing frame 140/967 (timestamp: 4.67s)
+2025-09-28 06:02:14,626 - INFO - Processing frame 145/967 (timestamp: 4.83s)
+2025-09-28 06:02:14,639 - INFO - Processing frame 150/967 (timestamp: 5.00s)
+2025-09-28 06:02:14,650 - INFO - Processing frame 155/967 (timestamp: 5.17s)
+2025-09-28 06:02:14,662 - INFO - Processing frame 160/967 (timestamp: 5.33s)
+2025-09-28 06:02:14,673 - INFO - Processing frame 165/967 (timestamp: 5.50s)
+2025-09-28 06:02:14,685 - INFO - Processing frame 170/967 (timestamp: 5.67s)
+2025-09-28 06:02:14,698 - INFO - Processing frame 175/967 (timestamp: 5.83s)
+2025-09-28 06:02:14,710 - INFO - Processing frame 180/967 (timestamp: 6.00s)
+2025-09-28 06:02:14,724 - INFO - Processing frame 185/967 (timestamp: 6.17s)
+2025-09-28 06:02:14,737 - INFO - Processing frame 190/967 (timestamp: 6.33s)
+2025-09-28 06:02:14,750 - INFO - Processing frame 195/967 (timestamp: 6.50s)
+2025-09-28 06:02:14,762 - INFO - Processing frame 200/967 (timestamp: 6.67s)
+2025-09-28 06:02:14,774 - INFO - Processing frame 205/967 (timestamp: 6.83s)
+2025-09-28 06:02:14,786 - INFO - Processing frame 210/967 (timestamp: 7.00s)
+2025-09-28 06:02:14,800 - INFO - Processing frame 215/967 (timestamp: 7.17s)
+2025-09-28 06:02:14,812 - INFO - Processing frame 220/967 (timestamp: 7.33s)
+2025-09-28 06:02:14,828 - INFO - Processing frame 225/967 (timestamp: 7.50s)
+2025-09-28 06:02:14,842 - INFO - Processing frame 230/967 (timestamp: 7.67s)
+2025-09-28 06:02:14,857 - INFO - Processing frame 235/967 (timestamp: 7.83s)
+2025-09-28 06:02:14,870 - INFO - Processing frame 240/967 (timestamp: 8.00s)
+2025-09-28 06:02:14,884 - INFO - Processing frame 245/967 (timestamp: 8.17s)
+2025-09-28 06:02:14,896 - INFO - Processing frame 250/967 (timestamp: 8.33s)
+2025-09-28 06:02:14,908 - INFO - Processing frame 255/967 (timestamp: 8.50s)
+2025-09-28 06:02:14,922 - INFO - Processing frame 260/967 (timestamp: 8.67s)
+2025-09-28 06:02:14,950 - INFO - Processing frame 265/967 (timestamp: 8.83s)
+2025-09-28 06:02:15,041 - INFO - Processing frame 270/967 (timestamp: 9.00s)
+2025-09-28 06:02:15,065 - INFO - Processing frame 275/967 (timestamp: 9.17s)
+2025-09-28 06:02:15,083 - INFO - Processing frame 280/967 (timestamp: 9.33s)
+2025-09-28 06:02:15,095 - INFO - Processing frame 285/967 (timestamp: 9.50s)
+2025-09-28 06:02:15,107 - INFO - Processing frame 290/967 (timestamp: 9.67s)
+2025-09-28 06:02:15,121 - INFO - Processing frame 295/967 (timestamp: 9.83s)
+2025-09-28 06:02:15,133 - INFO - Processing frame 300/967 (timestamp: 10.00s)
+2025-09-28 06:02:15,144 - INFO - Processing frame 305/967 (timestamp: 10.17s)
+2025-09-28 06:02:15,156 - INFO - Processing frame 310/967 (timestamp: 10.33s)
+2025-09-28 06:02:15,168 - INFO - Processing frame 315/967 (timestamp: 10.50s)
+2025-09-28 06:02:15,180 - INFO - Processing frame 320/967 (timestamp: 10.67s)
+2025-09-28 06:02:15,192 - INFO - Processing frame 325/967 (timestamp: 10.83s)
+2025-09-28 06:02:15,203 - INFO - Processing frame 330/967 (timestamp: 11.00s)
+2025-09-28 06:02:15,215 - INFO - Processing frame 335/967 (timestamp: 11.17s)
+2025-09-28 06:02:15,227 - INFO - Processing frame 340/967 (timestamp: 11.33s)
+2025-09-28 06:02:15,240 - INFO - Processing frame 345/967 (timestamp: 11.50s)
+2025-09-28 06:02:15,251 - INFO - Processing frame 350/967 (timestamp: 11.67s)
+2025-09-28 06:02:15,263 - INFO - Processing frame 355/967 (timestamp: 11.83s)
+2025-09-28 06:02:15,275 - INFO - Processing frame 360/967 (timestamp: 12.00s)
+2025-09-28 06:02:15,287 - INFO - Processing frame 365/967 (timestamp: 12.17s)
+2025-09-28 06:02:15,299 - INFO - Processing frame 370/967 (timestamp: 12.33s)
+2025-09-28 06:02:15,311 - INFO - Processing frame 375/967 (timestamp: 12.50s)
+2025-09-28 06:02:15,323 - INFO - Processing frame 380/967 (timestamp: 12.67s)
+2025-09-28 06:02:15,336 - INFO - Processing frame 385/967 (timestamp: 12.83s)
+2025-09-28 06:02:15,347 - INFO - Processing frame 390/967 (timestamp: 13.00s)
+2025-09-28 06:02:15,359 - INFO - Processing frame 395/967 (timestamp: 13.17s)
+2025-09-28 06:02:15,371 - INFO - Processing frame 400/967 (timestamp: 13.33s)
+2025-09-28 06:02:15,384 - INFO - Processing frame 405/967 (timestamp: 13.50s)
+2025-09-28 06:02:15,395 - INFO - Processing frame 410/967 (timestamp: 13.67s)
+2025-09-28 06:02:15,407 - INFO - Processing frame 415/967 (timestamp: 13.83s)
+2025-09-28 06:02:15,420 - INFO - Processing frame 420/967 (timestamp: 14.00s)
+2025-09-28 06:02:15,432 - INFO - Processing frame 425/967 (timestamp: 14.17s)
+2025-09-28 06:02:15,443 - INFO - Processing frame 430/967 (timestamp: 14.33s)
+2025-09-28 06:02:15,455 - INFO - Processing frame 435/967 (timestamp: 14.50s)
+2025-09-28 06:02:15,467 - INFO - Processing frame 440/967 (timestamp: 14.67s)
+2025-09-28 06:02:15,478 - INFO - Processing frame 445/967 (timestamp: 14.83s)
+2025-09-28 06:02:15,491 - INFO - Processing frame 450/967 (timestamp: 15.00s)
+2025-09-28 06:02:15,503 - INFO - Processing frame 455/967 (timestamp: 15.17s)
+2025-09-28 06:02:15,515 - INFO - Processing frame 460/967 (timestamp: 15.33s)
+2025-09-28 06:02:15,527 - INFO - Processing frame 465/967 (timestamp: 15.50s)
+2025-09-28 06:02:15,540 - INFO - Processing frame 470/967 (timestamp: 15.67s)
+2025-09-28 06:02:15,553 - INFO - Processing frame 475/967 (timestamp: 15.83s)
+2025-09-28 06:02:15,564 - INFO - Processing frame 480/967 (timestamp: 16.00s)
+2025-09-28 06:02:15,577 - INFO - Processing frame 485/967 (timestamp: 16.17s)
+2025-09-28 06:02:15,589 - INFO - Processing frame 490/967 (timestamp: 16.33s)
+2025-09-28 06:02:15,602 - INFO - Processing frame 495/967 (timestamp: 16.50s)
+2025-09-28 06:02:15,614 - INFO - Processing frame 500/967 (timestamp: 16.67s)
+2025-09-28 06:02:15,626 - INFO - Processing frame 505/967 (timestamp: 16.83s)
+2025-09-28 06:02:15,638 - INFO - Processing frame 510/967 (timestamp: 17.00s)
+2025-09-28 06:02:15,650 - INFO - Processing frame 515/967 (timestamp: 17.17s)
+2025-09-28 06:02:15,662 - INFO - Processing frame 520/967 (timestamp: 17.33s)
+2025-09-28 06:02:15,673 - INFO - Processing frame 525/967 (timestamp: 17.50s)
+2025-09-28 06:02:15,685 - INFO - Processing frame 530/967 (timestamp: 17.67s)
+2025-09-28 06:02:15,697 - INFO - Processing frame 535/967 (timestamp: 17.83s)
+2025-09-28 06:02:15,709 - INFO - Processing frame 540/967 (timestamp: 18.00s)
+2025-09-28 06:02:15,721 - INFO - Processing frame 545/967 (timestamp: 18.17s)
+2025-09-28 06:02:15,735 - INFO - Processing frame 550/967 (timestamp: 18.33s)
+2025-09-28 06:02:15,748 - INFO - Processing frame 555/967 (timestamp: 18.50s)
+2025-09-28 06:02:15,760 - INFO - Processing frame 560/967 (timestamp: 18.67s)
+2025-09-28 06:02:15,771 - INFO - Processing frame 565/967 (timestamp: 18.83s)
+2025-09-28 06:02:15,783 - INFO - Processing frame 570/967 (timestamp: 19.00s)
+2025-09-28 06:02:15,794 - INFO - Processing frame 575/967 (timestamp: 19.17s)
+2025-09-28 06:02:15,807 - INFO - Processing frame 580/967 (timestamp: 19.33s)
+2025-09-28 06:02:15,820 - INFO - Processing frame 585/967 (timestamp: 19.50s)
+2025-09-28 06:02:15,832 - INFO - Processing frame 590/967 (timestamp: 19.67s)
+2025-09-28 06:02:15,843 - INFO - Processing frame 595/967 (timestamp: 19.83s)
+2025-09-28 06:02:15,855 - INFO - Processing frame 600/967 (timestamp: 20.00s)
+2025-09-28 06:02:15,868 - INFO - Processing frame 605/967 (timestamp: 20.17s)
+2025-09-28 06:02:15,880 - INFO - Processing frame 610/967 (timestamp: 20.33s)
+2025-09-28 06:02:15,892 - INFO - Processing frame 615/967 (timestamp: 20.50s)
+2025-09-28 06:02:15,904 - INFO - Processing frame 620/967 (timestamp: 20.67s)
+2025-09-28 06:02:15,916 - INFO - Processing frame 625/967 (timestamp: 20.83s)
+2025-09-28 06:02:15,930 - INFO - Processing frame 630/967 (timestamp: 21.00s)
+2025-09-28 06:02:15,942 - INFO - Processing frame 635/967 (timestamp: 21.17s)
+2025-09-28 06:02:15,954 - INFO - Processing frame 640/967 (timestamp: 21.33s)
+2025-09-28 06:02:15,967 - INFO - Processing frame 645/967 (timestamp: 21.50s)
+2025-09-28 06:02:15,979 - INFO - Processing frame 650/967 (timestamp: 21.67s)
+2025-09-28 06:02:15,991 - INFO - Processing frame 655/967 (timestamp: 21.83s)
+2025-09-28 06:02:16,004 - INFO - Processing frame 660/967 (timestamp: 22.00s)
+2025-09-28 06:02:16,016 - INFO - Processing frame 665/967 (timestamp: 22.17s)
+2025-09-28 06:02:16,028 - INFO - Processing frame 670/967 (timestamp: 22.33s)
+2025-09-28 06:02:16,041 - INFO - Processing frame 675/967 (timestamp: 22.50s)
+2025-09-28 06:02:16,053 - INFO - Processing frame 680/967 (timestamp: 22.67s)
+2025-09-28 06:02:16,066 - INFO - Processing frame 685/967 (timestamp: 22.83s)
+2025-09-28 06:02:16,078 - INFO - Processing frame 690/967 (timestamp: 23.00s)
+2025-09-28 06:02:16,091 - INFO - Processing frame 695/967 (timestamp: 23.17s)
+2025-09-28 06:02:16,103 - INFO - Processing frame 700/967 (timestamp: 23.33s)
+2025-09-28 06:02:16,115 - INFO - Processing frame 705/967 (timestamp: 23.50s)
+2025-09-28 06:02:16,128 - INFO - Processing frame 710/967 (timestamp: 23.67s)
+2025-09-28 06:02:16,141 - INFO - Processing frame 715/967 (timestamp: 23.83s)
+2025-09-28 06:02:16,155 - INFO - Processing frame 720/967 (timestamp: 24.00s)
+2025-09-28 06:02:16,168 - INFO - Processing frame 725/967 (timestamp: 24.17s)
+2025-09-28 06:02:16,181 - INFO - Processing frame 730/967 (timestamp: 24.33s)
+2025-09-28 06:02:16,193 - INFO - Processing frame 735/967 (timestamp: 24.50s)
+2025-09-28 06:02:16,205 - INFO - Processing frame 740/967 (timestamp: 24.67s)
+2025-09-28 06:02:16,217 - INFO - Processing frame 745/967 (timestamp: 24.83s)
+2025-09-28 06:02:16,229 - INFO - Processing frame 750/967 (timestamp: 25.00s)
+2025-09-28 06:02:16,240 - INFO - Processing frame 755/967 (timestamp: 25.17s)
+2025-09-28 06:02:16,252 - INFO - Processing frame 760/967 (timestamp: 25.33s)
+2025-09-28 06:02:16,264 - INFO - Processing frame 765/967 (timestamp: 25.50s)
+2025-09-28 06:02:16,275 - INFO - Processing frame 770/967 (timestamp: 25.67s)
+2025-09-28 06:02:16,288 - INFO - Processing frame 775/967 (timestamp: 25.83s)
+2025-09-28 06:02:16,300 - INFO - Processing frame 780/967 (timestamp: 26.00s)
+2025-09-28 06:02:16,311 - INFO - Processing frame 785/967 (timestamp: 26.17s)
+2025-09-28 06:02:16,323 - INFO - Processing frame 790/967 (timestamp: 26.33s)
+2025-09-28 06:02:16,335 - INFO - Processing frame 795/967 (timestamp: 26.50s)
+2025-09-28 06:02:16,348 - INFO - Processing frame 800/967 (timestamp: 26.67s)
+2025-09-28 06:02:16,360 - INFO - Processing frame 805/967 (timestamp: 26.83s)
+2025-09-28 06:02:16,372 - INFO - Processing frame 810/967 (timestamp: 27.00s)
+2025-09-28 06:02:16,383 - INFO - Processing frame 815/967 (timestamp: 27.17s)
+2025-09-28 06:02:16,395 - INFO - Processing frame 820/967 (timestamp: 27.33s)
+2025-09-28 06:02:16,407 - INFO - Processing frame 825/967 (timestamp: 27.50s)
+2025-09-28 06:02:16,422 - INFO - Processing frame 830/967 (timestamp: 27.67s)
+2025-09-28 06:02:16,435 - INFO - Processing frame 835/967 (timestamp: 27.83s)
+2025-09-28 06:02:16,448 - INFO - Processing frame 840/967 (timestamp: 28.00s)
+2025-09-28 06:02:16,459 - INFO - Processing frame 845/967 (timestamp: 28.17s)
+2025-09-28 06:02:16,471 - INFO - Processing frame 850/967 (timestamp: 28.33s)
+2025-09-28 06:02:16,483 - INFO - Processing frame 855/967 (timestamp: 28.50s)
+2025-09-28 06:02:16,495 - INFO - Processing frame 860/967 (timestamp: 28.67s)
+2025-09-28 06:02:16,507 - INFO - Processing frame 865/967 (timestamp: 28.83s)
+2025-09-28 06:02:16,519 - INFO - Processing frame 870/967 (timestamp: 29.00s)
+2025-09-28 06:02:16,531 - INFO - Processing frame 875/967 (timestamp: 29.17s)
+2025-09-28 06:02:16,543 - INFO - Processing frame 880/967 (timestamp: 29.33s)
+2025-09-28 06:02:16,555 - INFO - Processing frame 885/967 (timestamp: 29.50s)
+2025-09-28 06:02:16,567 - INFO - Processing frame 890/967 (timestamp: 29.67s)
+2025-09-28 06:02:16,580 - INFO - Processing frame 895/967 (timestamp: 29.83s)
+2025-09-28 06:02:16,591 - INFO - Processing frame 900/967 (timestamp: 30.00s)
+2025-09-28 06:02:16,603 - INFO - Processing frame 905/967 (timestamp: 30.17s)
+2025-09-28 06:02:16,616 - INFO - Processing frame 910/967 (timestamp: 30.33s)
+2025-09-28 06:02:16,627 - INFO - Processing frame 915/967 (timestamp: 30.50s)
+2025-09-28 06:02:16,639 - INFO - Processing frame 920/967 (timestamp: 30.67s)
+2025-09-28 06:02:16,651 - INFO - Processing frame 925/967 (timestamp: 30.83s)
+2025-09-28 06:02:16,663 - INFO - Processing frame 930/967 (timestamp: 31.00s)
+2025-09-28 06:02:16,676 - INFO - Processing frame 935/967 (timestamp: 31.17s)
+2025-09-28 06:02:16,688 - INFO - Processing frame 940/967 (timestamp: 31.33s)
+2025-09-28 06:02:16,700 - INFO - Processing frame 945/967 (timestamp: 31.50s)
+2025-09-28 06:02:16,712 - INFO - Processing frame 950/967 (timestamp: 31.67s)
+2025-09-28 06:02:16,724 - INFO - Processing frame 955/967 (timestamp: 31.83s)
+2025-09-28 06:02:16,738 - INFO - Processing frame 960/967 (timestamp: 32.00s)
+2025-09-28 06:02:16,750 - INFO - Processing frame 965/967 (timestamp: 32.17s)
+2025-09-28 06:02:16,758 - INFO - Emotion analysis saved to Output/coffee_chat_emotion_analysis.json
+2025-09-28 06:02:16,758 - INFO - ✅ Processing complete: 194 frames analyzed, 0 with faces detected
+2025-09-28 06:02:16,758 - INFO - Completed: coffee_chat.mp4
+2025-09-28 06:02:16,758 - INFO -   - Processed 194 frames (every 5th frame)
+2025-09-28 06:02:16,758 - INFO -   - Face detection rate: 0.0%
+2025-09-28 06:02:16,758 - INFO -   - Average frustration: 0
+2025-09-28 06:02:16,758 - INFO -   - Average engagement: 0
+2025-09-28 06:02:16,760 - INFO - ✅ Emotion analysis completed successfully
+2025-09-28 06:02:16,760 - INFO - ✅ Emotion Analysis completed successfully
+2025-09-28 06:02:16,760 - INFO - 
+🔄 Running Data Synchronization...
+2025-09-28 06:02:16,760 - INFO - 🔄 STEP 3: Starting data synchronization...
+2025-09-28 06:02:16,763 - INFO - JSON Parser initialized
+2025-09-28 06:02:16,763 - INFO - Found matching pair: coffee_chat_transcription_ffmpeg.json <-> coffee_chat_emotion_analysis.json
+2025-09-28 06:02:16,763 - INFO - Found matching pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 06:02:16,763 - INFO - Processing pair: coffee_chat_transcription_ffmpeg.json <-> coffee_chat_emotion_analysis.json
+2025-09-28 06:02:16,763 - INFO - Loaded JSON file: Output/coffee_chat_transcription_ffmpeg.json
+2025-09-28 06:02:16,764 - INFO - Loaded JSON file: Output/coffee_chat_emotion_analysis.json
+2025-09-28 06:02:16,764 - INFO - Processing 3 sentences from transcription
+2025-09-28 06:02:16,764 - INFO - Processed: 00:00 - 00:03 - I wanted to share with you on building 5-speed a b...
+2025-09-28 06:02:16,764 - INFO - Processed: 00:03 - 00:10 - just let you know we've raised 50 million preseaso...
+2025-09-28 06:02:16,764 - INFO - Processed: 00:10 - 00:11 - thanks for the coffee shop
+2025-09-28 06:02:16,764 - INFO - Processing pair: video1777587742_transcription_ffmpeg.json <-> video1777587742_emotion_analysis.json
+2025-09-28 06:02:16,764 - INFO - Loaded JSON file: Output/video1777587742_transcription_ffmpeg.json
+2025-09-28 06:02:16,764 - INFO - Loaded JSON file: Output/video1777587742_emotion_analysis.json
+2025-09-28 06:02:16,765 - INFO - Processing 8 sentences from transcription
+2025-09-28 06:02:16,765 - INFO - Processed: 00:00 - 00:07 - hi I'm dancing I'm talking about a really boring t...
+2025-09-28 06:02:16,765 - INFO - Processed: 00:07 - 00:12 - yes this is a very interesting topic
+2025-09-28 06:02:16,765 - INFO - Processed: 00:12 - 00:15 - I'm so confused
+2025-09-28 06:02:16,765 - INFO - Processed: 00:15 - 00:16 - the
+2025-09-28 06:02:16,765 - INFO - Processed: 00:16 - 00:19 - what is happening
+2025-09-28 06:02:16,765 - INFO - Processed: 00:19 - 00:24 - what what is happening I'm so confused I don't eve...
+2025-09-28 06:02:16,765 - INFO - Processed: 00:24 - 00:26 - and now I'm neutral again
+2025-09-28 06:02:16,765 - INFO - Processed: 00:26 - 00:30 - how's it going to beat your ass
+2025-09-28 06:02:16,765 - INFO - Combined output saved to Output/synchronized_analysis.txt
+2025-09-28 06:02:16,765 - INFO - Summary report saved to Output/analysis_summary.txt
+2025-09-28 06:02:16,765 - INFO - ✅ Data synchronization completed successfully
+2025-09-28 06:02:16,765 - INFO - ✅ Data Synchronization completed successfully
+2025-09-28 06:02:16,765 - INFO - 
+🔄 Running AI Analysis...
+2025-09-28 06:02:16,765 - INFO - 🤖 STEP 4: Starting AI performance analysis...
+2025-09-28 06:02:16,766 - INFO - Gemini Analyzer initialized with model: gemini-2.0-flash-exp
+2025-09-28 06:02:16,766 - INFO - Read synchronized analysis from Output/synchronized_analysis.txt
+2025-09-28 06:02:16,766 - INFO - Calling Gemini API...
+2025-09-28 06:02:20,581 - INFO - ✅ Gemini API call successful
+2025-09-28 06:02:20,583 - INFO - Gemini analysis saved to Output/gemini_output.txt
+2025-09-28 06:02:20,583 - INFO - ✅ AI analysis completed successfully
+2025-09-28 06:02:20,583 - INFO - ✅ AI Analysis completed successfully
+2025-09-28 06:02:20,583 - INFO - 📊 PIPELINE SUMMARY
+2025-09-28 06:02:20,583 - INFO - ==================================================
+2025-09-28 06:02:20,584 - INFO - ✅ Transcription: 2 file(s)
+2025-09-28 06:02:20,584 - INFO - ✅ Emotion Analysis: 2 file(s)
+2025-09-28 06:02:20,584 - INFO - ✅ Synchronized Data: Output/synchronized_analysis.txt
+2025-09-28 06:02:20,584 - INFO - ✅ Analysis Summary: Output/analysis_summary.txt
+2025-09-28 06:02:20,584 - INFO - ✅ AI Feedback: Output/gemini_output.txt
+2025-09-28 06:02:20,584 - INFO - ==================================================
+2025-09-28 06:02:20,584 - INFO - 🎉 All pipeline steps completed successfully!

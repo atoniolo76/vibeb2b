@@ -16,7 +16,12 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
-import mediapipe as mp
+try:
+    import mediapipe as mp
+    MEDIAPIPE_AVAILABLE = True
+except ImportError:
+    MEDIAPIPE_AVAILABLE = False
+    mp = None
 import math
 import warnings
 from PIL import Image
@@ -164,14 +169,19 @@ class EmotionParser:
             self.backbone_model.load_state_dict(torch.load(self.model_path, map_location='cpu'))
             self.backbone_model.eval()
             
-            # Initialize MediaPipe face mesh
-            self.mp_face_mesh = mp.solutions.face_mesh
-            self.face_mesh = self.mp_face_mesh.FaceMesh(
-                max_num_faces=1, 
-                refine_landmarks=False, 
-                min_detection_confidence=0.5, 
-                min_tracking_confidence=0.5
-            )
+            # Initialize MediaPipe face mesh (if available)
+            if MEDIAPIPE_AVAILABLE:
+                self.mp_face_mesh = mp.solutions.face_mesh
+                self.face_mesh = self.mp_face_mesh.FaceMesh(
+                    max_num_faces=1,
+                    refine_landmarks=False,
+                    min_detection_confidence=0.5,
+                    min_tracking_confidence=0.5
+                )
+            else:
+                logger.warning("MediaPipe not available. Face detection will be skipped.")
+                self.mp_face_mesh = None
+                self.face_mesh = None
             
             logger.info("✅ Models loaded successfully!")
             return True
@@ -299,6 +309,28 @@ class EmotionParser:
         try:
             h, w = frame.shape[:2]
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+            # Check if MediaPipe is available
+            if self.face_mesh is None:
+                # No face detection available, return default neutral emotions
+                return {
+                    'frame_number': frame_number,
+                    'timestamp': timestamp,
+                    'face_detected': False,
+                    'face_bbox': None,
+                    'emotions': {
+                        'neutral': 80.0,
+                        'happy': 10.0,
+                        'sad': 5.0,
+                        'surprise': 2.0,
+                        'fear': 1.0,
+                        'disgust': 1.0,
+                        'angry': 1.0,
+                        'frustration': 0.0,
+                        'engagement': 20.0,
+                        'brow_furrow_score': 0.0
+                    }
+                }
 
             # Process with MediaPipe
             results = self.face_mesh.process(frame_rgb)
