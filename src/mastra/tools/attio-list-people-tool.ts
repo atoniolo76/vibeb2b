@@ -53,39 +53,98 @@ const listAttioPeople = async (limit: number) => {
     throw new Error('ATTIO_API_TOKEN environment variable is required');
   }
 
-  // Try different possible endpoints for listing people
-  const possibleEndpoints = [
-    `https://api.attio.com/v2/objects/people/records?limit=${limit}`,
-    `https://api.attio.com/v2/lists/people/records?limit=${limit}`,
-    `https://api.attio.com/v2/people?limit=${limit}`,
-    `https://api.attio.com/v2/records/people?limit=${limit}`,
-  ];
+  // First, get the list of objects to find the people object ID
+  try {
+    console.log('🔍 Getting Attio objects to find people object...');
+    const objectsResponse = await fetch('https://api.attio.com/v2/objects', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-  let response: Response | null = null;
-  let workingEndpoint = '';
+    if (objectsResponse.ok) {
+      const objectsData = await objectsResponse.json();
+      console.log('📊 Available objects:', objectsData.data?.map(obj => ({ id: obj.id, name: obj.api_slug })));
 
-  // Try each endpoint until one works
-  for (const endpoint of possibleEndpoints) {
-    try {
-      response = await fetch(endpoint, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${apiToken}`,
-          'Content-Type': 'application/json',
-        },
-      });
+      // Find the people object
+      const peopleObject = objectsData.data?.find(obj => obj.api_slug === 'people');
+      if (peopleObject) {
+        console.log(`✅ Found people object: ${peopleObject.id}`);
 
-      if (response.ok) {
-        workingEndpoint = endpoint;
-        break;
+        // Use the correct object ID for listing people
+        const endpoint = `https://api.attio.com/v2/objects/${peopleObject.id}/records?limit=${limit}`;
+        console.log(`Trying Attio endpoint: ${endpoint}`);
+
+        response = await fetch(endpoint, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiToken}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (response.ok) {
+          workingEndpoint = endpoint;
+          console.log(`✅ Found working endpoint: ${endpoint}`);
+        }
       }
-    } catch (error) {
-      continue;
+    }
+  } catch (error) {
+    console.log(`❌ Failed to discover objects: ${error.message}`);
+  }
+
+  // Fallback to trying common endpoints if object discovery failed
+  if (!response || !response.ok) {
+    console.log('🔄 Object discovery failed, trying common endpoints...');
+    const fallbackEndpoints = [
+      `https://api.attio.com/v2/objects/people/records?limit=${limit}`,
+      `https://api.attio.com/v2/lists/people/entries?limit=${limit}`,
+    ];
+
+    for (const endpoint of fallbackEndpoints) {
+      try {
+        console.log(`Trying Attio endpoint: ${endpoint}`);
+        response = await fetch(endpoint, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${apiToken}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        console.log(`Endpoint ${endpoint} returned status: ${response.status}`);
+
+        if (response.ok) {
+          workingEndpoint = endpoint;
+          console.log(`✅ Found working endpoint: ${endpoint}`);
+          break;
+        } else {
+          const errorText = await response.text();
+          console.log(`❌ Endpoint ${endpoint} failed: ${response.status} - ${errorText}`);
+        }
+      } catch (error) {
+        console.log(`❌ Endpoint ${endpoint} error: ${error.message}`);
+        continue;
+      }
     }
   }
 
   if (!response || !response.ok) {
-    throw new Error('Could not find a working endpoint to list people records. Please check your Attio API documentation.');
+    const errorText = await response?.text() || 'No response';
+    let errorMessage = `Could not access Attio API. Status: ${response?.status || 'Unknown'}`;
+
+    if (response?.status === 401) {
+      errorMessage += '\n❌ Authentication failed. Please check your ATTIO_API_TOKEN in the .env file.';
+    } else if (response?.status === 403) {
+      errorMessage += '\n❌ Insufficient permissions. Your API token needs "Read access to records" scope.';
+      errorMessage += '\n   Go to Attio Workspace Settings → Developers → [your integration] → Scopes';
+    } else if (response?.status === 404) {
+      errorMessage += '\n❌ Endpoint not found. The Attio API structure may have changed.';
+    }
+
+    throw new Error(`${errorMessage}\nResponse: ${errorText}`);
   }
 
   const data = (await response.json()) as AttioListResponse;

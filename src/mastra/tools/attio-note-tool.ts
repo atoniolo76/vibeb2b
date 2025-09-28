@@ -54,32 +54,101 @@ const createAttioNote = async (params: {
     throw new Error('ATTIO_API_TOKEN environment variable is required');
   }
 
-  const url = 'https://api.attio.com/v2/notes';
+  // First, discover the notes object ID
+  let notesObjectId = '';
+  try {
+    console.log('🔍 Discovering notes object from Attio...');
+    const objectsResponse = await fetch('https://api.attio.com/v2/objects', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
+    });
 
-  const body = {
-    data: {
-      parent_object: 'people',
-      parent_record_id: params.parent_record_id,
-      title: params.title,
-      format: 'plaintext',
-      content: params.content,
-      ...(params.meeting_id && { meeting_id: params.meeting_id }),
-      ...(params.created_at && { created_at: params.created_at }),
-    },
-  };
+    if (objectsResponse.ok) {
+      const objectsData = await objectsResponse.json();
+      console.log('📊 Available objects:', objectsData.data?.map(obj => ({ id: obj.id, name: obj.api_slug })));
 
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiToken}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  });
+      // Find the notes object
+      const notesObject = objectsData.data?.find(obj => obj.api_slug === 'notes');
+      if (notesObject) {
+        notesObjectId = notesObject.id;
+        console.log(`✅ Found notes object: ${notesObjectId}`);
+      }
+    }
+  } catch (error) {
+    console.log(`❌ Failed to discover notes object: ${error.message}`);
+  }
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Attio API error: ${response.status} ${response.statusText} - ${errorText}`);
+  // Try different possible endpoints for notes
+  const possibleEndpoints = [];
+  if (notesObjectId) {
+    possibleEndpoints.push(`https://api.attio.com/v2/objects/${notesObjectId}/records`);
+  }
+  possibleEndpoints.push(
+    'https://api.attio.com/v2/notes',
+    'https://api.attio.com/v2/objects/notes/records'
+  );
+
+  let response: Response | null = null;
+  let workingEndpoint = '';
+
+  for (const endpoint of possibleEndpoints) {
+    try {
+      console.log(`Trying Attio notes endpoint: ${endpoint}`);
+
+      const body = {
+        data: {
+          parent_object: 'people',
+          parent_record_id: params.parent_record_id,
+          title: params.title,
+          format: 'plaintext',
+          content: params.content,
+          ...(params.meeting_id && { meeting_id: params.meeting_id }),
+          ...(params.created_at && { created_at: params.created_at }),
+        },
+      };
+
+      response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body),
+      });
+
+      console.log(`Notes endpoint ${endpoint} returned status: ${response.status}`);
+
+      if (response.ok) {
+        workingEndpoint = endpoint;
+        console.log(`✅ Found working notes endpoint: ${endpoint}`);
+        break;
+      } else {
+        const errorText = await response.text();
+        console.log(`❌ Notes endpoint ${endpoint} failed: ${response.status} - ${errorText}`);
+      }
+    } catch (error) {
+      console.log(`❌ Notes endpoint ${endpoint} error: ${error.message}`);
+      continue;
+    }
+  }
+
+  if (!response || !response.ok) {
+    const errorMsg = await response?.text() || 'No response';
+    let errorMessage = `Could not create note in Attio CRM. Status: ${response?.status || 'Unknown'}`;
+
+    if (response?.status === 401) {
+      errorMessage += '\n❌ Authentication failed. Please check your ATTIO_API_TOKEN in the .env file.';
+    } else if (response?.status === 403) {
+      errorMessage += '\n❌ Insufficient permissions. Your API token needs "Write access to records" scope.';
+      errorMessage += '\n   Go to Attio Workspace Settings → Developers → [your integration] → Scopes';
+    } else if (response?.status === 404) {
+      errorMessage += '\n❌ Record not found. The parent_record_id may be invalid, or notes may not be available.';
+    }
+
+    throw new Error(`${errorMessage}\nResponse: ${errorMsg}`);
   }
 
   const data = (await response.json()) as AttioNoteResponse;

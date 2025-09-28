@@ -6,6 +6,8 @@ const { app, ipcMain, BrowserWindow } = require('electron');
 
 // Global references for processes
 let mastraProcess = null;
+let recallProcess = null;
+let webhookProcess = null;
 let mainWindow = null;
 let ENV_FILE_PATH = null;
 
@@ -71,7 +73,8 @@ function initializeApp() {
                       storedEnv.SLACK_BOT_TOKEN &&
                       storedEnv.SLACK_CHANNEL_ID &&
                       storedEnv.SLACK_SIGNING_SECRET &&
-                      storedEnv.ATTIO_API_TOKEN;
+                      storedEnv.ATTIO_API_TOKEN &&
+                      storedEnv.RECALL_AI_API_KEY;
 
     // Send message to renderer to show appropriate interface
     if (hasApiKeys) {
@@ -92,8 +95,24 @@ function initializeApp() {
   }
 }
 
+// Function to cleanup processes using port 4111
+function cleanupPort4111() {
+  console.log('Cleaning up any processes using port 4111...');
+  try {
+    // Use lsof to find and kill processes using port 4111
+    const { execSync } = require('child_process');
+    execSync('lsof -ti:4111 | xargs kill -9 2>/dev/null || true', { stdio: 'inherit' });
+    console.log('Port 4111 cleanup completed');
+  } catch (error) {
+    console.log('Port cleanup completed (or no processes were using the port)');
+  }
+}
+
 // Function to start the Mastra server as a child process
 function startMastraServer() {
+  // First cleanup any existing processes using port 4111
+  cleanupPort4111();
+
   // Check multiple ways to determine if we're in development
   const isDev = process.env.ELECTRON_IS_DEV === 'true' ||
                 process.env.NODE_ENV === 'development' ||
@@ -155,6 +174,147 @@ function startMastraServer() {
 
 
   return mastraProcess;
+}
+
+// Function to toggle the Recall listening subprocess
+function toggleRecallListening() {
+  if (recallProcess && !recallProcess.killed) {
+    // Stop the process
+    console.log('Stopping Recall listening subprocess...');
+    logToWindow('Stopping Recall listening subprocess...');
+    recallProcess.kill('SIGTERM');
+
+    // Give it 5 seconds to shut down gracefully, then force kill
+    setTimeout(() => {
+      if (recallProcess && !recallProcess.killed) {
+        console.log('Force killing Recall listening subprocess...');
+        recallProcess.kill('SIGKILL');
+      }
+    }, 5000);
+
+    recallProcess = null;
+    return { action: 'stopped' };
+  } else {
+    // Start the process
+    console.log('Starting Recall listening subprocess...');
+    logToWindow('Starting Recall listening subprocess...');
+
+    // Load stored environment variables
+    const storedEnvVars = loadEnvironmentVariables();
+
+    // Use tsx to run the TypeScript file
+    const command = 'npx';
+    const args = ['tsx', 'recall-ai-test.ts'];
+
+    // Spawn the Recall process with stored environment variables
+    recallProcess = spawn(command, args, {
+      cwd: __dirname,
+      stdio: ['pipe', 'pipe', 'pipe'],
+      env: {
+        ...process.env,
+        ...storedEnvVars, // Add stored environment variables
+        NODE_ENV: 'production'
+      }
+    });
+
+    // Handle stdout - stream all output to logs
+    recallProcess.stdout.on('data', (data) => {
+      const output = data.toString().trim();
+      if (output) {
+        console.log(`[Recall] ${output}`);
+        logToWindow(`[Recall] ${output}`);
+      }
+    });
+
+    // Handle stderr - stream all output to logs
+    recallProcess.stderr.on('data', (data) => {
+      const output = data.toString().trim();
+      if (output) {
+        console.error(`[Recall Error] ${output}`);
+        logToWindow(`[Recall Error] ${output}`);
+      }
+    });
+
+    // Handle process exit
+    recallProcess.on('exit', (code, signal) => {
+      console.log(`Recall listening process exited with code ${code} and signal ${signal}`);
+      logToWindow(`Recall listening process exited with code ${code}`);
+      recallProcess = null;
+      // Notify renderer that process stopped
+      if (mainWindow && !mainWindow.isDestroyed()) {
+        mainWindow.webContents.send('recall-process-stopped');
+      }
+    });
+
+    // Handle process errors
+    recallProcess.on('error', (error) => {
+      console.error('Failed to start Recall listening process:', error);
+      logToWindow(`Failed to start Recall listening: ${error.message}`);
+      recallProcess = null;
+    });
+
+    return { action: 'started' };
+  }
+}
+
+// Function to start the webhook server subprocess
+function startWebhookServer() {
+  if (webhookProcess) {
+    console.log('Webhook server is already running');
+    logToWindow('Webhook server is already running');
+    return webhookProcess;
+  }
+
+  console.log('Starting webhook server...');
+  logToWindow('Starting webhook server...');
+
+  // Load stored environment variables
+  const storedEnvVars = loadEnvironmentVariables();
+
+  // Use tsx to run the TypeScript file
+  const command = 'npx';
+  const args = ['tsx', 'webhook-server.ts'];
+
+  // Spawn the webhook process
+  webhookProcess = spawn(command, args, {
+    cwd: __dirname,
+    stdio: ['pipe', 'pipe', 'pipe'],
+    env: {
+      ...process.env,
+      ...storedEnvVars,
+      NODE_ENV: 'production'
+    }
+  });
+
+  // Handle stdout
+  webhookProcess.stdout.on('data', (data) => {
+    const output = data.toString();
+    console.log(`[Webhook Server] ${output.trim()}`);
+    logToWindow(`[Webhook] ${output.trim()}`);
+  });
+
+  // Handle stderr
+  webhookProcess.stderr.on('data', (data) => {
+    const output = data.toString();
+    console.error(`[Webhook Server Error] ${output.trim()}`);
+    logToWindow(`[Webhook Error] ${output.trim()}`);
+  });
+
+  // Handle process exit
+  webhookProcess.on('exit', (code, signal) => {
+    console.log(`Webhook server exited with code ${code} and signal ${signal}`);
+    logToWindow(`Webhook server exited with code ${code}`);
+    webhookProcess = null;
+  });
+
+  // Handle process errors
+  webhookProcess.on('error', (error) => {
+    console.error('Failed to start webhook server:', error);
+    logToWindow(`Failed to start webhook server: ${error.message}`);
+    webhookProcess = null;
+  });
+
+  return webhookProcess;
 }
 
 // Function to stop the Mastra server
@@ -220,6 +380,114 @@ function checkServerHealth(port, name) {
   });
 }
 
+// Global reference for svix process
+let svixProcess = null;
+
+// Function to setup svix webhook relay
+async function setupSvixRelay() {
+  return new Promise((resolve, reject) => {
+    // Check if svix is already running
+    if (svixProcess && !svixProcess.killed) {
+      console.log('Svix relay is already running');
+      reject(new Error('Svix relay is already running'));
+      return;
+    }
+
+    console.log('Setting up svix webhook relay...');
+    logToWindow('Starting svix webhook relay...');
+
+    // Set up environment with Homebrew PATH
+    const env = {
+      ...process.env,
+      PATH: '/opt/homebrew/bin:/opt/homebrew/sbin:' + process.env.PATH
+    };
+
+    // Run svix listen command as background process
+    svixProcess = spawn('svix', ['listen', 'http://localhost:3001/webhook'], {
+      cwd: __dirname,
+      stdio: ['pipe', 'pipe', 'pipe'],
+      env: env
+    });
+
+    let relayUrl = null;
+    let outputBuffer = '';
+
+    // Handle stdout - look for the first https URL (relay URL)
+    svixProcess.stdout.on('data', (data) => {
+      const output = data.toString();
+      outputBuffer += output;
+      console.log(`[Svix] ${output.trim()}`);
+
+      // Look for the first https URL in the output (this is the relay URL)
+      const urlMatch = output.match(/https:\/\/[^\s]+/);
+      if (urlMatch && !relayUrl) {
+        relayUrl = urlMatch[0];
+        console.log(`Found relay URL: ${relayUrl}`);
+        logToWindow(`Webhook relay URL: ${relayUrl}`);
+
+        // Relay URL found, resolve the promise
+        resolve({
+          success: true,
+          relayUrl: relayUrl,
+          message: 'Webhook relay setup successfully'
+        });
+      }
+    });
+
+    // Handle stderr
+    svixProcess.stderr.on('data', (data) => {
+      const output = data.toString();
+      console.error(`[Svix Error] ${output.trim()}`);
+    });
+
+    // Handle process exit (unexpected exit)
+    svixProcess.on('exit', (code, signal) => {
+      console.log(`Svix process exited unexpectedly with code ${code}, signal ${signal}`);
+      logToWindow(`Svix relay stopped unexpectedly (code: ${code})`);
+      svixProcess = null;
+    });
+
+    // Handle process errors
+    svixProcess.on('error', (error) => {
+      console.error('Failed to start svix process:', error);
+      logToWindow('Failed to start svix relay');
+      svixProcess = null;
+      reject(error);
+    });
+
+    // Timeout after 30 seconds if no relay URL found
+    setTimeout(() => {
+      if (!relayUrl) {
+        console.error('Timeout waiting for svix relay URL');
+        if (svixProcess) {
+          svixProcess.kill('SIGTERM');
+          svixProcess = null;
+        }
+        reject(new Error('Timeout waiting for svix relay URL'));
+      }
+    }, 30000);
+  });
+}
+
+// Function to stop svix relay
+function stopSvixRelay() {
+  if (svixProcess && !svixProcess.killed) {
+    console.log('Stopping svix relay...');
+    logToWindow('Stopping svix relay...');
+    svixProcess.kill('SIGTERM');
+
+    // Give it 5 seconds to shut down gracefully, then force kill
+    setTimeout(() => {
+      if (svixProcess && !svixProcess.killed) {
+        console.log('Force killing svix relay...');
+        svixProcess.kill('SIGKILL');
+      }
+    }, 5000);
+
+    svixProcess = null;
+  }
+}
+
 // Setup IPC handlers (called from app.whenReady)
 function setupIPCHandlers() {
   // Window control handlers
@@ -269,6 +537,25 @@ function setupIPCHandlers() {
     };
   });
 
+  ipcMain.handle('toggle-recall-listening', async () => {
+    const result = toggleRecallListening();
+    if (result.action === 'started') {
+      logToWindow('Recall listening started from UI');
+      return { success: true, action: 'started' };
+    } else {
+      logToWindow('Recall listening stopped from UI');
+      return { success: true, action: 'stopped' };
+    }
+  });
+
+  ipcMain.handle('get-recall-status', async () => {
+    const isRunning = recallProcess !== null && !recallProcess.killed;
+    return {
+      isRunning: isRunning,
+      pid: isRunning ? recallProcess.pid : null
+    };
+  });
+
   // Health check IPC handler
   ipcMain.handle('check-health', async () => {
     // Check Mastra server on multiple common ports
@@ -289,6 +576,10 @@ function setupIPCHandlers() {
         mastra: {
           isRunning: mastraProcess !== null && !mastraProcess.killed,
           pid: (mastraProcess !== null && !mastraProcess.killed) ? mastraProcess.pid : null
+        },
+        recall: {
+          isRunning: recallProcess !== null && !recallProcess.killed,
+          pid: (recallProcess !== null && !recallProcess.killed) ? recallProcess.pid : null
         }
       }
     };
@@ -313,12 +604,34 @@ function setupIPCHandlers() {
         SLACK_BOT_TOKEN: apiKeys.slackBotToken,
         SLACK_CHANNEL_ID: apiKeys.slackChannelId,
         SLACK_SIGNING_SECRET: apiKeys.slackSigningSecret,
-        ATTIO_API_TOKEN: apiKeys.attioToken
+        ATTIO_API_TOKEN: apiKeys.attioToken,
+        RECALL_AI_API_KEY: apiKeys.recallApiKey
       };
 
       const success = saveEnvironmentVariables(envVars);
       if (success) {
         logToWindow('API keys saved successfully');
+
+        // Start webhook server and setup svix relay
+        setTimeout(async () => {
+          if (!webhookProcess) {
+            startWebhookServer();
+          }
+
+          // Wait a moment for webhook server to start, then setup svix
+          setTimeout(async () => {
+            try {
+              const svixResult = await setupSvixRelay();
+              if (svixResult.success && mainWindow) {
+                mainWindow.webContents.send('svix-relay-ready', svixResult.relayUrl);
+              }
+            } catch (error) {
+              console.error('Failed to setup svix relay:', error);
+              logToWindow('Failed to setup webhook relay');
+            }
+          }, 3000);
+        }, 1000);
+
         return { success: true };
       } else {
         return { success: false, message: 'Failed to save API keys' };
@@ -342,10 +655,11 @@ setImmediate(() => {
 
   initializeApp();
 
-  // Start Mastra server automatically when app launches
+  // Start servers automatically when app launches
   setTimeout(() => {
     startMastraServer();
-  }, 1000); // Small delay to ensure app is ready
+    startWebhookServer();
+  }, 2000); // Increased delay to ensure port cleanup completes
   });
 });
 
@@ -366,12 +680,39 @@ app.on('activate', () => {
 app.on('before-quit', () => {
   console.log('App is quitting, stopping servers...');
   stopMastraServer();
+  stopSvixRelay();
+
+  // Synchronous cleanup for processes
+  if (recallProcess) {
+    console.log('Force stopping recall listening process...');
+    recallProcess.kill('SIGKILL');
+    recallProcess = null;
+  }
+  if (webhookProcess) {
+    console.log('Force stopping webhook server...');
+    webhookProcess.kill('SIGKILL');
+    webhookProcess = null;
+  }
+  if (svixProcess) {
+    console.log('Force stopping svix relay...');
+    svixProcess.kill('SIGKILL');
+    svixProcess = null;
+  }
 });
 
 app.on('will-quit', () => {
-  // Final cleanup
+  // Final cleanup - force kill any remaining processes
   if (mastraProcess) {
-    mastraProcess.kill();
+    mastraProcess.kill('SIGKILL');
+  }
+  if (recallProcess) {
+    recallProcess.kill('SIGKILL');
+  }
+  if (webhookProcess) {
+    webhookProcess.kill('SIGKILL');
+  }
+  if (svixProcess) {
+    svixProcess.kill('SIGKILL');
   }
 });
 
@@ -379,11 +720,49 @@ app.on('will-quit', () => {
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
   stopMastraServer();
+  stopSvixRelay();
+
+  // Synchronous cleanup for processes
+  if (recallProcess) {
+    console.log('Force stopping recall listening process due to error...');
+    recallProcess.kill('SIGKILL');
+    recallProcess = null;
+  }
+  if (webhookProcess) {
+    console.log('Force stopping webhook server due to error...');
+    webhookProcess.kill('SIGKILL');
+    webhookProcess = null;
+  }
+  if (svixProcess) {
+    console.log('Force stopping svix relay due to error...');
+    svixProcess.kill('SIGKILL');
+    svixProcess = null;
+  }
+
   app.quit();
 });
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
   stopMastraServer();
+  stopSvixRelay();
+
+  // Synchronous cleanup for processes
+  if (recallProcess) {
+    console.log('Force stopping recall listening process due to error...');
+    recallProcess.kill('SIGKILL');
+    recallProcess = null;
+  }
+  if (webhookProcess) {
+    console.log('Force stopping webhook server due to error...');
+    webhookProcess.kill('SIGKILL');
+    webhookProcess = null;
+  }
+  if (svixProcess) {
+    console.log('Force stopping svix relay due to error...');
+    svixProcess.kill('SIGKILL');
+    svixProcess = null;
+  }
+
   app.quit();
 });

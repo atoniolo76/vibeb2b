@@ -147,45 +147,62 @@ export class SynchronousRecording {
     }
   }
 
-  // Wait for recording completion
-  async waitForCompletion(windowId: string, pollInterval = 10000, maxAttempts = 180): Promise<string> {
-    console.log('⏳ Waiting for recording completion...');
+  // Wait for Desktop SDK recording completion (different from bot recordings)
+  async waitForCompletion(windowId: string, pollInterval = 15000, maxAttempts = 120): Promise<string> {
+    console.log('⏳ Waiting for Desktop SDK recording completion...');
+    console.log('📋 Note: Desktop SDK recordings require webhook confirmation, but we\'ll poll as fallback');
 
-    // Wait a bit for the upload to be processed before starting to poll
-    console.log('⏳ Waiting 30 seconds for initial processing...');
-    await new Promise(resolve => setTimeout(resolve, 30000));
+    // For Desktop SDK recordings, we should ideally wait for sdk_upload.complete webhook
+    // But since this is a standalone script, we'll poll for the recording to appear
+    console.log('⏳ Waiting 45 seconds for upload to complete...');
+    await new Promise(resolve => setTimeout(resolve, 45000));
 
     for (let attempt = 0; attempt < maxAttempts; attempt++) {
       try {
-        // Get the most recent recording - it should be ours
-        const recordings = await this.getRecordings(5);
+        // Get recent recordings
+        const recordings = await this.getRecordings(3);
 
         if (recordings.length > 0) {
           const latestRecording = recordings[0];
-          const status = latestRecording.status?.code;
 
-          // Log full status on first attempt to debug
-          if (attempt === 0) {
-            console.log('🔍 Recording details:', {
+          // Log details on first few attempts for debugging
+          if (attempt < 3) {
+            console.log('🔍 Latest recording details:', {
               id: latestRecording.id,
-              status: latestRecording.status,
+              status: latestRecording.status?.code || 'unknown',
               created_at: latestRecording.created_at,
-              duration: latestRecording.duration
+              duration: latestRecording.duration,
+              media_shortcuts: {
+                video_mixed: latestRecording.media_shortcuts?.video_mixed?.status?.code || 'not_available',
+                transcript: latestRecording.media_shortcuts?.transcript?.status?.code || 'not_available',
+                participant_events: latestRecording.media_shortcuts?.participant_events?.status?.code || 'not_available'
+              }
             });
           }
 
-          console.log(`📊 Status: ${status} (attempt ${attempt + 1}/${maxAttempts})`);
+          console.log(`📊 Status: ${latestRecording.status?.code || 'unknown'} (attempt ${attempt + 1}/${maxAttempts})`);
 
-          // Check for various completion states
-          if (status === 'done' || status === 'completed' || status === 'ready') {
-            this.currentRecordingId = latestRecording.id;
-            console.log(`✅ Recording completed: ${this.currentRecordingId}`);
-            return this.currentRecordingId;
-          } else if (status === 'failed' || status === 'error') {
+          // For Desktop SDK recordings, check if media shortcuts are available
+          const mediaShortcuts = latestRecording.media_shortcuts || {};
+          const videoShortcut = mediaShortcuts.video_mixed;
+
+          if (videoShortcut) {
+            const videoStatusCode = videoShortcut.status?.code || videoShortcut.status;
+            console.log(`🎬 Video shortcut status check: ${videoStatusCode}`);
+
+            // Check for completion status
+            if (videoStatusCode === 'done' || videoStatusCode === 'completed' || videoStatusCode === 'ready') {
+              this.currentRecordingId = latestRecording.id;
+              console.log(`✅ Recording ready with video: ${this.currentRecordingId}`);
+              return this.currentRecordingId;
+            }
+          }
+
+          if (latestRecording.status?.code === 'failed') {
             throw new Error('Recording failed to process');
-          } else if (status === 'processing' && attempt > 10) {
-            // If it's been processing for more than 10 attempts (2+ minutes), try to download anyway
-            console.log('⚠️ Recording still processing, but attempting download...');
+          } else if (attempt > 20) {
+            // After 5+ minutes (20 attempts * 15s), try anyway if we have a recording
+            console.log('⚠️ Taking too long, attempting download with current recording...');
             this.currentRecordingId = latestRecording.id;
             return this.currentRecordingId;
           }
@@ -195,12 +212,12 @@ export class SynchronousRecording {
 
         await new Promise(resolve => setTimeout(resolve, pollInterval));
       } catch (error) {
-        console.error('Error checking status:', error);
+        console.error('Error checking recording status:', error);
         await new Promise(resolve => setTimeout(resolve, pollInterval));
       }
     }
 
-    throw new Error('Recording timed out');
+    throw new Error('Desktop SDK recording timed out - webhook may be required for proper completion');
   }
 
   // Download recording to footage folder
@@ -210,24 +227,63 @@ export class SynchronousRecording {
       fs.mkdirSync(footageDir, { recursive: true });
     }
 
+    console.log(`📥 Attempting to download recording: ${recordingId}`);
+
     const recording = await this.getRecording(recordingId);
+    console.log('📊 Recording details:', {
+      id: recording.id,
+      status: recording.status?.code || 'unknown',
+      media_shortcuts: {
+        video_mixed: recording.media_shortcuts?.video_mixed?.status?.code || 'not_available',
+        transcript: recording.media_shortcuts?.transcript?.status?.code || 'not_available',
+        participant_events: recording.media_shortcuts?.participant_events?.status?.code || 'not_available'
+      },
+      created_at: recording.created_at
+    });
+
     const mediaShortcuts = recording.media_shortcuts || {};
-    const videoUrl = mediaShortcuts.video_mixed?.data?.download_url;
+    const videoShortcut = mediaShortcuts.video_mixed;
 
-    if (!videoUrl) throw new Error('No video download URL found');
+    if (!videoShortcut) {
+      throw new Error(`No video_mixed media shortcut found. Available shortcuts: ${Object.keys(mediaShortcuts).join(', ')}`);
+    }
 
+    console.log('🎬 Video shortcut full details:', JSON.stringify(videoShortcut, null, 2));
+
+    // Check different possible status formats
+    const statusCode = videoShortcut.status?.code || videoShortcut.status;
+    console.log('🎬 Video shortcut status code:', statusCode);
+
+    if (statusCode !== 'done' && statusCode !== 'completed' && statusCode !== 'ready') {
+      throw new Error(`Video not ready for download. Status: ${statusCode || 'unknown'}`);
+    }
+
+    const videoUrl = videoShortcut.data?.download_url;
+    if (!videoUrl) {
+      throw new Error('Video shortcut marked as done but no download URL found');
+    }
+
+    console.log(`🔗 Download URL found: ${videoUrl}`);
     const outputPath = path.join(footageDir, `${recordingId}.mp4`);
 
-    const response = await axios.get(videoUrl, { responseType: 'stream' });
+    console.log(`💾 Downloading to: ${outputPath}`);
+    const response = await axios.get(videoUrl, {
+      responseType: 'stream',
+      timeout: 300000 // 5 minutes timeout for large files
+    });
+
     const writer = fs.createWriteStream(outputPath);
     response.data.pipe(writer);
 
     return new Promise((resolve, reject) => {
       writer.on('finish', () => {
-        console.log(`✅ Downloaded to: ${outputPath}`);
+        console.log(`✅ Download completed: ${outputPath}`);
         resolve(outputPath);
       });
-      writer.on('error', reject);
+      writer.on('error', (error) => {
+        console.error('❌ Download failed:', error);
+        reject(error);
+      });
     });
   }
 
@@ -236,24 +292,34 @@ export class SynchronousRecording {
     await this.detectRegion();
     const apiKey = process.env.RECALL_AI_API_KEY;
 
-    const response = await axios.get(`${RECALL_API_BASE}/api/v1/recording/${recordingId}/`, {
-      headers: { 'Authorization': `Token ${apiKey}` }
-    });
+    console.log(`🔍 Fetching recording details for ${recordingId} from ${RECALL_API_BASE}`);
+    try {
+      const response = await axios.get(`${RECALL_API_BASE}/api/v1/recording/${recordingId}/`, {
+        headers: { 'Authorization': `Token ${apiKey}` }
+      });
 
-    return response.data;
+      console.log('📊 Raw recording response:', JSON.stringify(response.data, null, 2));
+      return response.data;
+    } catch (error: any) {
+      console.error(`❌ Failed to get recording ${recordingId}:`, error.response?.data || error.message);
+      throw error;
+    }
   }
 
   // Get recent recordings
-  private async getRecordings(limit = 1): Promise<any[]> {
+  async getRecordings(limit = 1): Promise<any[]> {
     await this.detectRegion();
     const apiKey = process.env.RECALL_AI_API_KEY;
 
+    console.log(`🔍 Fetching ${limit} recent recordings from ${RECALL_API_BASE}`);
     const response = await axios.get(`${RECALL_API_BASE}/api/v1/recording/`, {
       headers: { 'Authorization': `Token ${apiKey}` },
       params: { limit }
     });
 
-    return response.data.results || response.data;
+    const recordings = response.data.results || response.data;
+    console.log(`📊 Found ${recordings.length} recordings`);
+    return recordings;
   }
 
   // Clean up

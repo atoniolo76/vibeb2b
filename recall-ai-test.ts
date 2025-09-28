@@ -68,9 +68,22 @@ async function testSynchronousRecording() {
             console.log('4️⃣ Stopping recording and uploading...');
             await recorder.stopRecording(currentWindowId!);
 
-            // Wait for completion
-            console.log('5️⃣ Waiting for processing completion...');
-            const recordingId = await recorder.waitForCompletion(currentWindowId!);
+            // For Desktop SDK recordings, we should wait for the webhook instead of polling
+            console.log('5️⃣ Waiting for sdk_upload.complete webhook...');
+            console.log('📡 Webhook server should receive the completion event');
+            console.log('⚠️ Since this is a test script, we\'ll wait a bit then try to download');
+
+            // Wait for webhook (in a real app, this would be handled by the webhook endpoint)
+            await new Promise(resolve => setTimeout(resolve, 60000)); // Wait 1 minute
+
+            // Get the most recent recording (should be ours)
+            const recordings = await recorder.getRecordings(1);
+            if (recordings.length === 0) {
+              throw new Error('No recordings found after waiting');
+            }
+
+            const recordingId = recordings[0].id;
+            console.log(`📹 Found recording: ${recordingId}`);
 
             // Download to footage folder
             console.log('6️⃣ Downloading to footage folder...');

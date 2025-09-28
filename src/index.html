@@ -21,11 +21,6 @@
     <!-- Setup Page -->
     <div id="setup-page" class="container mx-auto max-w-lg">
         <div class="text-center mb-8">
-            <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-6">
-                <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-            </div>
             <h1 class="text-3xl font-light text-gray-900 mb-3">Welcome to VibeB2B</h1>
             <p class="text-gray-600">Configure your API keys to get started</p>
         </div>
@@ -96,6 +91,18 @@
                         />
                     </div>
 
+                    <!-- Recall API Key -->
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">Recall API Key</label>
+                        <input
+                            type="password"
+                            id="recall-api-key"
+                            placeholder="Enter your Recall.ai API key"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
+                            required
+                        />
+                    </div>
+
                     <div class="pt-4">
                         <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
                             Get Started
@@ -116,6 +123,73 @@
             <p class="text-gray-600">Server for the AI Powered Business Assistant</p>
         </div>
 
+
+        <!-- Webhook Setup -->
+        <div id="webhook-setup" class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6" style="display: none;">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="font-light text-gray-900">Webhook Configuration</h3>
+                <div class="flex items-center text-sm">
+                    <div class="w-3 h-3 rounded-full mr-2 bg-yellow-500" id="webhook-status"></div>
+                    <span id="webhook-text">Setting up relay...</span>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <!-- Relay URL Section -->
+                <div id="relay-url-section">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Webhook Relay URL</label>
+                    <div class="flex space-x-2">
+                        <input
+                            type="text"
+                            id="relay-url"
+                            readonly
+                            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-900 font-mono text-sm"
+                            placeholder="Waiting for relay URL..."
+                        />
+                        <button onclick="copyRelayUrl()" class="px-4 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-200">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success Instructions -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <div class="flex items-start space-x-3">
+                        <div class="flex-shrink-0">
+                            <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-medium text-blue-800">Next Steps</h4>
+                            <p class="text-sm text-blue-700 mt-1">
+                                Create a webhook in Recall.ai using the relay URL above. Set the event type to <strong>recording.done</strong> to receive notifications when recordings are completed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recording Control -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="font-light text-gray-900">Recording Control</h3>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-sm">
+                        <div class="w-3 h-3 rounded-full mr-2 bg-gray-500" id="recall-status"></div>
+                        <span id="recall-text">Not listening</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex">
+                <button id="recall-toggle-btn" onclick="toggleRecallListening()" class="bg-blue-600 hover:bg-blue-700 text-black font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
+                    Start Listening
+                </button>
+            </div>
+            <p class="text-sm text-gray-600 mt-3">
+                Start listening for meeting recordings. When a meeting is detected, it will automatically record and upload to Recall.ai.
+            </p>
+        </div>
 
         <!-- Activity Log -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6" id="log-area">
@@ -148,7 +222,8 @@
                 slackBotToken: document.getElementById('slack-bot-token').value,
                 slackChannelId: document.getElementById('slack-channel-id').value,
                 slackSigningSecret: document.getElementById('slack-signing-secret').value,
-                geminiApiKey: document.getElementById('gemini-api-key').value
+                geminiApiKey: document.getElementById('gemini-api-key').value,
+                recallApiKey: document.getElementById('recall-api-key').value
             };
 
             try {
@@ -238,9 +313,69 @@
                     log('❌ Mastra Server is not running');
                 }
 
+                // Update recall status indicator and button
+                const recallStatus = health.processes?.recall;
+                if (recallStatus) {
+                    updateRecallStatus(recallStatus.isRunning);
+                    updateToggleButton(recallStatus.isRunning);
+                }
+
                 log('Health check completed');
             } catch (error) {
                 log('Error checking health: ' + error.message);
+            }
+        }
+
+        // Recall listening toggle function
+        async function toggleRecallListening() {
+            try {
+                const result = await ipcRenderer.invoke('toggle-recall-listening');
+                if (result.success) {
+                    if (result.action === 'started') {
+                        log('✅ Recall listening started successfully');
+                        updateRecallStatus(true);
+                        updateToggleButton(true);
+                    } else {
+                        log('✅ Recall listening stopped successfully');
+                        updateRecallStatus(false);
+                        updateToggleButton(false);
+                    }
+                    checkHealth(); // Refresh status
+                } else {
+                    log('❌ Failed to toggle recall listening: ' + result.message);
+                }
+            } catch (error) {
+                log('❌ Error toggling recall listening: ' + error.message);
+            }
+        }
+
+        function updateToggleButton(isRunning) {
+            const button = document.getElementById('recall-toggle-btn');
+            if (button) {
+                if (isRunning) {
+                    button.textContent = 'Stop Listening';
+                    button.className = 'bg-red-600 hover:bg-red-700 text-black font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md';
+                } else {
+                    button.textContent = 'Start Listening';
+                    button.className = 'bg-blue-600 hover:bg-blue-700 text-black font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md';
+                }
+            }
+        }
+
+        function updateRecallStatus(isRunning) {
+            const statusIndicator = document.getElementById('recall-status');
+            const statusText = document.getElementById('recall-text');
+
+            if (statusIndicator && statusText) {
+                if (isRunning) {
+                    statusIndicator.className = 'w-3 h-3 rounded-full mr-2 bg-green-500';
+                    statusText.textContent = 'Listening';
+                    statusText.className = 'text-sm text-green-600';
+                } else {
+                    statusIndicator.className = 'w-3 h-3 rounded-full mr-2 bg-gray-500';
+                    statusText.textContent = 'Not listening';
+                    statusText.className = 'text-sm text-gray-500';
+                }
             }
         }
 
@@ -248,6 +383,22 @@
         // Listen for log messages from main process
         ipcRenderer.on('log-message', (event, message) => {
             log(message);
+        });
+
+        // Listen for recall process stopped event
+        ipcRenderer.on('recall-process-stopped', () => {
+            updateRecallStatus(false);
+            updateToggleButton(false);
+        });
+
+        // Listen for svix relay ready event
+        ipcRenderer.on('svix-relay-ready', (event, relayUrl) => {
+            document.getElementById('relay-url').value = relayUrl;
+            document.getElementById('webhook-status').className = 'w-3 h-3 rounded-full mr-2 bg-green-500';
+            document.getElementById('webhook-text').textContent = 'Relay active';
+
+            document.getElementById('webhook-setup').style.display = 'block';
+            log('Webhook relay is ready! Copy the URL above and create a webhook in Recall.ai');
         });
 
         // Listen for interface control messages
@@ -263,6 +414,29 @@
             document.getElementById('main-interface').style.display = 'none';
             log('No API keys configured, showing setup page');
         });
+
+        // Copy relay URL function
+        function copyRelayUrl() {
+            const relayInput = document.getElementById('relay-url');
+            relayInput.select();
+            relayInput.setSelectionRange(0, 99999); // For mobile devices
+
+            navigator.clipboard.writeText(relayInput.value).then(() => {
+                log('Webhook relay URL copied to clipboard!');
+                // Show temporary success feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.className = 'px-4 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.className = 'px-4 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-200';
+                }, 2000);
+            }).catch(err => {
+                log('Failed to copy URL: ' + err);
+            });
+        }
+
 
         // Window control functions
         function minimizeWindow() {
