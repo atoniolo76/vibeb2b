@@ -1,6 +1,6 @@
-# Vibeb2b
+# VibeB2B
 
-A Mastra-based AI assistant for sales insights and weather planning.
+A Mastra-based AI assistant for sales insights and CRM management.
 
 ## Setup
 
@@ -22,6 +22,14 @@ Copy `.env.example` to `.env` and fill in your API keys:
 ```bash
 cp .env.example .env
 ```
+
+## AI Configuration
+
+### Google AI Setup
+
+1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Create a new API key
+3. Add it to your `.env` file as `GOOGLE_GENERATIVE_AI_API_KEY`
 
 ## Slack Bot Setup
 
@@ -63,148 +71,57 @@ SLACK_SIGNING_SECRET=your-signing-secret-here
 
 Invite the bot to your desired channel: `@vibeb2b`
 
-## Recall.ai Meeting Recording Setup
+## Attio CRM Setup
 
-VibeB2B includes integration with [Recall.ai](https://recall.ai) for automated meeting recording and transcription.
+### 1. Get Your Attio API Token
 
-### Prerequisites
+1. Go to [Attio](https://attio.com) and sign in to your account
+2. Navigate to **Settings** → **API Tokens**
+3. Click **Create API Token**
+4. Give it a name (e.g., "VibeB2B Integration")
+5. Copy the generated token
 
-- ngrok account and CLI (automatically installed via setup script)
-- Recall.ai API key
+### 2. Configure Environment
 
-### Installation & Setup
+Add to your `.env` file:
 
-1. **Install Python dependencies**:
-   ```bash
-   pip3 install -r src/recall/requirements.txt
-   ```
-
-2. **Configure environment variables**:
-   Copy `.env.example` to `.env` and fill in your settings:
-   ```bash
-   cp .env.example .env
-   ```
-
-   Required environment variables:
-   ```env
-   RECALL_API_KEY=your-recall-api-key-here
-   NGROK_AUTHTOKEN=your-ngrok-authtoken-here  # Optional - enables auto-tunneling
-   RECALL_WEBSOCKET_URL=wss://your-websocket-server-url  # Optional
-   ```
-
-3. **Get your ngrok authtoken** (optional but recommended):
-   - Sign up at [ngrok.com](https://dashboard.ngrok.com/signup)
-   - Get your authtoken from [dashboard.ngrok.com/get-started/your-authtoken](https://dashboard.ngrok.com/get-started/your-authtoken)
-   - Add it to your `.env` file as `NGROK_AUTHTOKEN`
-
-4. **Start the server**:
-   ```bash
-   npm run recall
-   ```
-
-   For local development, no external tunneling is needed. If `NGROK_AUTHTOKEN` is set, the server will:
-   - Automatically authenticate with ngrok
-   - Start an ngrok tunnel to port 3000
-   - Use the tunnel URL for webhooks
-   - Clean up the tunnel when the server stops
-
-   Without `NGROK_AUTHTOKEN`, it runs in localhost mode (no external access).
-
-### Manual Setup (Alternative)
-
-If you prefer to set up manually:
-
-```bash
-# Terminal 1: Start Flask server
-npm run recall
-
-# Terminal 2: Start ngrok tunnel
-ngrok http 3000
+```env
+ATTIO_API_TOKEN=your-attio-api-token-here
 ```
 
-Copy the ngrok URL and update `src/recall/recallAPI.py` as described above.
+### 3. Usage
 
-### Testing
-
-Test your setup by calling the health endpoint:
-```bash
-curl https://your-ngrok-url.ngrok-free.app/health
-```
-
-### Usage
-
-#### Quick Start - Start a Bot Directly
-
-Start recording a meeting directly from the command line:
-
-```bash
-npm run recall "https://zoom.us/j/123456789"
-```
-
-This will automatically create a bot and start recording the meeting.
-
-#### API Endpoint Usage
-
-Alternatively, start recording by sending a POST request to the `/start_VB2B` endpoint:
-
-```bash
-curl -X POST https://your-ngrok-url.ngrok-free.app/start_VB2B \
-  -H "Content-Type: application/json" \
-  -d '{"meeting_url": "https://zoom.us/j/123456789"}'
-```
-
-#### Meeting Requirements
-
-**Supported Platforms:**
-- Zoom
-- Google Meet
-- Microsoft Teams
-- Webex
-- And other major video conferencing platforms
-
-**Requirements:**
-- Meeting must be **publicly accessible** (no password protection)
-- Meeting must allow **guests to join without registration**
-- Bot needs to be able to join before the meeting starts (for best results)
-- Meeting URL must be valid and accessible
-
-**What Gets Recorded:**
-- Audio transcripts (real-time)
-- Video frames (if websocket URL is configured)
-- Participant metadata
-
-Transcripts are automatically saved to `src/recall/transcript.db` as SQLite database.
+The AI agents can now:
+- Read people data from Attio CRM
+- Add notes to client records
+- Update CRM information based on insights
 
 ## Development
 
-### Interactive Control Center
+### GUI Application
 
-For an interactive experience managing all services:
+For an interactive experience managing the Mastra server:
 
 ```bash
-npm run main
+npm run electron-dev
 ```
 
-This launches the **VibeB2B Control Center** with commands like:
-- `bot` - Create meeting recording bots
-- `server` - Start/stop Recall Flask server
-- `mastra` - Start/stop Mastra AI server
-- `health` - Check service status
-- `status` - Show process information
+This launches the **VibeB2B GUI** with controls to:
+- Start/stop the Mastra AI server
+- Monitor server health and status
+- View real-time logs
+- Manage environment variables
 
 ### Individual Services
 
 Run individual services:
 
 ```bash
-# Mastra AI development server
+# Mastra AI development server only
 npm run dev
 
-# Recall Flask server only
-npm run recall
-
-# Create bot directly
-npm run recall "https://meeting-url.com"
+# GUI application only
+npm run electron-dev
 ```
 
 ## Build

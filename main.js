@@ -1,20 +1,13 @@
-import { spawn } from 'child_process';
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
-import pkg from 'electron';
-const { app, BrowserWindow, ipcMain } = pkg;
+const { spawn } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+const http = require('http');
+const { app, ipcMain, BrowserWindow } = require('electron');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// Environment variables storage
-const ENV_FILE_PATH = path.join(app.getPath('userData'), 'environment.json');
-
-// Keep a global reference of the window object
-let mainWindow;
+// Global references for processes
 let mastraProcess = null;
-let recallProcess = null;
+let mainWindow = null;
+let ENV_FILE_PATH = null;
 
 // Function to save environment variables
 function saveEnvironmentVariables(envVars) {
@@ -40,46 +33,61 @@ function loadEnvironmentVariables() {
   return {};
 }
 
-// Function to determine which page to load
-function getInitialPage() {
-  // Start with main app page
-  return 'index.html';
-}
 
-// Function to create the main application window
-function createWindow() {
+// Function to initialize the application with GUI
+function initializeApp() {
+  console.log('VibeB2B running with GUI - initializing main window');
+  logToWindow('VibeB2B application starting...');
+
+  // Create the browser window
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: false,
-      contextIsolation: true,
-      enableRemoteModule: false,
-      preload: path.join(__dirname, 'preload.js')
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
     },
-    show: false // Don't show until ready-to-show
+    title: 'VibeB2B - AI Assistant',
+    icon: path.join(__dirname, 'assets', 'icon.png'), // Optional icon
+    show: false // Don't show until ready
   });
 
-  // Load the appropriate initial page
-  const initialPage = getInitialPage();
-  mainWindow.loadFile(`src/renderer/${initialPage}`);
-
-  // Note: Removed auto-start from main.js to prevent conflicts
+  // Load the index.html file
+  const indexPath = path.join(__dirname, 'src', 'index.html');
+  mainWindow.loadFile(indexPath);
 
   // Show window when ready to prevent visual flash
   mainWindow.once('ready-to-show', () => {
     mainWindow.show();
-  });
+    console.log('Main window ready and shown');
+    logToWindow('Main window ready and shown');
 
-  // Open DevTools in development
-  if (process.env.ELECTRON_IS_DEV) {
-    mainWindow.webContents.openDevTools();
-  }
+    // Check if API keys are already configured
+    const storedEnv = loadEnvironmentVariables();
+    const hasApiKeys = storedEnv.GOOGLE_GENERATIVE_AI_API_KEY &&
+                      storedEnv.SLACK_BOT_TOKEN &&
+                      storedEnv.SLACK_CHANNEL_ID &&
+                      storedEnv.SLACK_SIGNING_SECRET &&
+                      storedEnv.ATTIO_API_TOKEN;
+
+    // Send message to renderer to show appropriate interface
+    if (hasApiKeys) {
+      mainWindow.webContents.send('show-main-interface');
+    } else {
+      mainWindow.webContents.send('show-setup-page');
+    }
+  });
 
   // Handle window closed
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
+
+  // Open DevTools in development
+  if (process.env.NODE_ENV === 'development' || process.env.ELECTRON_IS_DEV === 'true') {
+    mainWindow.webContents.openDevTools();
+  }
 }
 
 // Function to start the Mastra server as a child process
@@ -90,6 +98,7 @@ function startMastraServer() {
                 !fs.existsSync(path.join(__dirname, 'dist'));
 
   console.log(`Starting Mastra server in ${isDev ? 'development' : 'production'} mode`);
+  logToWindow(`Starting Mastra server in ${isDev ? 'development' : 'production'} mode`);
   console.log(`ELECTRON_IS_DEV: ${process.env.ELECTRON_IS_DEV}`);
   console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
   console.log(`Dist exists: ${fs.existsSync(path.join(__dirname, 'dist'))}`);
@@ -117,10 +126,6 @@ function startMastraServer() {
   mastraProcess.stdout.on('data', (data) => {
     const output = data.toString();
     console.log(`[Mastra Server] ${output.trim()}`);
-    // Send to renderer process for logging in UI
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('mastra-log', { type: 'stdout', data: output });
-    }
   });
 
   // Handle stderr
@@ -132,43 +137,20 @@ function startMastraServer() {
     if (output.includes('EADDRINUSE') && output.includes('3000')) {
       console.error('Port 3000 is already in use. Mastra may not be respecting the PORT environment variable.');
     }
-
-    // Send to renderer process for logging in UI
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('mastra-log', { type: 'stderr', data: output });
-    }
   });
 
   // Handle process exit
   mastraProcess.on('exit', (code, signal) => {
     console.log(`Mastra server exited with code ${code} and signal ${signal}`);
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('mastra-status', {
-        status: code === 0 ? 'stopped' : 'error',
-        code,
-        signal,
-        error: code !== 0 ? `Server exited with code ${code}` : null
-      });
-    }
     mastraProcess = null;
   });
 
   // Handle process errors
   mastraProcess.on('error', (error) => {
     console.error('Failed to start Mastra server:', error);
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('mastra-status', {
-        status: 'error',
-        error: error.message
-      });
-    }
     mastraProcess = null;
   });
 
-  // Notify renderer that server is starting
-  if (mainWindow && !mainWindow.isDestroyed()) {
-    mainWindow.webContents.send('mastra-status', { status: 'starting' });
-  }
 
   return mastraProcess;
 }
@@ -189,95 +171,11 @@ function stopMastraServer() {
   }
 }
 
-// Function to start the Recall server
-function startRecallServer() {
-  if (recallProcess && !recallProcess.killed) {
-    console.log('Recall server is already running');
-    return recallProcess;
-  }
 
-  console.log('Starting Recall Flask server...');
-
-  // Load stored environment variables
-  const storedEnvVars = loadEnvironmentVariables();
-
-  // Start the Python Recall server
-  recallProcess = spawn('python3', ['src/recall/recallAPI.py'], {
-    cwd: __dirname,
-    stdio: ['pipe', 'pipe', 'pipe'],
-    env: {
-      ...process.env,
-      ...storedEnvVars
-    }
-  });
-
-  // Handle stdout
-  recallProcess.stdout.on('data', (data) => {
-    const output = data.toString();
-    console.log(`[Recall Server] ${output.trim()}`);
-    // Send to renderer process for logging in UI
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('recall-log', { type: 'stdout', data: output });
-    }
-  });
-
-  // Handle stderr
-  recallProcess.stderr.on('data', (data) => {
-    const output = data.toString();
-    console.error(`[Recall Server Error] ${output.trim()}`);
-    // Send to renderer process for logging in UI
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('recall-log', { type: 'stderr', data: output });
-    }
-  });
-
-  // Handle process exit
-  recallProcess.on('exit', (code, signal) => {
-    console.log(`Recall server exited with code ${code} and signal ${signal}`);
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('recall-status', {
-        status: code === 0 ? 'stopped' : 'error',
-        code,
-        signal,
-        error: code !== 0 ? `Server exited with code ${code}` : null
-      });
-    }
-    recallProcess = null;
-  });
-
-  // Handle process errors
-  recallProcess.on('error', (error) => {
-    console.error('Failed to start Recall server:', error);
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('recall-status', {
-        status: 'error',
-        error: error.message
-      });
-    }
-    recallProcess = null;
-  });
-
-  // Notify renderer that server is starting
+// Function to send log messages to the renderer process
+function logToWindow(message) {
   if (mainWindow && !mainWindow.isDestroyed()) {
-    mainWindow.webContents.send('recall-status', { status: 'starting' });
-  }
-
-  return recallProcess;
-}
-
-// Function to stop the Recall server
-function stopRecallServer() {
-  if (recallProcess && !recallProcess.killed) {
-    console.log('Stopping Recall server...');
-    recallProcess.kill('SIGTERM');
-
-    // Give it 5 seconds to shut down gracefully, then force kill
-    setTimeout(() => {
-      if (recallProcess && !recallProcess.killed) {
-        console.log('Force killing Recall server...');
-        recallProcess.kill('SIGKILL');
-      }
-    }, 5000);
+    mainWindow.webContents.send('log-message', message);
   }
 }
 
@@ -320,167 +218,113 @@ function checkServerHealth(port, name) {
   });
 }
 
-// IPC handlers
-ipcMain.handle('start-mastra', async () => {
-  if (!mastraProcess) {
-    startMastraServer();
-    return { success: true };
-  } else {
-    return { success: false, message: 'Mastra server is already running' };
-  }
-});
-
-ipcMain.handle('stop-mastra', async () => {
-  if (mastraProcess) {
-    stopMastraServer();
-    return { success: true };
-  } else {
-    return { success: false, message: 'Mastra server is not running' };
-  }
-});
-
-ipcMain.handle('get-mastra-status', async () => {
-  const isRunning = mastraProcess !== null && !mastraProcess.killed;
-  return {
-    isRunning: isRunning,
-    pid: isRunning ? mastraProcess.pid : null
-  };
-});
-
-// Recall server IPC handlers
-ipcMain.handle('start-recall', async () => {
-  if (!recallProcess) {
-    startRecallServer();
-    return { success: true };
-  } else {
-    return { success: false, message: 'Recall server is already running' };
-  }
-});
-
-ipcMain.handle('stop-recall', async () => {
-  if (recallProcess) {
-    stopRecallServer();
-    return { success: true };
-  } else {
-    return { success: false, message: 'Recall server is not running' };
-  }
-});
-
-ipcMain.handle('get-recall-status', async () => {
-  const isRunning = recallProcess !== null && !recallProcess.killed;
-  return {
-    isRunning: isRunning,
-    pid: isRunning ? recallProcess.pid : null
-  };
-});
-
-// Bot creation IPC handler
-ipcMain.handle('create-bot', async (event, meetingUrl) => {
-  if (!meetingUrl || !meetingUrl.trim()) {
-    return { success: false, message: 'Meeting URL is required' };
-  }
-
-  try {
-    const response = await fetch('http://localhost:3000/start_VB2B', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ meeting_url: meetingUrl.trim() })
-    });
-
-    if (response.ok) {
-      const result = await response.json();
-      return {
-        success: true,
-        message: 'Bot created successfully!',
-        data: result
-      };
+// Setup IPC handlers (called from app.whenReady)
+function setupIPCHandlers() {
+  ipcMain.handle('start-mastra', async () => {
+    if (!mastraProcess) {
+      logToWindow('Starting Mastra server from UI...');
+      startMastraServer();
+      return { success: true };
     } else {
-      const errorText = await response.text();
-      return {
-        success: false,
-        message: `Failed to create bot: ${errorText}`
-      };
+      logToWindow('Mastra server is already running');
+      return { success: false, message: 'Mastra server is already running' };
     }
-  } catch (error) {
-    if (error.code === 'ECONNREFUSED') {
-      return {
-        success: false,
-        message: 'Cannot connect to Recall server. Make sure it\'s running.'
-      };
+  });
+
+  ipcMain.handle('stop-mastra', async () => {
+    if (mastraProcess) {
+      stopMastraServer();
+      return { success: true };
+    } else {
+      return { success: false, message: 'Mastra server is not running' };
     }
+  });
+
+  ipcMain.handle('get-mastra-status', async () => {
+    const isRunning = mastraProcess !== null && !mastraProcess.killed;
     return {
-      success: false,
-      message: `Error creating bot: ${error.message}`
+      isRunning: isRunning,
+      pid: isRunning ? mastraProcess.pid : null
     };
-  }
-});
+  });
 
-// Health check IPC handler
-ipcMain.handle('check-health', async () => {
-  const recallHealth = await checkServerHealth(3000, 'Recall Server');
+  // Health check IPC handler
+  ipcMain.handle('check-health', async () => {
+    // Check Mastra server on multiple common ports
+    const mastraPorts = [4111, 3001, 5173, 4000, 8000];
+    let mastraHealth = { status: 'not_running', message: '❌ Mastra Server not found on common ports' };
 
-  // Check Mastra server on multiple common ports
-  const mastraPorts = [4111, 3001, 5173, 4000, 8000];
-  let mastraHealth = { status: 'not_running', message: '❌ Mastra Server not found on common ports' };
-
-  for (const port of mastraPorts) {
-    const health = await checkServerHealth(port, 'Mastra Server');
-    if (health.status === 'running') {
-      mastraHealth = health;
-      break;
-    }
-  }
-
-  return {
-    recall: recallHealth,
-    mastra: mastraHealth,
-    processes: {
-      recall: {
-        isRunning: recallProcess !== null && !recallProcess.killed,
-        pid: (recallProcess !== null && !recallProcess.killed) ? recallProcess.pid : null
-      },
-      mastra: {
-        isRunning: mastraProcess !== null && !mastraProcess.killed,
-        pid: (mastraProcess !== null && !mastraProcess.killed) ? mastraProcess.pid : null
+    for (const port of mastraPorts) {
+      const health = await checkServerHealth(port, 'Mastra Server');
+      if (health.status === 'running') {
+        mastraHealth = health;
+        break;
       }
     }
-  };
-});
 
-// Environment variables management
-ipcMain.handle('save-env-variables', async (event, envVars) => {
-  const success = saveEnvironmentVariables(envVars);
-  return { success };
-});
+    return {
+      mastra: mastraHealth,
+      processes: {
+        mastra: {
+          isRunning: mastraProcess !== null && !mastraProcess.killed,
+          pid: (mastraProcess !== null && !mastraProcess.killed) ? mastraProcess.pid : null
+        }
+      }
+    };
+  });
 
-ipcMain.handle('get-stored-env', async () => {
-  return loadEnvironmentVariables();
-});
+  // Environment variables management
+  ipcMain.handle('save-env-variables', async (event, envVars) => {
+    const success = saveEnvironmentVariables(envVars);
+    return { success };
+  });
 
-// Navigation handler
-ipcMain.handle('navigate-to-page', async (event, page) => {
-  if (mainWindow && !mainWindow.isDestroyed()) {
-    mainWindow.loadFile(`src/renderer/${page}`);
-    return { success: true };
-  }
-  return { success: false, error: 'Window not available' };
-});
+  ipcMain.handle('get-stored-env', async () => {
+    return loadEnvironmentVariables();
+  });
+
+  // API keys management
+  ipcMain.handle('save-api-keys', async (event, apiKeys) => {
+    try {
+      // Convert API keys to environment variable format
+      const envVars = {
+        GOOGLE_GENERATIVE_AI_API_KEY: apiKeys.geminiApiKey,
+        SLACK_BOT_TOKEN: apiKeys.slackBotToken,
+        SLACK_CHANNEL_ID: apiKeys.slackChannelId,
+        SLACK_SIGNING_SECRET: apiKeys.slackSigningSecret,
+        ATTIO_API_TOKEN: apiKeys.attioToken
+      };
+
+      const success = saveEnvironmentVariables(envVars);
+      if (success) {
+        logToWindow('API keys saved successfully');
+        return { success: true };
+      } else {
+        return { success: false, message: 'Failed to save API keys' };
+      }
+    } catch (error) {
+      console.error('Error saving API keys:', error);
+      return { success: false, message: error.message };
+    }
+  });
+}
+
 
 // App event handlers
-app.whenReady().then(() => {
-  createWindow();
+setImmediate(() => {
+  app.whenReady().then(() => {
+  // Set the environment file path now that app is available
+  ENV_FILE_PATH = path.join(app.getPath('userData'), 'environment.json');
+
+  // Setup IPC handlers now that Electron APIs are available
+  setupIPCHandlers();
+
+  initializeApp();
 
   // Start Mastra server automatically when app launches
   setTimeout(() => {
     startMastraServer();
-  }, 1000); // Small delay to ensure window is ready
-
-  app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
+  }, 1000); // Small delay to ensure app is ready
   });
 });
 
@@ -491,10 +335,16 @@ app.on('window-all-closed', () => {
   }
 });
 
+app.on('activate', () => {
+  // On macOS, re-create window when dock icon is clicked
+  if (BrowserWindow.getAllWindows().length === 0) {
+    initializeApp();
+  }
+});
+
 app.on('before-quit', () => {
   console.log('App is quitting, stopping servers...');
   stopMastraServer();
-  stopRecallServer();
 });
 
 app.on('will-quit', () => {
@@ -502,22 +352,17 @@ app.on('will-quit', () => {
   if (mastraProcess) {
     mastraProcess.kill();
   }
-  if (recallProcess) {
-    recallProcess.kill();
-  }
 });
 
 // Handle uncaught exceptions
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
   stopMastraServer();
-  stopRecallServer();
   app.quit();
 });
 
 process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
   stopMastraServer();
-  stopRecallServer();
   app.quit();
 });

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeB2B</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 text-white p-6">
+    <!-- Setup Page -->
+    <div id="setup-page" class="container mx-auto max-w-md">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2">🚀 VibeB2B</h1>
+            <p class="text-lg opacity-90 mb-6">Setup API Keys</p>
+        </div>
+
+        <div class="card bg-white/10 backdrop-blur-md border border-white/20 shadow-xl">
+            <div class="card-body">
+                <form id="api-keys-form" class="space-y-4">
+                    <!-- Attio API Token -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">Attio API Token</span>
+                        </label>
+                        <input
+                            type="password"
+                            id="attio-token"
+                            placeholder="Enter your Attio API token"
+                            class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-white/60"
+                            required
+                        />
+                    </div>
+
+                    <!-- Slack Bot Token -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">Slack Bot Token</span>
+                        </label>
+                        <input
+                            type="password"
+                            id="slack-bot-token"
+                            placeholder="xoxb-your-bot-token-here"
+                            class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-white/60"
+                            required
+                        />
+                    </div>
+
+                    <!-- Slack Channel ID -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">Slack Channel ID</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="slack-channel-id"
+                            placeholder="C1234567890"
+                            class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-white/60"
+                            required
+                        />
+                    </div>
+
+                    <!-- Slack Signing Secret -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">Slack Signing Secret</span>
+                        </label>
+                        <input
+                            type="password"
+                            id="slack-signing-secret"
+                            placeholder="Enter your Slack signing secret"
+                            class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-white/60"
+                            required
+                        />
+                    </div>
+
+                    <!-- Gemini API Key -->
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text text-white">Gemini API Key</span>
+                        </label>
+                        <input
+                            type="password"
+                            id="gemini-api-key"
+                            placeholder="Enter your Google AI API key"
+                            class="input input-bordered bg-white/20 border-white/30 text-white placeholder:text-white/60"
+                            required
+                        />
+                    </div>
+
+                    <div class="form-control mt-6">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Continue
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Interface (hidden initially) -->
+    <div id="main-interface" class="container mx-auto max-w-4xl" style="display: none;">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2">🚀 VibeB2B</h1>
+            <p class="text-lg opacity-90">AI-Powered Assistant</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6 mb-8">
+            <div class="card bg-white/10 backdrop-blur-md border border-white/20 shadow-xl" id="mastra-status">
+                <div class="card-body">
+                    <h3 class="card-title text-white">Mastra Server</h3>
+                    <div id="mastra-indicator" class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                        <span id="mastra-text">Checking...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mb-8">
+            <button class="btn btn-primary" onclick="startMastra()">Start Mastra</button>
+            <button class="btn btn-error" onclick="stopMastra()">Stop Mastra</button>
+            <button class="btn btn-neutral" onclick="checkHealth()">Refresh Status</button>
+        </div>
+
+        <div class="card bg-black/30 backdrop-blur-md border border-white/20 shadow-xl" id="log-area">
+            <div class="card-body">
+                <h3 class="card-title text-white mb-4">Activity Log</h3>
+                <div class="max-h-64 overflow-y-auto font-mono text-sm space-y-1" id="log-content">
+                    <div class="log-entry opacity-75">Application started...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // IPC communication with main process
+        const { ipcRenderer } = require('electron');
+
+        // Form submission handler
+        document.getElementById('api-keys-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const apiKeys = {
+                attioToken: document.getElementById('attio-token').value,
+                slackBotToken: document.getElementById('slack-bot-token').value,
+                slackChannelId: document.getElementById('slack-channel-id').value,
+                slackSigningSecret: document.getElementById('slack-signing-secret').value,
+                geminiApiKey: document.getElementById('gemini-api-key').value
+            };
+
+            try {
+                // Send API keys to main process
+                const result = await ipcRenderer.invoke('save-api-keys', apiKeys);
+                if (result.success) {
+                    // Hide setup page and show main interface
+                    document.getElementById('setup-page').style.display = 'none';
+                    document.getElementById('main-interface').style.display = 'block';
+
+                    // Initialize the main interface
+                    log('API keys saved successfully');
+                    checkHealth();
+                } else {
+                    alert('Failed to save API keys: ' + result.message);
+                }
+            } catch (error) {
+                alert('Error saving API keys: ' + error.message);
+            }
+        });
+
+        // Status update functions
+        function updateStatus(elementId, status, text) {
+            const indicator = document.querySelector(`#${elementId} .w-3`);
+            const textElement = document.getElementById(`${elementId.split('-')[0]}-text`);
+
+            // Update status indicator color
+            indicator.className = 'w-3 h-3 rounded-full mr-2 ' +
+                (status === 'running' ? 'bg-green-500' :
+                 status === 'error' ? 'bg-red-500' : 'bg-gray-500');
+            textElement.textContent = text;
+        }
+
+        function log(message) {
+            const logContent = document.getElementById('log-content');
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry opacity-75';
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logContent.appendChild(logEntry);
+            logContent.scrollTop = logContent.scrollHeight;
+        }
+
+        // Button handlers
+        async function startMastra() {
+            log('Starting Mastra server...');
+            try {
+                const result = await ipcRenderer.invoke('start-mastra');
+                if (result.success) {
+                    log('Mastra server started successfully');
+                    checkHealth();
+                } else {
+                    log('Failed to start Mastra: ' + result.message);
+                }
+            } catch (error) {
+                log('Error starting Mastra: ' + error.message);
+            }
+        }
+
+        async function stopMastra() {
+            log('Stopping Mastra server...');
+            try {
+                const result = await ipcRenderer.invoke('stop-mastra');
+                if (result.success) {
+                    log('Mastra server stopped successfully');
+                    checkHealth();
+                } else {
+                    log('Failed to stop Mastra: ' + result.message);
+                }
+            } catch (error) {
+                log('Error stopping Mastra: ' + error.message);
+            }
+        }
+
+
+        async function checkHealth() {
+            log('Checking server health...');
+            try {
+                const health = await ipcRenderer.invoke('check-health');
+
+                // Update Mastra status
+                if (health.mastra.status === 'running') {
+                    updateStatus('mastra-indicator', 'running', health.mastra.message);
+                } else {
+                    updateStatus('mastra-indicator', 'stopped', health.mastra.message);
+                }
+
+                log('Health check completed');
+            } catch (error) {
+                log('Error checking health: ' + error.message);
+            }
+        }
+
+
+        // Listen for log messages from main process
+        ipcRenderer.on('log-message', (event, message) => {
+            log(message);
+        });
+
+        // Listen for interface control messages
+        ipcRenderer.on('show-main-interface', () => {
+            document.getElementById('setup-page').style.display = 'none';
+            document.getElementById('main-interface').style.display = 'block';
+            log('API keys already configured, showing main interface');
+            checkHealth();
+        });
+
+        ipcRenderer.on('show-setup-page', () => {
+            document.getElementById('setup-page').style.display = 'block';
+            document.getElementById('main-interface').style.display = 'none';
+            log('No API keys configured, showing setup page');
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            log('VibeB2B interface loaded');
+
+            // Auto-refresh status every 30 seconds (only when main interface is visible)
+            setInterval(() => {
+                if (document.getElementById('main-interface').style.display !== 'none') {
+                    checkHealth();
+                }
+            }, 30000);
+        });
+
+    </script>
+</body>
+</html>
