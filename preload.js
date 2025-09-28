@@ -8,11 +8,22 @@ contextBridge.exposeInMainWorld('electronAPI', {
   stopMastra: () => ipcRenderer.invoke('stop-mastra'),
   getMastraStatus: () => ipcRenderer.invoke('get-mastra-status'),
 
+  // Recall server control
+  startRecall: () => ipcRenderer.invoke('start-recall'),
+  stopRecall: () => ipcRenderer.invoke('stop-recall'),
+  getRecallStatus: () => ipcRenderer.invoke('get-recall-status'),
+
+  // Bot creation
+  createBot: (meetingUrl) => ipcRenderer.invoke('create-bot', meetingUrl),
+
+  // Health checking
+  checkHealth: () => ipcRenderer.invoke('check-health'),
+
   // Environment variables management
   saveEnvVariables: (envVars) => ipcRenderer.invoke('save-env-variables', envVars),
   getStoredEnv: () => ipcRenderer.invoke('get-stored-env'),
 
-  // Event listeners for Mastra server logs and status
+  // Event listeners for server logs and status
   onMastraLog: (callback) => {
     ipcRenderer.on('mastra-log', callback);
     // Return cleanup function
@@ -23,6 +34,18 @@ contextBridge.exposeInMainWorld('electronAPI', {
     ipcRenderer.on('mastra-status', callback);
     // Return cleanup function
     return () => ipcRenderer.removeListener('mastra-status', callback);
+  },
+
+  onRecallLog: (callback) => {
+    ipcRenderer.on('recall-log', callback);
+    // Return cleanup function
+    return () => ipcRenderer.removeListener('recall-log', callback);
+  },
+
+  onRecallStatus: (callback) => {
+    ipcRenderer.on('recall-status', callback);
+    // Return cleanup function
+    return () => ipcRenderer.removeListener('recall-status', callback);
   },
 
   // Navigation helpers

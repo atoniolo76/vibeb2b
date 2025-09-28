@@ -102,7 +102,7 @@ VibeB2B includes integration with [Recall.ai](https://recall.ai) for automated m
    npm run recall
    ```
 
-   If `NGROK_AUTHTOKEN` is set, the server will:
+   For local development, no external tunneling is needed. If `NGROK_AUTHTOKEN` is set, the server will:
    - Automatically authenticate with ngrok
    - Start an ngrok tunnel to port 3000
    - Use the tunnel URL for webhooks

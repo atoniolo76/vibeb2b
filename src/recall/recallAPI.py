@@ -13,7 +13,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Use localhost for webhook URL (no external tunneling)
-webhook_url = "http://localhost:3000/webhook"
+webhook_url = os.getenv("RECALL_WEBHOOK_URL", "http://localhost:3000/webhook")
 websocket_url = os.getenv("RECALL_WEBSOCKET_URL", "")
 
 

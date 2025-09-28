@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeB2B</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="welcome">
+            <h1>VibeB2B</h1>
+            <p>Business automation platform</p>
+            <div class="status">Ready to configure...</div>
+        </div>
+    </div>
+
+    <script>
+        // Simple app initialization
+        console.log('VibeB2B frontend loaded');
+
+        // Check if we're in Electron
+        if (window.electronAPI) {
+            console.log('Electron API available');
+        } else {
+            console.log('Running in browser mode');
+        }
+    </script>
+</body>
+</html>
