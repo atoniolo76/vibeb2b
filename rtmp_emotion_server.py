@@ -1,23 +1,19 @@
 #!/usr/bin/env python3
 """
-INTEGRATED EMOTION SERVER - Everything in One File
-Receives H264 chunks, processes emotions, serves API results
+RTMP EMOTION SERVER - Everything in One File
+Receives RTMP video stream, processes emotions, serves API results
 
-IMPORTANT: This version stores ALL frames in MEMORY only.
-No files are saved to disk to avoid computer clogging.
+IMPORTANT: This version uses RTMP for 720p 30fps video.
+No files are saved to disk - everything processed in memory.
 
-Debug output shows participant names and processing status.
-Uses H264 for better performance and no blocking.
+Uses RTMP for high-quality real-time video processing.
 """
 
-from flask import Flask, jsonify
-from websocket_server import WebsocketServer
-import json
-import base64
-import threading
-import time
+from flask import Flask, jsonify, request
 import cv2
 import numpy as np
+import threading
+import time
 from datetime import datetime
 import torch
 import torch.nn as nn
@@ -47,14 +43,13 @@ latest_result = {
     "engagement": 0,
     "engagement_spike": False
 }
-latest_preview_frame = None
-preview_lock = threading.Lock()
 
-class LatestH264Manager:
+class RTMPFrameManager:
     def __init__(self):
         self.latest_frame = None
         self.frame_lock = threading.Lock()
-        self.h264_buffer = b""  # Accumulate H264 chunks
+        self.cap = None
+        self.rtmp_url = None
 
         # Statistics
         self.frames_received = 0
@@ -63,108 +58,50 @@ class LatestH264Manager:
         self.last_receive_time = 0
         self.receive_fps = 0
 
-    def update_frame(self, h264_data):
-        """Decode H264 chunk directly as a complete frame"""
+    def connect_rtmp(self, rtmp_url):
+        """Connect to RTMP stream"""
+        try:
+            self.rtmp_url = rtmp_url
+            self.cap = cv2.VideoCapture(rtmp_url)
+            
+            if not self.cap.isOpened():
+                print(f"❌ Failed to connect to RTMP stream: {rtmp_url}")
+                return False
+            
+            print(f"✅ Connected to RTMP stream: {rtmp_url}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ RTMP connection error: {e}")
+            return False
+
+    def get_latest_frame(self):
+        """Get the most recent frame from RTMP stream"""
         with self.frame_lock:
-            # Count statistics
-            self.frames_received += 1
-            if self.latest_frame is not None:
-                self.frames_skipped += 1  # We're replacing an unprocessed frame
+            if self.cap is None or not self.cap.isOpened():
+                return None
 
             try:
-                h264_bytes = base64.b64decode(h264_data)
-                print(f"🔍 H264 chunk size: {len(h264_bytes)} bytes")
-
-                # Try to decode this chunk directly as a complete H264 frame
-                frame = self.decode_h264_chunk(h264_bytes)
-
-                if frame is not None:
-                    # Always replace with latest
+                ret, frame = self.cap.read()
+                if ret and frame is not None:
+                    self.frames_received += 1
                     self.latest_frame = frame.copy()
-
-                    # Calculate receive FPS
+                    
+                    # Calculate FPS
                     current_time = time.time()
                     if self.last_receive_time > 0:
                         time_diff = current_time - self.last_receive_time
                         if time_diff > 0:
                             self.receive_fps = 0.9 * self.receive_fps + 0.1 * (1.0 / time_diff)
                     self.last_receive_time = current_time
-
-                    return True
+                    
+                    return frame
                 else:
-                    # If direct decode fails, try accumulating approach as fallback
-                    self.h264_buffer += h264_bytes
-                    frame = self.decode_h264_frame()
-
-                    if frame is not None:
-                        self.latest_frame = frame.copy()
-                        self.h264_buffer = b""  # Clear after success
-
-                        current_time = time.time()
-                        if self.last_receive_time > 0:
-                            time_diff = current_time - self.last_receive_time
-                            if time_diff > 0:
-                                self.receive_fps = 0.9 * self.receive_fps + 0.1 * (1.0 / time_diff)
-                        self.last_receive_time = current_time
-
-                        return True
-
+                    return None
+                    
             except Exception as e:
-                print(f"❌ H264 decode error: {e}")
-                return False
-
-    def decode_h264_chunk(self, h264_bytes):
-        """Try to decode H264 bytes directly as a complete frame"""
-        try:
-            # Write the chunk directly to a temp file
-            temp_file = f"temp_chunk_{hash(h264_bytes) % 1000}.h264"
-            with open(temp_file, 'wb') as f:
-                f.write(h264_bytes)
-
-            cap = cv2.VideoCapture(temp_file)
-            ret, frame = cap.read()
-            cap.release()
-
-            # Clean up temp file
-            import os
-            if os.path.exists(temp_file):
-                os.remove(temp_file)
-
-            return frame if ret else None
-
-        except Exception as e:
-            return None
-
-    def decode_h264_frame(self):
-        """Decode H264 buffer to get latest frame (fallback method)"""
-        try:
-            # Use OpenCV to decode H264
-            temp_file = "temp_frame.h264"
-            with open(temp_file, 'wb') as f:
-                f.write(self.h264_buffer)
-
-            cap = cv2.VideoCapture(temp_file)
-            ret, frame = cap.read()
-            cap.release()
-
-            # Clean up temp file
-            import os
-            if os.path.exists(temp_file):
-                os.remove(temp_file)
-
-            return frame if ret else None
-
-        except Exception as e:
-            return None
-
-    def get_latest_frame(self):
-        """Get the most recent frame for processing"""
-        with self.frame_lock:
-            if self.latest_frame is not None:
-                frame = self.latest_frame.copy()
-                self.frames_processed += 1
-                return frame
-            return None
+                print(f"❌ RTMP frame read error: {e}")
+                return None
 
     def get_stats(self):
         """Get performance statistics"""
@@ -175,11 +112,12 @@ class LatestH264Manager:
                 'frames_skipped': self.frames_skipped,
                 'receive_fps': round(self.receive_fps, 2),
                 'skip_ratio': round(self.frames_skipped / max(1, self.frames_received) * 100, 1),
-                'has_frame': self.latest_frame is not None
+                'has_frame': self.latest_frame is not None,
+                'rtmp_connected': self.cap is not None and self.cap.isOpened()
             }
 
 # Global frame manager
-frame_manager = LatestH264Manager()
+frame_manager = RTMPFrameManager()
 
 # PyTorch Model Classes
 class Bottleneck(nn.Module):
@@ -472,81 +410,19 @@ def process_frame(frame):
         print(f"Error processing frame: {e}")
         return 0, 0, False, False
 
-def draw_preview_overlay(frame, frustration, engagement, frus_spike, eng_spike):
-    """Draw emotion metrics overlay on preview frame"""
-    h, w = frame.shape[:2]
-    
-    # Create overlay
-    overlay = frame.copy()
-    
-    # Create metrics text
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    metrics_text = f"{timestamp}, FRUS: {int(frustration):03d}, ENG: {int(engagement):03d}"
-    
-    # Draw background rectangle for text
-    text_size = cv2.getTextSize(metrics_text, cv2.FONT_HERSHEY_SIMPLEX, 0.6, 2)[0]
-    cv2.rectangle(overlay, (10, 10), (text_size[0] + 20, text_size[1] + 30), (0, 0, 0), -1)
-    cv2.rectangle(overlay, (10, 10), (text_size[0] + 20, text_size[1] + 30), (255, 255, 255), 2)
-    
-    # Draw metrics text
-    cv2.putText(overlay, metrics_text, (15, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-    
-    # Draw emotion bars
-    bar_y = 60
-    bar_width = 200
-    bar_height = 20
-    
-    # Frustration bar
-    frus_color = (0, 0, 255) if frus_spike else (0, 255, 255)
-    cv2.rectangle(overlay, (10, bar_y), (10 + int(bar_width * frustration / 100), bar_y + bar_height), frus_color, -1)
-    cv2.rectangle(overlay, (10, bar_y), (10 + bar_width, bar_y + bar_height), (255, 255, 255), 2)
-    cv2.putText(overlay, f"Frustration: {int(frustration)}", (220, bar_y + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
-    
-    # Engagement bar
-    eng_color = (0, 255, 0) if eng_spike else (255, 255, 0)
-    cv2.rectangle(overlay, (10, bar_y + 30), (10 + int(bar_width * engagement / 100), bar_y + 30 + bar_height), eng_color, -1)
-    cv2.rectangle(overlay, (10, bar_y + 30), (10 + bar_width, bar_y + 30 + bar_height), (255, 255, 255), 2)
-    cv2.putText(overlay, f"Engagement: {int(engagement)}", (220, bar_y + 45), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
-    
-    # Spike indicators
-    if frus_spike:
-        cv2.putText(overlay, "FRUSTRATION SPIKE!", (10, bar_y + 70), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-    if eng_spike:
-        cv2.putText(overlay, "ENGAGEMENT SPIKE!", (10, bar_y + 95), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-    
-    # Add stats info
-    stats = frame_manager.get_stats()
-    stats_text = f"Frames: {stats['frames_received']} | Processed: {stats['frames_processed']} | FPS: {stats['receive_fps']:.1f}"
-    cv2.putText(overlay, stats_text, (10, h - 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
-    
-    return overlay
-
 def process_frames_worker():
-    """Background worker to process frames from memory"""
-    global latest_result, latest_preview_frame
+    """Background worker to process frames from RTMP stream"""
+    global latest_result
 
-    print("🔄 Frame processing worker started - will process frames from memory")
-    print("📺 Preview window will show processed frames with emotion stats")
-
-    last_frame_hash = None
+    print("🔄 RTMP frame processing worker started")
 
     while True:
         try:
-            # Get latest frame from memory (no disk I/O)
+            # Get latest frame from RTMP stream
             frame = frame_manager.get_latest_frame()
 
             if frame is not None:
-                # Calculate frame hash to detect if it's actually a new frame
-                frame_hash = hash(frame.tobytes())
-
-                if frame_hash == last_frame_hash:
-                    # Same frame as before, skip processing
-                    print("⏭️  Skipping duplicate frame")
-                    time.sleep(0.1)  # Short sleep before checking again
-                    continue
-
-                last_frame_hash = frame_hash
-                print(f"🔍 Processing NEW frame from memory (shape: {frame.shape})")
+                print(f"🔍 Processing RTMP frame (shape: {frame.shape})")
 
                 # Process immediately
                 frustration, engagement, frus_spike, eng_spike = process_frame(frame)
@@ -563,18 +439,13 @@ def process_frames_worker():
                 print(f"🎯 EMOTION RESULTS: FRUS:{int(frustration):3d} ENG:{int(engagement):3d} "
                       f"FRUS_SPIKE:{frus_spike} ENG_SPIKE:{eng_spike}")
 
-                # Create preview with overlay and store it
-                preview_frame = draw_preview_overlay(frame, frustration, engagement, frus_spike, eng_spike)
-                with preview_lock:
-                    latest_preview_frame = preview_frame.copy()
-
             else:
-                print("⏳ No frames available to process yet...")
+                print("⏳ No RTMP frames available yet...")
 
-            time.sleep(0.2)  # Process faster but with deduplication
+            time.sleep(1/30)  # Process at 30fps (RTMP rate)
 
         except Exception as e:
-            print(f"❌ Error in processing worker: {e}")
+            print(f"❌ Error in RTMP processing worker: {e}")
             time.sleep(1)
 
 def load_models():
@@ -599,85 +470,6 @@ def load_models():
         print(f"❌ Error loading models: {e}")
         return False
 
-# WebSocket handlers
-def new_client(client, server):
-    """Called when a new client connects"""
-    print(f"🎉 Google Meet bot connected! Client: {client}")
-
-def client_left(client, server):
-    """Called when a client disconnects"""
-    print(f"❌ Google Meet bot disconnected! Client: {client}")
-
-def message_received(client, server, message):
-    """Called when a message is received"""
-    try:
-        ws_message = json.loads(message)
-
-        if ws_message.get('event') == 'video_separate_h264.data':
-            participant = ws_message['data']['data'].get('participant', {})
-            participant_name = participant.get('name', 'Unknown')
-            recording_id = ws_message['data']['recording']['id']
-
-            print(f"🎬 RECEIVED H264 CHUNK from: {participant_name} (Recording: {recording_id})")
-
-            # Get H264 data
-            h264_buffer = ws_message['data']['data']['buffer']
-
-            # Update latest frame (STORED IN MEMORY ONLY - no disk saving)
-            if frame_manager.update_frame(h264_buffer):
-                stats = frame_manager.get_stats()
-                print(f"✅ H264 CHUNK PROCESSED | Total Received: {stats['frames_received']} | Skipped: {stats['frames_skipped']} | FPS: {stats['receive_fps']:.1f}")
-            else:
-                # Don't spam errors for H264 - it's expected to fail often
-                pass
-
-        elif ws_message.get('event') == 'video_separate_png.data':
-            participant = ws_message['data']['data'].get('participant', {})
-            participant_name = participant.get('name', 'Unknown')
-            recording_id = ws_message['data']['recording']['id']
-
-            print(f"🖼️ RECEIVED PNG CHUNK from: {participant_name} (Recording: {recording_id})")
-
-            # Get PNG data
-            png_buffer = ws_message['data']['data']['buffer']
-
-            # Decode PNG directly
-            try:
-                png_bytes = base64.b64decode(png_buffer)
-                nparr = np.frombuffer(png_bytes, np.uint8)
-                frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-
-                if frame is not None:
-                    # Update latest frame directly
-                    with frame_manager.frame_lock:
-                        frame_manager.latest_frame = frame.copy()
-                        frame_manager.frames_received += 1
-
-                        # Calculate receive FPS
-                        current_time = time.time()
-                        if frame_manager.last_receive_time > 0:
-                            time_diff = current_time - frame_manager.last_receive_time
-                            if time_diff > 0:
-                                frame_manager.receive_fps = 0.9 * frame_manager.receive_fps + 0.1 * (1.0 / time_diff)
-                        frame_manager.last_receive_time = current_time
-
-                    stats = frame_manager.get_stats()
-                    print(f"✅ PNG FRAME PROCESSED | Total Received: {stats['frames_received']} | FPS: {stats['receive_fps']:.1f}")
-                    print(f"🖼️ Frame shape: {frame.shape} | Should appear in preview window now!")
-                else:
-                    print("❌ Failed to decode PNG chunk - frame is None")
-
-            except Exception as e:
-                print(f"❌ PNG decode error: {e}")
-
-        else:
-            print(f"❓ Unhandled WebSocket event: {ws_message.get('event', 'unknown')}")
-
-    except json.JSONDecodeError as e:
-        print(f'❌ JSON parse error: {e} | Raw message length: {len(message)}')
-    except Exception as e:
-        print(f'❌ WebSocket message error: {e}')
-
 # Flask routes
 @app.route('/')
 def index():
@@ -685,11 +477,30 @@ def index():
     stats = frame_manager.get_stats()
     return jsonify({
         'status': 'running',
-        'message': 'Integrated Emotion Server is running',
-        'websocket_url': 'ws://localhost:5003',
+        'message': 'RTMP Emotion Server is running',
+        'rtmp_connected': stats['rtmp_connected'],
         'frames_received': stats['frames_received'],
         'latest_result': latest_result
     })
+
+@app.route('/video_mixed_flv.data', methods=['POST'])
+def connect_rtmp():
+    print("connected !!")
+    """Connect to RTMP stream"""
+    try:
+        data = request.get_json()
+        rtmp_url = data.get('rtmp_url')
+        
+        if not rtmp_url:
+            return jsonify({"error": "rtmp_url required"}), 400
+        
+        if frame_manager.connect_rtmp(rtmp_url):
+            return jsonify({"message": f"Connected to RTMP stream: {rtmp_url}"})
+        else:
+            return jsonify({"error": "Failed to connect to RTMP stream"}), 500
+            
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/get_metrics', methods=['GET'])
 def get_metrics():
@@ -706,93 +517,31 @@ def health_check():
     return jsonify({
         "status": "healthy",
         "models_loaded": pth_LSTM_model is not None,
+        "rtmp_connected": stats['rtmp_connected'],
         "frames_received": stats['frames_received'],
         "frames_processed": stats['frames_processed'],
         "frames_skipped": stats['frames_skipped'],
         "latest_result": latest_result
     })
 
-@app.route('/websocket_status', methods=['GET'])
-def websocket_status():
-    """Check WebSocket server status"""
-    return jsonify({
-        "websocket_port": 5003,
-        "websocket_url": "ws://localhost:5003",
-        "server_running": True,
-        "instructions": "Configure your Google Meet bot to send video data to ws://YOUR_NGROK_URL:5003"
-    })
-
-def preview_display_worker():
-    """Display preview window in main thread"""
-    global latest_preview_frame
-    
-    print("📺 Preview display worker started")
-    
-    while True:
-        try:
-            with preview_lock:
-                if latest_preview_frame is not None:
-                    cv2.imshow('Emotion Analysis Preview', latest_preview_frame)
-                    
-                    # Check for quit key
-                    if cv2.waitKey(1) & 0xFF == ord('q'):
-                        print("👋 Preview window closed by user")
-                        cv2.destroyAllWindows()
-                        break
-            
-            time.sleep(0.033)  # ~30 FPS display rate
-            
-        except Exception as e:
-            print(f"❌ Error in preview display: {e}")
-            time.sleep(1)
-
-def start_websocket_server():
-    """Start WebSocket server in background thread"""
-    server = WebsocketServer(host='0.0.0.0', port=5003)
-    server.set_fn_new_client(new_client)
-    server.set_fn_client_left(client_left)
-    server.set_fn_message_received(message_received)
-
-    print("🚀 WebSocket server started on port 5003")
-    server.run_forever()
-
 if __name__ == '__main__':
-        print("🚀 Starting INTEGRATED Emotion Server...")
-        print("Loading models...")
+    print("🚀 Starting RTMP Emotion Server...")
+    print("Loading models...")
 
-        if load_models():
-            # Start WebSocket server in background
-            ws_thread = threading.Thread(target=start_websocket_server, daemon=True)
-            ws_thread.start()
+    if load_models():
+        # Start frame processing worker
+        processing_thread = threading.Thread(target=process_frames_worker, daemon=True)
+        processing_thread.start()
 
-            # Start frame processing worker
-            processing_thread = threading.Thread(target=process_frames_worker, daemon=True)
-            processing_thread.start()
+        print("🚀 Starting Flask API server on port 5000...")
+        print("🌐 HTTP API: http://localhost:5000")
+        print("\n🎯 RTMP Emotion Server Ready!")
+        print("   POST /connect_rtmp with rtmp_url to start")
+        print("   GET /get_metrics for emotion results")
+        print("   720p 30fps video processing")
+        print("   NO FILES SAVED - everything in memory!")
+        print("\n" + "="*50)
 
-            # Start preview display worker
-            preview_thread = threading.Thread(target=preview_display_worker, daemon=True)
-            preview_thread.start()
-
-            print("🚀 Starting Flask API server on port 5000...")
-            print("📡 WebSocket: ws://localhost:5003")
-            print("🌐 HTTP API: http://localhost:5000")
-            print("🌐 Make WebSocket public with: ngrok http 5003")
-            print("\n🎯 Everything is integrated - no delays!")
-            print("   PNG/H264 → Processing → Results (all in one process)")
-            print("   NO FILES SAVED - everything in memory!")
-            print("📺 Preview window will show processed frames with emotion stats")
-            print("   Press 'q' in preview window to close it")
-            print("\n🚨 CRITICAL: SWITCH TO PNG FORMAT NOW!")
-            print("   Your H264 is 90% corrupted (missing SPS/PPS headers)")
-            print("   PNG works perfectly - change your bot config immediately!")
-            print("   H264 fragmentation cannot be easily fixed with buffering.")
-            print("\n" + "="*50)
-
-            try:
-                app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
-            except KeyboardInterrupt:
-                print("\n👋 Shutting down server...")
-                cv2.destroyAllWindows()
-                print("✅ Server stopped cleanly")
-        else:
-            print("❌ Failed to load models. Exiting.")
+        app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
+    else:
+        print("❌ Failed to load models. Exiting.")
