@@ -75,6 +75,39 @@ def create_bot():
             ]
         }
     }
+
+    # prod_h264_payload = {
+    #     "meeting_url": meeting_url,
+    #     "bot_name": "VibeB2B",
+    #     "variant": {
+    #             "zoom": "web_4_core",
+    #             "google_meet": "web_4_core",
+    #             "microsoft_teams": "web_4_core",
+    #             "webex": "web_4_core"
+    #         },
+    #     "recording_config": {
+    #         "transcript": {
+    #             "provider": {
+    #                 "meeting_captions": {}
+    #             }
+    #         },
+    #         "video_separate_h264": {},
+    #         "video_mixed_layout": "gallery_view_v2",
+    #         "realtime_endpoints": [
+    #             {
+    #                 "type": "webhook",
+    #                 "url": webhook_url,
+    #                 "events": ["transcript.data", "transcript.partial_data"]
+    #             },
+    #             {
+    #                 "type": "websocket",
+    #                 "url": websocket_url,
+    #                 "events": ["video_separate_h264.data"]
+    #             }
+    #         ],
+
+    #     }
+    # }
     
     prod_payload = {
         "meeting_url": meeting_url,
