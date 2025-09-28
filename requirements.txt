@@ -7,6 +7,7 @@ moviepy==2.2.1
 # Audio processing and speech recognition
 SpeechRecognition==3.14.3
 pydub==0.25.1
+openai-whisper==20240930
 
 # Machine learning and AI
 torch==2.0.1

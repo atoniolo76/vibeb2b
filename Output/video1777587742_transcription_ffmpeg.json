@@ -1,71 +1,85 @@
 {
   "transcription": {
-    "full_text": "hi I'm dancing I'm talking about a really boring topic about to start talking about a really interesting topic yes this is a very interesting topic I'm so confused the what is happening what what is happening I'm so confused I don't even know what's happening anymore bro and now I'm neutral again how's it going to beat your ass",
+    "full_text": "I'm not talking about a really boring topic. I'm talking about a really interesting topic. Yes, this is a very interesting topic. I'm so confused. What the fuck? What is happening? What is happening? I'm so confused. I don't even know what's happening anymore, bro. And now I'm neutral again. Good boy. How does it get to the beach? I'm gonna be trash. I'm gonna be real mad.",
     "language": "en",
-    "total_duration": 30.08,
+    "total_duration": 39.0,
     "sentences": [
       {
-        "start_time": 0,
-        "end_time": 7.2,
-        "duration": 7.2,
-        "text": "hi I'm dancing I'm talking about a really boring topic about to start talking about a really interesting topic",
-        "chunk_index": 1
+        "start": 0.0,
+        "end": 9.0,
+        "text": "I'm not talking about a really boring topic."
       },
       {
-        "start_time": 7.2,
-        "end_time": 12.46,
-        "duration": 5.26,
-        "text": "yes this is a very interesting topic",
-        "chunk_index": 3
+        "start": 9.0,
+        "end": 16.0,
+        "text": "I'm talking about a really interesting topic."
       },
       {
-        "start_time": 12.46,
-        "end_time": 15.35,
-        "duration": 2.89,
-        "text": "I'm so confused",
-        "chunk_index": 4
+        "start": 16.0,
+        "end": 20.0,
+        "text": "Yes, this is a very interesting topic."
       },
       {
-        "start_time": 15.35,
-        "end_time": 16.55,
-        "duration": 1.2,
-        "text": "the",
-        "chunk_index": 6
+        "start": 20.0,
+        "end": 23.0,
+        "text": "I'm so confused."
       },
       {
-        "start_time": 16.55,
-        "end_time": 19.15,
-        "duration": 2.6,
-        "text": "what is happening",
-        "chunk_index": 7
+        "start": 23.0,
+        "end": 25.0,
+        "text": "What the fuck?"
       },
       {
-        "start_time": 19.15,
-        "end_time": 24.38,
-        "duration": 5.23,
-        "text": "what what is happening I'm so confused I don't even know what's happening anymore bro",
-        "chunk_index": 8
+        "start": 25.0,
+        "end": 28.0,
+        "text": "What is happening?"
       },
       {
-        "start_time": 24.38,
-        "end_time": 26.04,
-        "duration": 1.66,
-        "text": "and now I'm neutral again",
-        "chunk_index": 9
+        "start": 28.0,
+        "end": 30.0,
+        "text": "What is happening?"
       },
       {
-        "start_time": 26.04,
-        "end_time": 30.08,
-        "duration": 4.04,
-        "text": "how's it going to beat your ass",
-        "chunk_index": 11
+        "start": 30.0,
+        "end": 31.0,
+        "text": "I'm so confused."
+      },
+      {
+        "start": 31.0,
+        "end": 33.0,
+        "text": "I don't even know what's happening anymore, bro."
+      },
+      {
+        "start": 33.0,
+        "end": 35.0,
+        "text": "And now I'm neutral again."
+      },
+      {
+        "start": 35.0,
+        "end": 36.0,
+        "text": "Good boy."
+      },
+      {
+        "start": 36.0,
+        "end": 37.0,
+        "text": "How does it get to the beach?"
+      },
+      {
+        "start": 37.0,
+        "end": 38.0,
+        "text": "I'm gonna be trash."
+      },
+      {
+        "start": 38.0,
+        "end": 39.0,
+        "text": "I'm gonna be real mad."
       }
     ],
-    "total_sentences": 8
+    "total_sentences": 14
   },
   "metadata": {
-    "model_used": "google_speech_recognition",
-    "processed_at": "2025-09-28T04:44:39.253926",
-    "total_chunks": 12
+    "model_used": "openai_whisper",
+    "processed_at": "2025-09-28T06:21:58.869852",
+    "model_size": "base"
   }
 }

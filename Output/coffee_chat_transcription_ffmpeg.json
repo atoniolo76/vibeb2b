@@ -1,36 +1,70 @@
 {
   "transcription": {
-    "full_text": "I wanted to share with you on building 5-speed a beat to automate your middle funnel sales just let you know we've raised 50 million preseason from not combinator and a 6706 thanks for the coffee shop",
+    "full_text": "Thanks for joining me, Poppy Chat today. I wanted to share with you on building Vibes B2B to automate your middle funnel sales. To do. I want to let you know I started Vibes B2B after I saw how low conversion rates were for B2B says SaaS coffee chats. And Dawson, we're leveraging generative AI, big data, and even the blockchain to generate actual insights.tenx revenue. And a money. Just let you know we've raised $50 million per C from not combinator and A670. We're also hiring 50 interns. Thanks for the coffee chat.",
     "language": "en",
-    "total_duration": 11.44,
+    "total_duration": 32.04,
     "sentences": [
       {
-        "start_time": 0,
-        "end_time": 3.62,
-        "duration": 3.62,
-        "text": "I wanted to share with you on building 5-speed a beat to automate your middle funnel sales",
-        "chunk_index": 1
+        "start": 0.0,
+        "end": 5.8,
+        "text": "Thanks for joining me, Poppy Chat today."
       },
       {
-        "start_time": 3.62,
-        "end_time": 10.16,
-        "duration": 6.54,
-        "text": "just let you know we've raised 50 million preseason from not combinator and a 6706",
-        "chunk_index": 7
+        "start": 5.8,
+        "end": 8.96,
+        "text": "I wanted to share with you on building Vibes B2B to automate your middle funnel sales."
       },
       {
-        "start_time": 10.16,
-        "end_time": 11.44,
-        "duration": 1.27,
-        "text": "thanks for the coffee shop",
-        "chunk_index": 8
+        "start": 8.96,
+        "end": 9.96,
+        "text": "To do."
+      },
+      {
+        "start": 9.96,
+        "end": 14.26,
+        "text": "I want to let you know I started Vibes B2B after I saw how low conversion rates were for"
+      },
+      {
+        "start": 14.26,
+        "end": 16.84,
+        "text": "B2B says SaaS coffee chats."
+      },
+      {
+        "start": 16.84,
+        "end": 20.82,
+        "text": "And Dawson, we're leveraging generative AI, big data, and even the blockchain to generate"
+      },
+      {
+        "start": 20.82,
+        "end": 23.96,
+        "text": "actual insights.tenx revenue."
+      },
+      {
+        "start": 23.96,
+        "end": 24.96,
+        "text": "And a money."
+      },
+      {
+        "start": 24.96,
+        "end": 29.04,
+        "text": "Just let you know we've raised $50 million per C from not combinator and A670."
+      },
+      {
+        "start": 29.04,
+        "end": 31.28,
+        "text": "We're also hiring 50 interns."
+      },
+      {
+        "start": 31.28,
+        "end": 32.04,
+        "text": "Thanks for the coffee chat."
       }
     ],
-    "total_sentences": 3
+    "total_sentences": 11
   },
   "metadata": {
-    "model_used": "google_speech_recognition",
-    "processed_at": "2025-09-28T06:02:12.202933",
-    "total_chunks": 9
+    "model_used": "openai_whisper",
+    "processed_at": "2025-09-28T06:25:22.462362",
+    "model_size": "base"
   }
 }

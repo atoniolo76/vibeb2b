@@ -7,6 +7,7 @@ from typing import Dict, List, Any
 from datetime import datetime
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
+import whisper
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -62,6 +63,9 @@ class FFmpegVideoProcessor:
             logger.error(f"Failed to extract audio: {e}")
             raise
     
+
+
+    # OLD - uses Google Speech Recognition
     def transcribe_audio(self, audio_path: str) -> Dict[str, Any]:
         """
         Transcribe audio using Google Speech Recognition with timestamps.
@@ -145,7 +149,56 @@ class FFmpegVideoProcessor:
         except Exception as e:
             logger.error(f"Failed to transcribe audio: {e}")
             raise
-    
+
+    def new_transcribe_audio(self, audio_path: str) -> Dict[str, Any]:
+        """
+        Transcribe audio using Whisper (OpenAI) for improved accuracy and timestamps.
+
+        Args:
+            audio_path: Path to the audio file
+
+        Returns:
+            Dictionary containing transcription with timestamps
+        """
+        try:
+            logger.info(f"Transcribing audio with Whisper: {audio_path}")
+
+            # Load Whisper model (using 'base' for speed, can change to 'small', 'medium', etc.)
+            model = whisper.load_model("base")
+
+            # Transcribe the audio
+            result = model.transcribe(audio_path, language='en')  # Specify language if known
+
+            # Extract sentences from segments
+            sentences = []
+            for segment in result.get('segments', []):
+                sentences.append({
+                    "start": segment['start'],
+                    "end": segment['end'],
+                    "text": segment['text'].strip()
+                })
+
+            total_duration = sentences[-1]['end'] if sentences else 0.0
+
+            return {
+                "transcription": {
+                    "full_text": result.get('text', '').strip(),
+                    "language": result.get('language', 'en'),
+                    "total_duration": round(total_duration, 2),
+                    "sentences": sentences,
+                    "total_sentences": len(sentences)
+                },
+                "metadata": {
+                    "model_used": "openai_whisper",
+                    "processed_at": datetime.now().isoformat(),
+                    "model_size": "base"
+                }
+            }
+
+        except Exception as e:
+            logger.error(f"Failed to transcribe audio with Whisper: {e}")
+            raise
+
     def process_video(self, video_path: str, output_path: str = None) -> Dict[str, Any]:
         """
         Complete video processing pipeline: extract audio and transcribe.
@@ -162,7 +215,8 @@ class FFmpegVideoProcessor:
             audio_path = self.extract_audio_from_video(video_path)
             
             # Transcribe audio
-            transcription_data = self.transcribe_audio(audio_path)
+            # transcription_data = self.transcribe_audio(audio_path)
+            transcription_data = self.new_transcribe_audio(audio_path)
             
             # Save to JSON file if output path is provided
             if output_path:
