@@ -1,0 +1,24 @@
+# Core dependencies for the complete video analysis pipeline
+
+# Video processing and computer vision
+opencv-python==4.11.0.86
+moviepy==2.2.1
+
+# Audio processing and speech recognition
+SpeechRecognition==3.14.3
+pydub==0.25.1
+openai-whisper==20240930
+
+# Machine learning and AI
+torch==2.0.1
+torchvision==0.15.2
+mediapipe==0.10.21
+numpy==1.26.4
+pillow==11.3.0
+
+# Web framework and API
+flask==2.3.3
+requests==2.32.5
+
+# Utilities
+python-dateutil==2.9.0.post0
