@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "mastra dev",
     "build": "mastra build",
-    "start": "mastra start"
+    "start": "mastra start",
+    "main": "python3 main.py",
+    "recall": "python3 src/recall/recallAPI.py $*"
   },
   "keywords": [],
   "author": "",
