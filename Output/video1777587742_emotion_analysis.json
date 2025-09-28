@@ -1,0 +1,4528 @@
+{
+  "video_info": {
+    "file_path": "Upload\\video1777587742.mp4",
+    "total_frames": 976,
+    "processed_frames": 196,
+    "frame_interval": 5,
+    "fps": 25.0,
+    "duration_seconds": 39.04,
+    "face_detected_frames": 195,
+    "face_detection_rate": 99.49
+  },
+  "summary_metrics": {
+    "average_frustration": 2.86,
+    "average_engagement": 20.72,
+    "max_frustration": 9.53,
+    "max_engagement": 98.1
+  },
+  "frame_analysis": [
+    {
+      "frame_number": 0,
+      "timestamp": 0.0,
+      "face_detected": false,
+      "face_bbox": null,
+      "emotions": {
+        "neutral": 0,
+        "happy": 0,
+        "sad": 0,
+        "surprise": 0,
+        "fear": 0,
+        "disgust": 0,
+        "angry": 0,
+        "frustration": 0,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 5,
+      "timestamp": 0.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 421,
+        "startY": 168,
+        "endX": 734,
+        "endY": 528
+      },
+      "emotions": {
+        "neutral": 34.43,
+        "happy": 6.2,
+        "sad": 27.94,
+        "surprise": 1.64,
+        "fear": 4.21,
+        "disgust": 6.1,
+        "angry": 19.47,
+        "frustration": 2.0,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 10,
+      "timestamp": 0.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 448,
+        "startY": 165,
+        "endX": 730,
+        "endY": 508
+      },
+      "emotions": {
+        "neutral": 23.2,
+        "happy": 6.48,
+        "sad": 28.59,
+        "surprise": 2.35,
+        "fear": 8.4,
+        "disgust": 14.48,
+        "angry": 16.5,
+        "frustration": 2.92,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 15,
+      "timestamp": 0.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 458,
+        "startY": 165,
+        "endX": 728,
+        "endY": 498
+      },
+      "emotions": {
+        "neutral": 54.47,
+        "happy": 6.84,
+        "sad": 18.47,
+        "surprise": 4.74,
+        "fear": 6.72,
+        "disgust": 1.73,
+        "angry": 7.03,
+        "frustration": 1.99,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 20,
+      "timestamp": 0.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 478,
+        "startY": 173,
+        "endX": 751,
+        "endY": 496
+      },
+      "emotions": {
+        "neutral": 51.38,
+        "happy": 8.77,
+        "sad": 14.5,
+        "surprise": 4.3,
+        "fear": 4.05,
+        "disgust": 7.74,
+        "angry": 9.26,
+        "frustration": 1.86,
+        "engagement": 0,
+        "brow_furrow_score": 0.23
+      }
+    },
+    {
+      "frame_number": 25,
+      "timestamp": 1.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 180,
+        "endX": 734,
+        "endY": 494
+      },
+      "emotions": {
+        "neutral": 42.55,
+        "happy": 6.31,
+        "sad": 20.26,
+        "surprise": 4.46,
+        "fear": 4.22,
+        "disgust": 13.8,
+        "angry": 8.4,
+        "frustration": 2.23,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 30,
+      "timestamp": 1.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 476,
+        "startY": 195,
+        "endX": 734,
+        "endY": 503
+      },
+      "emotions": {
+        "neutral": 59.01,
+        "happy": 5.23,
+        "sad": 19.03,
+        "surprise": 2.96,
+        "fear": 1.75,
+        "disgust": 5.55,
+        "angry": 6.48,
+        "frustration": 4.22,
+        "engagement": 0,
+        "brow_furrow_score": 4.66
+      }
+    },
+    {
+      "frame_number": 35,
+      "timestamp": 1.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 473,
+        "startY": 197,
+        "endX": 729,
+        "endY": 508
+      },
+      "emotions": {
+        "neutral": 42.55,
+        "happy": 2.93,
+        "sad": 33.65,
+        "surprise": 1.65,
+        "fear": 2.56,
+        "disgust": 6.24,
+        "angry": 10.41,
+        "frustration": 2.04,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 40,
+      "timestamp": 1.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 478,
+        "startY": 218,
+        "endX": 728,
+        "endY": 527
+      },
+      "emotions": {
+        "neutral": 42.63,
+        "happy": 3.84,
+        "sad": 21.89,
+        "surprise": 11.86,
+        "fear": 8.84,
+        "disgust": 5.49,
+        "angry": 5.45,
+        "frustration": 3.11,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 45,
+      "timestamp": 1.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 484,
+        "startY": 223,
+        "endX": 727,
+        "endY": 523
+      },
+      "emotions": {
+        "neutral": 36.41,
+        "happy": 3.9,
+        "sad": 18.98,
+        "surprise": 10.48,
+        "fear": 10.37,
+        "disgust": 10.25,
+        "angry": 9.62,
+        "frustration": 3.25,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 50,
+      "timestamp": 2.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 490,
+        "startY": 226,
+        "endX": 730,
+        "endY": 515
+      },
+      "emotions": {
+        "neutral": 69.98,
+        "happy": 18.48,
+        "sad": 5.22,
+        "surprise": 1.73,
+        "fear": 0.47,
+        "disgust": 0.43,
+        "angry": 3.69,
+        "frustration": 1.02,
+        "engagement": 8.12,
+        "brow_furrow_score": 1.01
+      }
+    },
+    {
+      "frame_number": 55,
+      "timestamp": 2.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 505,
+        "startY": 217,
+        "endX": 736,
+        "endY": 504
+      },
+      "emotions": {
+        "neutral": 3.2,
+        "happy": 91.0,
+        "sad": 0.37,
+        "surprise": 4.8,
+        "fear": 0.22,
+        "disgust": 0.02,
+        "angry": 0.39,
+        "frustration": 0.43,
+        "engagement": 90.32,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 60,
+      "timestamp": 2.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 217,
+        "endX": 723,
+        "endY": 501
+      },
+      "emotions": {
+        "neutral": 1.94,
+        "happy": 73.59,
+        "sad": 0.57,
+        "surprise": 22.47,
+        "fear": 0.8,
+        "disgust": 0.05,
+        "angry": 0.58,
+        "frustration": 1.92,
+        "engagement": 72.66,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 65,
+      "timestamp": 2.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 479,
+        "startY": 222,
+        "endX": 717,
+        "endY": 505
+      },
+      "emotions": {
+        "neutral": 1.59,
+        "happy": 73.86,
+        "sad": 0.58,
+        "surprise": 22.82,
+        "fear": 0.64,
+        "disgust": 0.03,
+        "angry": 0.48,
+        "frustration": 1.93,
+        "engagement": 73.07,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 70,
+      "timestamp": 2.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 220,
+        "endX": 730,
+        "endY": 506
+      },
+      "emotions": {
+        "neutral": 1.76,
+        "happy": 87.66,
+        "sad": 0.49,
+        "surprise": 9.21,
+        "fear": 0.44,
+        "disgust": 0.02,
+        "angry": 0.41,
+        "frustration": 0.81,
+        "engagement": 86.99,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 75,
+      "timestamp": 3.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 490,
+        "startY": 218,
+        "endX": 738,
+        "endY": 511
+      },
+      "emotions": {
+        "neutral": 2.04,
+        "happy": 94.62,
+        "sad": 0.59,
+        "surprise": 2.01,
+        "fear": 0.3,
+        "disgust": 0.02,
+        "angry": 0.42,
+        "frustration": 0.22,
+        "engagement": 93.95,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 80,
+      "timestamp": 3.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 484,
+        "startY": 213,
+        "endX": 743,
+        "endY": 515
+      },
+      "emotions": {
+        "neutral": 1.39,
+        "happy": 96.75,
+        "sad": 0.4,
+        "surprise": 0.97,
+        "fear": 0.18,
+        "disgust": 0.01,
+        "angry": 0.3,
+        "frustration": 0.12,
+        "engagement": 96.29,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 85,
+      "timestamp": 3.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 207,
+        "endX": 749,
+        "endY": 517
+      },
+      "emotions": {
+        "neutral": 0.97,
+        "happy": 98.36,
+        "sad": 0.21,
+        "surprise": 0.23,
+        "fear": 0.08,
+        "disgust": 0.0,
+        "angry": 0.15,
+        "frustration": 0.04,
+        "engagement": 98.1,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 90,
+      "timestamp": 3.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 474,
+        "startY": 202,
+        "endX": 759,
+        "endY": 519
+      },
+      "emotions": {
+        "neutral": 1.64,
+        "happy": 96.8,
+        "sad": 0.49,
+        "surprise": 0.49,
+        "fear": 0.22,
+        "disgust": 0.02,
+        "angry": 0.34,
+        "frustration": 0.09,
+        "engagement": 96.25,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 95,
+      "timestamp": 3.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 194,
+        "endX": 755,
+        "endY": 514
+      },
+      "emotions": {
+        "neutral": 61.37,
+        "happy": 3.27,
+        "sad": 24.88,
+        "surprise": 3.4,
+        "fear": 1.68,
+        "disgust": 0.63,
+        "angry": 4.78,
+        "frustration": 1.49,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 100,
+      "timestamp": 4.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 482,
+        "startY": 191,
+        "endX": 751,
+        "endY": 502
+      },
+      "emotions": {
+        "neutral": 76.95,
+        "happy": 1.84,
+        "sad": 14.85,
+        "surprise": 1.53,
+        "fear": 0.58,
+        "disgust": 0.22,
+        "angry": 4.02,
+        "frustration": 0.8,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 105,
+      "timestamp": 4.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 211,
+        "endX": 741,
+        "endY": 507
+      },
+      "emotions": {
+        "neutral": 79.09,
+        "happy": 1.4,
+        "sad": 12.91,
+        "surprise": 2.12,
+        "fear": 0.85,
+        "disgust": 0.17,
+        "angry": 3.46,
+        "frustration": 2.93,
+        "engagement": 0,
+        "brow_furrow_score": 3.56
+      }
+    },
+    {
+      "frame_number": 110,
+      "timestamp": 4.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 496,
+        "startY": 225,
+        "endX": 736,
+        "endY": 512
+      },
+      "emotions": {
+        "neutral": 66.37,
+        "happy": 1.08,
+        "sad": 24.67,
+        "surprise": 1.32,
+        "fear": 1.18,
+        "disgust": 0.27,
+        "angry": 5.11,
+        "frustration": 4.35,
+        "engagement": 0,
+        "brow_furrow_score": 5.17
+      }
+    },
+    {
+      "frame_number": 115,
+      "timestamp": 4.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 503,
+        "startY": 244,
+        "endX": 730,
+        "endY": 522
+      },
+      "emotions": {
+        "neutral": 72.15,
+        "happy": 1.16,
+        "sad": 18.04,
+        "surprise": 3.06,
+        "fear": 1.59,
+        "disgust": 0.26,
+        "angry": 3.73,
+        "frustration": 1.74,
+        "engagement": 0,
+        "brow_furrow_score": 0.95
+      }
+    },
+    {
+      "frame_number": 120,
+      "timestamp": 4.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 506,
+        "startY": 246,
+        "endX": 731,
+        "endY": 526
+      },
+      "emotions": {
+        "neutral": 51.53,
+        "happy": 1.18,
+        "sad": 24.39,
+        "surprise": 13.33,
+        "fear": 3.8,
+        "disgust": 2.06,
+        "angry": 3.72,
+        "frustration": 3.73,
+        "engagement": 0,
+        "brow_furrow_score": 1.92
+      }
+    },
+    {
+      "frame_number": 125,
+      "timestamp": 5.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 509,
+        "startY": 246,
+        "endX": 733,
+        "endY": 522
+      },
+      "emotions": {
+        "neutral": 68.06,
+        "happy": 3.39,
+        "sad": 17.05,
+        "surprise": 5.53,
+        "fear": 1.06,
+        "disgust": 1.92,
+        "angry": 2.99,
+        "frustration": 2.35,
+        "engagement": 0,
+        "brow_furrow_score": 1.7
+      }
+    },
+    {
+      "frame_number": 130,
+      "timestamp": 5.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 507,
+        "startY": 246,
+        "endX": 730,
+        "endY": 518
+      },
+      "emotions": {
+        "neutral": 86.23,
+        "happy": 2.89,
+        "sad": 5.98,
+        "surprise": 0.35,
+        "fear": 0.08,
+        "disgust": 0.14,
+        "angry": 4.33,
+        "frustration": 1.31,
+        "engagement": 0,
+        "brow_furrow_score": 1.7
+      }
+    },
+    {
+      "frame_number": 135,
+      "timestamp": 5.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 246,
+        "endX": 731,
+        "endY": 517
+      },
+      "emotions": {
+        "neutral": 80.65,
+        "happy": 4.99,
+        "sad": 8.21,
+        "surprise": 0.79,
+        "fear": 0.25,
+        "disgust": 0.44,
+        "angry": 4.67,
+        "frustration": 1.46,
+        "engagement": 0,
+        "brow_furrow_score": 1.7
+      }
+    },
+    {
+      "frame_number": 140,
+      "timestamp": 5.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 245,
+        "endX": 732,
+        "endY": 521
+      },
+      "emotions": {
+        "neutral": 86.25,
+        "happy": 2.91,
+        "sad": 5.58,
+        "surprise": 0.29,
+        "fear": 0.12,
+        "disgust": 0.06,
+        "angry": 4.79,
+        "frustration": 2.14,
+        "engagement": 0,
+        "brow_furrow_score": 3.13
+      }
+    },
+    {
+      "frame_number": 145,
+      "timestamp": 5.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 246,
+        "endX": 732,
+        "endY": 521
+      },
+      "emotions": {
+        "neutral": 58.65,
+        "happy": 3.07,
+        "sad": 19.29,
+        "surprise": 11.04,
+        "fear": 2.37,
+        "disgust": 1.95,
+        "angry": 3.63,
+        "frustration": 3.04,
+        "engagement": 0,
+        "brow_furrow_score": 1.7
+      }
+    },
+    {
+      "frame_number": 150,
+      "timestamp": 6.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 509,
+        "startY": 247,
+        "endX": 732,
+        "endY": 516
+      },
+      "emotions": {
+        "neutral": 71.21,
+        "happy": 3.39,
+        "sad": 13.51,
+        "surprise": 4.59,
+        "fear": 0.81,
+        "disgust": 2.86,
+        "angry": 3.64,
+        "frustration": 2.99,
+        "engagement": 0,
+        "brow_furrow_score": 3.13
+      }
+    },
+    {
+      "frame_number": 155,
+      "timestamp": 6.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 511,
+        "startY": 247,
+        "endX": 733,
+        "endY": 516
+      },
+      "emotions": {
+        "neutral": 60.2,
+        "happy": 3.33,
+        "sad": 9.63,
+        "surprise": 13.95,
+        "fear": 1.29,
+        "disgust": 7.11,
+        "angry": 4.48,
+        "frustration": 3.69,
+        "engagement": 0,
+        "brow_furrow_score": 2.91
+      }
+    },
+    {
+      "frame_number": 160,
+      "timestamp": 6.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 510,
+        "startY": 245,
+        "endX": 732,
+        "endY": 516
+      },
+      "emotions": {
+        "neutral": 89.44,
+        "happy": 2.87,
+        "sad": 4.6,
+        "surprise": 0.32,
+        "fear": 0.06,
+        "disgust": 0.04,
+        "angry": 2.67,
+        "frustration": 1.84,
+        "engagement": 0,
+        "brow_furrow_score": 2.69
+      }
+    },
+    {
+      "frame_number": 165,
+      "timestamp": 6.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 509,
+        "startY": 246,
+        "endX": 731,
+        "endY": 520
+      },
+      "emotions": {
+        "neutral": 49.86,
+        "happy": 3.12,
+        "sad": 9.85,
+        "surprise": 24.1,
+        "fear": 1.38,
+        "disgust": 6.93,
+        "angry": 4.75,
+        "frustration": 4.51,
+        "engagement": 0,
+        "brow_furrow_score": 2.91
+      }
+    },
+    {
+      "frame_number": 170,
+      "timestamp": 6.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 513,
+        "startY": 249,
+        "endX": 732,
+        "endY": 523
+      },
+      "emotions": {
+        "neutral": 75.91,
+        "happy": 7.15,
+        "sad": 11.87,
+        "surprise": 1.52,
+        "fear": 0.59,
+        "disgust": 0.37,
+        "angry": 2.58,
+        "frustration": 0.68,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 175,
+      "timestamp": 7.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 519,
+        "startY": 253,
+        "endX": 735,
+        "endY": 524
+      },
+      "emotions": {
+        "neutral": 33.09,
+        "happy": 7.29,
+        "sad": 36.15,
+        "surprise": 8.3,
+        "fear": 5.49,
+        "disgust": 4.21,
+        "angry": 5.46,
+        "frustration": 2.94,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 180,
+      "timestamp": 7.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 517,
+        "startY": 252,
+        "endX": 736,
+        "endY": 523
+      },
+      "emotions": {
+        "neutral": 45.64,
+        "happy": 4.45,
+        "sad": 27.65,
+        "surprise": 8.57,
+        "fear": 2.76,
+        "disgust": 5.58,
+        "angry": 5.34,
+        "frustration": 2.35,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 185,
+      "timestamp": 7.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 514,
+        "startY": 250,
+        "endX": 735,
+        "endY": 523
+      },
+      "emotions": {
+        "neutral": 80.74,
+        "happy": 9.95,
+        "sad": 4.13,
+        "surprise": 0.59,
+        "fear": 0.14,
+        "disgust": 0.15,
+        "angry": 4.3,
+        "frustration": 0.24,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 190,
+      "timestamp": 7.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 511,
+        "startY": 251,
+        "endX": 732,
+        "endY": 524
+      },
+      "emotions": {
+        "neutral": 36.39,
+        "happy": 2.78,
+        "sad": 10.9,
+        "surprise": 23.24,
+        "fear": 2.86,
+        "disgust": 16.13,
+        "angry": 7.7,
+        "frustration": 4.77,
+        "engagement": 0,
+        "brow_furrow_score": 2.48
+      }
+    },
+    {
+      "frame_number": 195,
+      "timestamp": 7.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 512,
+        "startY": 255,
+        "endX": 730,
+        "endY": 525
+      },
+      "emotions": {
+        "neutral": 31.85,
+        "happy": 8.67,
+        "sad": 18.11,
+        "surprise": 10.36,
+        "fear": 5.73,
+        "disgust": 16.12,
+        "angry": 9.17,
+        "frustration": 2.88,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 200,
+      "timestamp": 8.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 518,
+        "startY": 271,
+        "endX": 739,
+        "endY": 542
+      },
+      "emotions": {
+        "neutral": 73.4,
+        "happy": 16.26,
+        "sad": 5.86,
+        "surprise": 1.82,
+        "fear": 0.35,
+        "disgust": 0.08,
+        "angry": 2.22,
+        "frustration": 0.43,
+        "engagement": 6.11,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 205,
+      "timestamp": 8.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 523,
+        "startY": 272,
+        "endX": 742,
+        "endY": 543
+      },
+      "emotions": {
+        "neutral": 60.73,
+        "happy": 5.21,
+        "sad": 19.93,
+        "surprise": 6.48,
+        "fear": 2.47,
+        "disgust": 1.39,
+        "angry": 3.78,
+        "frustration": 1.67,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 210,
+      "timestamp": 8.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 525,
+        "startY": 272,
+        "endX": 743,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 39.96,
+        "happy": 5.34,
+        "sad": 34.91,
+        "surprise": 5.78,
+        "fear": 2.66,
+        "disgust": 6.14,
+        "angry": 5.22,
+        "frustration": 2.42,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 215,
+      "timestamp": 8.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 520,
+        "startY": 251,
+        "endX": 738,
+        "endY": 521
+      },
+      "emotions": {
+        "neutral": 61.24,
+        "happy": 3.51,
+        "sad": 23.2,
+        "surprise": 5.22,
+        "fear": 1.9,
+        "disgust": 1.75,
+        "angry": 3.18,
+        "frustration": 1.64,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 220,
+      "timestamp": 8.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 518,
+        "startY": 250,
+        "endX": 742,
+        "endY": 523
+      },
+      "emotions": {
+        "neutral": 58.38,
+        "happy": 4.01,
+        "sad": 17.37,
+        "surprise": 6.53,
+        "fear": 2.97,
+        "disgust": 4.21,
+        "angry": 6.53,
+        "frustration": 2.05,
+        "engagement": 0,
+        "brow_furrow_score": 0.51
+      }
+    },
+    {
+      "frame_number": 225,
+      "timestamp": 9.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 515,
+        "startY": 245,
+        "endX": 743,
+        "endY": 524
+      },
+      "emotions": {
+        "neutral": 80.86,
+        "happy": 4.53,
+        "sad": 9.9,
+        "surprise": 0.56,
+        "fear": 0.17,
+        "disgust": 0.29,
+        "angry": 3.7,
+        "frustration": 0.47,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 230,
+      "timestamp": 9.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 513,
+        "startY": 249,
+        "endX": 740,
+        "endY": 528
+      },
+      "emotions": {
+        "neutral": 44.5,
+        "happy": 5.42,
+        "sad": 22.14,
+        "surprise": 8.13,
+        "fear": 4.45,
+        "disgust": 8.31,
+        "angry": 7.06,
+        "frustration": 2.4,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 235,
+      "timestamp": 9.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 517,
+        "startY": 261,
+        "endX": 742,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 43.54,
+        "happy": 4.62,
+        "sad": 21.82,
+        "surprise": 7.39,
+        "fear": 3.13,
+        "disgust": 13.29,
+        "angry": 6.2,
+        "frustration": 2.37,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 240,
+      "timestamp": 9.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 517,
+        "startY": 261,
+        "endX": 744,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 36.63,
+        "happy": 3.38,
+        "sad": 10.84,
+        "surprise": 28.86,
+        "fear": 3.67,
+        "disgust": 9.76,
+        "angry": 6.87,
+        "frustration": 3.57,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 245,
+      "timestamp": 9.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 516,
+        "startY": 257,
+        "endX": 743,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 64.77,
+        "happy": 1.84,
+        "sad": 17.37,
+        "surprise": 1.97,
+        "fear": 1.52,
+        "disgust": 1.3,
+        "angry": 11.23,
+        "frustration": 1.09,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 250,
+      "timestamp": 10.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 515,
+        "startY": 253,
+        "endX": 742,
+        "endY": 532
+      },
+      "emotions": {
+        "neutral": 78.14,
+        "happy": 3.76,
+        "sad": 8.87,
+        "surprise": 1.53,
+        "fear": 0.66,
+        "disgust": 0.57,
+        "angry": 6.47,
+        "frustration": 0.58,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 255,
+      "timestamp": 10.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 518,
+        "startY": 256,
+        "endX": 743,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 34.36,
+        "happy": 4.19,
+        "sad": 24.1,
+        "surprise": 6.83,
+        "fear": 7.95,
+        "disgust": 12.95,
+        "angry": 9.6,
+        "frustration": 2.98,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 260,
+      "timestamp": 10.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 518,
+        "startY": 259,
+        "endX": 745,
+        "endY": 541
+      },
+      "emotions": {
+        "neutral": 38.8,
+        "happy": 4.47,
+        "sad": 18.21,
+        "surprise": 13.95,
+        "fear": 6.12,
+        "disgust": 10.77,
+        "angry": 7.68,
+        "frustration": 3.01,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 265,
+      "timestamp": 10.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 521,
+        "startY": 258,
+        "endX": 747,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 52.35,
+        "happy": 3.93,
+        "sad": 19.66,
+        "surprise": 6.95,
+        "fear": 3.54,
+        "disgust": 4.99,
+        "angry": 8.59,
+        "frustration": 1.97,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 270,
+      "timestamp": 10.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 522,
+        "startY": 261,
+        "endX": 747,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 10.72,
+        "happy": 5.13,
+        "sad": 12.53,
+        "surprise": 3.85,
+        "fear": 2.23,
+        "disgust": 58.03,
+        "angry": 7.52,
+        "frustration": 3.4,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 275,
+      "timestamp": 11.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 522,
+        "startY": 253,
+        "endX": 749,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 8.07,
+        "happy": 4.68,
+        "sad": 2.46,
+        "surprise": 80.89,
+        "fear": 2.26,
+        "disgust": 0.45,
+        "angry": 1.2,
+        "frustration": 6.86,
+        "engagement": 1.61,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 280,
+      "timestamp": 11.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 516,
+        "startY": 238,
+        "endX": 746,
+        "endY": 530
+      },
+      "emotions": {
+        "neutral": 5.98,
+        "happy": 20.86,
+        "sad": 1.49,
+        "surprise": 66.98,
+        "fear": 3.51,
+        "disgust": 0.4,
+        "angry": 0.78,
+        "frustration": 5.85,
+        "engagement": 17.98,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 285,
+      "timestamp": 11.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 231,
+        "endX": 750,
+        "endY": 521
+      },
+      "emotions": {
+        "neutral": 3.62,
+        "happy": 43.9,
+        "sad": 1.46,
+        "surprise": 45.61,
+        "fear": 4.27,
+        "disgust": 0.16,
+        "angry": 0.99,
+        "frustration": 4.23,
+        "engagement": 40.95,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 290,
+      "timestamp": 11.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 500,
+        "startY": 224,
+        "endX": 755,
+        "endY": 520
+      },
+      "emotions": {
+        "neutral": 3.32,
+        "happy": 91.58,
+        "sad": 0.69,
+        "surprise": 3.45,
+        "fear": 0.4,
+        "disgust": 0.03,
+        "angry": 0.53,
+        "frustration": 0.35,
+        "engagement": 90.65,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 295,
+      "timestamp": 11.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 494,
+        "startY": 215,
+        "endX": 760,
+        "endY": 522
+      },
+      "emotions": {
+        "neutral": 1.6,
+        "happy": 96.35,
+        "sad": 0.27,
+        "surprise": 1.33,
+        "fear": 0.16,
+        "disgust": 0.01,
+        "angry": 0.28,
+        "frustration": 0.14,
+        "engagement": 95.93,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 300,
+      "timestamp": 12.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 485,
+        "startY": 205,
+        "endX": 768,
+        "endY": 526
+      },
+      "emotions": {
+        "neutral": 1.55,
+        "happy": 94.97,
+        "sad": 0.35,
+        "surprise": 2.54,
+        "fear": 0.27,
+        "disgust": 0.01,
+        "angry": 0.31,
+        "frustration": 0.25,
+        "engagement": 94.47,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 305,
+      "timestamp": 12.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 488,
+        "startY": 194,
+        "endX": 784,
+        "endY": 530
+      },
+      "emotions": {
+        "neutral": 1.37,
+        "happy": 92.47,
+        "sad": 0.22,
+        "surprise": 5.59,
+        "fear": 0.17,
+        "disgust": 0.01,
+        "angry": 0.18,
+        "frustration": 0.48,
+        "engagement": 92.13,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 310,
+      "timestamp": 12.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 492,
+        "startY": 184,
+        "endX": 796,
+        "endY": 527
+      },
+      "emotions": {
+        "neutral": 0.96,
+        "happy": 81.73,
+        "sad": 0.23,
+        "surprise": 16.72,
+        "fear": 0.21,
+        "disgust": 0.01,
+        "angry": 0.14,
+        "frustration": 1.37,
+        "engagement": 81.42,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 315,
+      "timestamp": 12.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 490,
+        "startY": 180,
+        "endX": 797,
+        "endY": 529
+      },
+      "emotions": {
+        "neutral": 0.81,
+        "happy": 72.32,
+        "sad": 0.21,
+        "surprise": 26.25,
+        "fear": 0.28,
+        "disgust": 0.01,
+        "angry": 0.12,
+        "frustration": 2.14,
+        "engagement": 72.01,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 320,
+      "timestamp": 12.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 487,
+        "startY": 175,
+        "endX": 796,
+        "endY": 529
+      },
+      "emotions": {
+        "neutral": 0.83,
+        "happy": 67.14,
+        "sad": 0.21,
+        "surprise": 31.34,
+        "fear": 0.36,
+        "disgust": 0.01,
+        "angry": 0.12,
+        "frustration": 2.56,
+        "engagement": 66.8,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 325,
+      "timestamp": 13.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 484,
+        "startY": 176,
+        "endX": 795,
+        "endY": 531
+      },
+      "emotions": {
+        "neutral": 0.61,
+        "happy": 59.67,
+        "sad": 0.2,
+        "surprise": 38.92,
+        "fear": 0.47,
+        "disgust": 0.01,
+        "angry": 0.11,
+        "frustration": 3.18,
+        "engagement": 59.32,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 330,
+      "timestamp": 13.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 490,
+        "startY": 184,
+        "endX": 799,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 1.02,
+        "happy": 67.87,
+        "sad": 0.32,
+        "surprise": 29.96,
+        "fear": 0.64,
+        "disgust": 0.02,
+        "angry": 0.17,
+        "frustration": 2.49,
+        "engagement": 67.34,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 335,
+      "timestamp": 13.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 182,
+        "endX": 800,
+        "endY": 539
+      },
+      "emotions": {
+        "neutral": 1.23,
+        "happy": 79.92,
+        "sad": 0.3,
+        "surprise": 17.84,
+        "fear": 0.49,
+        "disgust": 0.02,
+        "angry": 0.19,
+        "frustration": 1.5,
+        "engagement": 79.43,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 340,
+      "timestamp": 13.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 487,
+        "startY": 180,
+        "endX": 800,
+        "endY": 538
+      },
+      "emotions": {
+        "neutral": 2.06,
+        "happy": 78.77,
+        "sad": 0.58,
+        "surprise": 17.8,
+        "fear": 0.41,
+        "disgust": 0.03,
+        "angry": 0.34,
+        "frustration": 1.5,
+        "engagement": 78.08,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 345,
+      "timestamp": 13.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 179,
+        "endX": 802,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 4.75,
+        "happy": 72.21,
+        "sad": 1.5,
+        "surprise": 19.27,
+        "fear": 1.1,
+        "disgust": 0.19,
+        "angry": 0.97,
+        "frustration": 1.74,
+        "engagement": 70.39,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 350,
+      "timestamp": 14.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 487,
+        "startY": 178,
+        "endX": 801,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 3.16,
+        "happy": 71.42,
+        "sad": 1.16,
+        "surprise": 21.61,
+        "fear": 1.7,
+        "disgust": 0.14,
+        "angry": 0.82,
+        "frustration": 1.98,
+        "engagement": 69.71,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 355,
+      "timestamp": 14.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 496,
+        "startY": 188,
+        "endX": 802,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 2.57,
+        "happy": 78.75,
+        "sad": 0.75,
+        "surprise": 16.64,
+        "fear": 0.78,
+        "disgust": 0.07,
+        "angry": 0.45,
+        "frustration": 1.46,
+        "engagement": 77.76,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 360,
+      "timestamp": 14.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 486,
+        "startY": 183,
+        "endX": 793,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 2.04,
+        "happy": 86.47,
+        "sad": 0.43,
+        "surprise": 10.29,
+        "fear": 0.44,
+        "disgust": 0.02,
+        "angry": 0.31,
+        "frustration": 0.89,
+        "engagement": 85.83,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 365,
+      "timestamp": 14.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 193,
+        "endX": 793,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 2.27,
+        "happy": 71.19,
+        "sad": 0.75,
+        "surprise": 24.78,
+        "fear": 0.55,
+        "disgust": 0.04,
+        "angry": 0.43,
+        "frustration": 2.08,
+        "engagement": 70.33,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 370,
+      "timestamp": 14.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 489,
+        "startY": 185,
+        "endX": 798,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 6.13,
+        "happy": 79.03,
+        "sad": 1.55,
+        "surprise": 11.55,
+        "fear": 0.79,
+        "disgust": 0.11,
+        "angry": 0.84,
+        "frustration": 1.09,
+        "engagement": 77.27,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 375,
+      "timestamp": 15.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 483,
+        "startY": 192,
+        "endX": 793,
+        "endY": 541
+      },
+      "emotions": {
+        "neutral": 3.83,
+        "happy": 87.49,
+        "sad": 2.09,
+        "surprise": 3.65,
+        "fear": 1.45,
+        "disgust": 0.27,
+        "angry": 1.23,
+        "frustration": 0.56,
+        "engagement": 85.33,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 380,
+      "timestamp": 15.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 474,
+        "startY": 176,
+        "endX": 782,
+        "endY": 531
+      },
+      "emotions": {
+        "neutral": 6.58,
+        "happy": 87.75,
+        "sad": 2.22,
+        "surprise": 1.25,
+        "fear": 0.73,
+        "disgust": 0.24,
+        "angry": 1.23,
+        "frustration": 0.29,
+        "engagement": 85.57,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 385,
+      "timestamp": 15.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 461,
+        "startY": 174,
+        "endX": 770,
+        "endY": 529
+      },
+      "emotions": {
+        "neutral": 6.56,
+        "happy": 86.27,
+        "sad": 2.7,
+        "surprise": 1.54,
+        "fear": 1.01,
+        "disgust": 0.47,
+        "angry": 1.45,
+        "frustration": 0.37,
+        "engagement": 83.68,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 390,
+      "timestamp": 15.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 456,
+        "startY": 180,
+        "endX": 761,
+        "endY": 527
+      },
+      "emotions": {
+        "neutral": 4.19,
+        "happy": 89.74,
+        "sad": 2.6,
+        "surprise": 1.13,
+        "fear": 0.82,
+        "disgust": 0.33,
+        "angry": 1.19,
+        "frustration": 0.31,
+        "engagement": 87.64,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 395,
+      "timestamp": 15.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 484,
+        "startY": 194,
+        "endX": 768,
+        "endY": 527
+      },
+      "emotions": {
+        "neutral": 7.81,
+        "happy": 77.6,
+        "sad": 4.61,
+        "surprise": 2.94,
+        "fear": 3.07,
+        "disgust": 1.16,
+        "angry": 2.81,
+        "frustration": 0.83,
+        "engagement": 72.74,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 400,
+      "timestamp": 16.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 491,
+        "startY": 217,
+        "endX": 771,
+        "endY": 538
+      },
+      "emotions": {
+        "neutral": 9.51,
+        "happy": 82.91,
+        "sad": 2.78,
+        "surprise": 1.1,
+        "fear": 0.77,
+        "disgust": 0.71,
+        "angry": 2.21,
+        "frustration": 0.32,
+        "engagement": 79.72,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 405,
+      "timestamp": 16.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 496,
+        "startY": 236,
+        "endX": 772,
+        "endY": 555
+      },
+      "emotions": {
+        "neutral": 9.53,
+        "happy": 70.92,
+        "sad": 5.9,
+        "surprise": 3.51,
+        "fear": 4.65,
+        "disgust": 1.26,
+        "angry": 4.23,
+        "frustration": 1.13,
+        "engagement": 64.27,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 410,
+      "timestamp": 16.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 492,
+        "startY": 216,
+        "endX": 785,
+        "endY": 557
+      },
+      "emotions": {
+        "neutral": 5.21,
+        "happy": 81.42,
+        "sad": 2.82,
+        "surprise": 3.23,
+        "fear": 3.46,
+        "disgust": 1.03,
+        "angry": 2.84,
+        "frustration": 0.83,
+        "engagement": 77.23,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 415,
+      "timestamp": 16.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 483,
+        "startY": 230,
+        "endX": 770,
+        "endY": 570
+      },
+      "emotions": {
+        "neutral": 3.99,
+        "happy": 84.6,
+        "sad": 2.41,
+        "surprise": 4.11,
+        "fear": 2.08,
+        "disgust": 0.64,
+        "angry": 2.16,
+        "frustration": 0.7,
+        "engagement": 81.59,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 420,
+      "timestamp": 16.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 479,
+        "startY": 226,
+        "endX": 772,
+        "endY": 570
+      },
+      "emotions": {
+        "neutral": 9.34,
+        "happy": 65.59,
+        "sad": 5.41,
+        "surprise": 5.95,
+        "fear": 6.29,
+        "disgust": 2.48,
+        "angry": 4.93,
+        "frustration": 1.55,
+        "engagement": 57.8,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 425,
+      "timestamp": 17.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 480,
+        "startY": 242,
+        "endX": 768,
+        "endY": 582
+      },
+      "emotions": {
+        "neutral": 4.89,
+        "happy": 82.35,
+        "sad": 2.58,
+        "surprise": 4.27,
+        "fear": 1.97,
+        "disgust": 1.2,
+        "angry": 2.73,
+        "frustration": 0.73,
+        "engagement": 78.84,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 430,
+      "timestamp": 17.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 231,
+        "endX": 766,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 9.03,
+        "happy": 77.18,
+        "sad": 4.29,
+        "surprise": 2.9,
+        "fear": 2.28,
+        "disgust": 1.48,
+        "angry": 2.84,
+        "frustration": 0.74,
+        "engagement": 72.5,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 435,
+      "timestamp": 17.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 470,
+        "startY": 226,
+        "endX": 773,
+        "endY": 577
+      },
+      "emotions": {
+        "neutral": 7.28,
+        "happy": 65.56,
+        "sad": 3.74,
+        "surprise": 10.56,
+        "fear": 6.08,
+        "disgust": 2.73,
+        "angry": 4.05,
+        "frustration": 1.83,
+        "engagement": 58.84,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 440,
+      "timestamp": 17.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 481,
+        "startY": 223,
+        "endX": 780,
+        "endY": 577
+      },
+      "emotions": {
+        "neutral": 2.38,
+        "happy": 92.09,
+        "sad": 0.8,
+        "surprise": 3.13,
+        "fear": 0.75,
+        "disgust": 0.13,
+        "angry": 0.71,
+        "frustration": 0.38,
+        "engagement": 90.99,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 445,
+      "timestamp": 17.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 494,
+        "startY": 227,
+        "endX": 792,
+        "endY": 581
+      },
+      "emotions": {
+        "neutral": 5.54,
+        "happy": 74.34,
+        "sad": 3.46,
+        "surprise": 6.65,
+        "fear": 4.33,
+        "disgust": 2.8,
+        "angry": 2.87,
+        "frustration": 1.3,
+        "engagement": 69.03,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 450,
+      "timestamp": 18.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 237,
+        "endX": 807,
+        "endY": 585
+      },
+      "emotions": {
+        "neutral": 2.94,
+        "happy": 89.84,
+        "sad": 1.44,
+        "surprise": 2.75,
+        "fear": 1.66,
+        "disgust": 0.3,
+        "angry": 1.06,
+        "frustration": 0.49,
+        "engagement": 87.94,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 455,
+      "timestamp": 18.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 511,
+        "startY": 243,
+        "endX": 803,
+        "endY": 587
+      },
+      "emotions": {
+        "neutral": 6.31,
+        "happy": 78.88,
+        "sad": 4.01,
+        "surprise": 4.43,
+        "fear": 3.48,
+        "disgust": 0.88,
+        "angry": 2.03,
+        "frustration": 0.97,
+        "engagement": 74.58,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 460,
+      "timestamp": 18.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 505,
+        "startY": 240,
+        "endX": 801,
+        "endY": 585
+      },
+      "emotions": {
+        "neutral": 3.58,
+        "happy": 86.57,
+        "sad": 2.36,
+        "surprise": 3.37,
+        "fear": 1.97,
+        "disgust": 0.81,
+        "angry": 1.34,
+        "frustration": 0.63,
+        "engagement": 83.93,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 465,
+      "timestamp": 18.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 503,
+        "startY": 235,
+        "endX": 794,
+        "endY": 573
+      },
+      "emotions": {
+        "neutral": 25.73,
+        "happy": 12.26,
+        "sad": 22.29,
+        "surprise": 14.22,
+        "fear": 9.12,
+        "disgust": 10.07,
+        "angry": 6.32,
+        "frustration": 3.53,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 470,
+      "timestamp": 18.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 501,
+        "startY": 234,
+        "endX": 775,
+        "endY": 560
+      },
+      "emotions": {
+        "neutral": 61.86,
+        "happy": 4.49,
+        "sad": 23.46,
+        "surprise": 2.72,
+        "fear": 1.42,
+        "disgust": 1.27,
+        "angry": 4.77,
+        "frustration": 1.38,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 475,
+      "timestamp": 19.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 502,
+        "startY": 246,
+        "endX": 758,
+        "endY": 556
+      },
+      "emotions": {
+        "neutral": 78.73,
+        "happy": 5.88,
+        "sad": 10.25,
+        "surprise": 1.44,
+        "fear": 0.29,
+        "disgust": 0.2,
+        "angry": 3.2,
+        "frustration": 0.57,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 480,
+      "timestamp": 19.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 254,
+        "endX": 760,
+        "endY": 555
+      },
+      "emotions": {
+        "neutral": 77.45,
+        "happy": 2.28,
+        "sad": 14.96,
+        "surprise": 0.9,
+        "fear": 0.38,
+        "disgust": 0.17,
+        "angry": 3.85,
+        "frustration": 0.72,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 485,
+      "timestamp": 19.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 509,
+        "startY": 256,
+        "endX": 756,
+        "endY": 552
+      },
+      "emotions": {
+        "neutral": 69.14,
+        "happy": 1.72,
+        "sad": 22.29,
+        "surprise": 0.71,
+        "fear": 0.31,
+        "disgust": 0.29,
+        "angry": 5.54,
+        "frustration": 1.0,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 490,
+      "timestamp": 19.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 510,
+        "startY": 263,
+        "endX": 754,
+        "endY": 554
+      },
+      "emotions": {
+        "neutral": 33.72,
+        "happy": 2.06,
+        "sad": 35.87,
+        "surprise": 0.63,
+        "fear": 2.2,
+        "disgust": 3.24,
+        "angry": 22.29,
+        "frustration": 3.99,
+        "engagement": 0,
+        "brow_furrow_score": 3.51
+      }
+    },
+    {
+      "frame_number": 495,
+      "timestamp": 19.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 508,
+        "startY": 259,
+        "endX": 752,
+        "endY": 551
+      },
+      "emotions": {
+        "neutral": 20.99,
+        "happy": 2.87,
+        "sad": 43.89,
+        "surprise": 1.4,
+        "fear": 7.59,
+        "disgust": 7.38,
+        "angry": 15.88,
+        "frustration": 3.07,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 500,
+      "timestamp": 20.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 510,
+        "startY": 268,
+        "endX": 752,
+        "endY": 555
+      },
+      "emotions": {
+        "neutral": 12.6,
+        "happy": 2.71,
+        "sad": 50.21,
+        "surprise": 1.42,
+        "fear": 15.54,
+        "disgust": 3.32,
+        "angry": 14.21,
+        "frustration": 9.12,
+        "engagement": 0,
+        "brow_furrow_score": 8.33
+      }
+    },
+    {
+      "frame_number": 505,
+      "timestamp": 20.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 501,
+        "startY": 262,
+        "endX": 739,
+        "endY": 547
+      },
+      "emotions": {
+        "neutral": 17.27,
+        "happy": 4.02,
+        "sad": 31.03,
+        "surprise": 1.37,
+        "fear": 21.23,
+        "disgust": 4.19,
+        "angry": 20.9,
+        "frustration": 4.67,
+        "engagement": 0,
+        "brow_furrow_score": 1.01
+      }
+    },
+    {
+      "frame_number": 510,
+      "timestamp": 20.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 501,
+        "startY": 265,
+        "endX": 744,
+        "endY": 555
+      },
+      "emotions": {
+        "neutral": 16.48,
+        "happy": 5.0,
+        "sad": 32.6,
+        "surprise": 1.72,
+        "fear": 24.04,
+        "disgust": 3.99,
+        "angry": 16.18,
+        "frustration": 9.49,
+        "engagement": 0,
+        "brow_furrow_score": 8.33
+      }
+    },
+    {
+      "frame_number": 515,
+      "timestamp": 20.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 484,
+        "startY": 273,
+        "endX": 757,
+        "endY": 570
+      },
+      "emotions": {
+        "neutral": 24.65,
+        "happy": 12.41,
+        "sad": 18.66,
+        "surprise": 14.97,
+        "fear": 18.7,
+        "disgust": 2.47,
+        "angry": 8.14,
+        "frustration": 4.29,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 520,
+      "timestamp": 20.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 496,
+        "startY": 282,
+        "endX": 744,
+        "endY": 578
+      },
+      "emotions": {
+        "neutral": 14.11,
+        "happy": 4.71,
+        "sad": 36.58,
+        "surprise": 2.74,
+        "fear": 16.02,
+        "disgust": 4.64,
+        "angry": 21.2,
+        "frustration": 6.13,
+        "engagement": 0,
+        "brow_furrow_score": 3.89
+      }
+    },
+    {
+      "frame_number": 525,
+      "timestamp": 21.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 507,
+        "startY": 274,
+        "endX": 749,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 11.88,
+        "happy": 3.65,
+        "sad": 20.85,
+        "surprise": 1.53,
+        "fear": 28.59,
+        "disgust": 6.27,
+        "angry": 27.24,
+        "frustration": 4.64,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 530,
+      "timestamp": 21.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 501,
+        "startY": 250,
+        "endX": 746,
+        "endY": 554
+      },
+      "emotions": {
+        "neutral": 14.73,
+        "happy": 2.95,
+        "sad": 13.22,
+        "surprise": 2.87,
+        "fear": 15.18,
+        "disgust": 23.55,
+        "angry": 27.5,
+        "frustration": 7.07,
+        "engagement": 0,
+        "brow_furrow_score": 5.91
+      }
+    },
+    {
+      "frame_number": 535,
+      "timestamp": 21.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 497,
+        "startY": 246,
+        "endX": 746,
+        "endY": 550
+      },
+      "emotions": {
+        "neutral": 12.79,
+        "happy": 2.7,
+        "sad": 6.66,
+        "surprise": 2.64,
+        "fear": 2.09,
+        "disgust": 65.13,
+        "angry": 7.99,
+        "frustration": 4.25,
+        "engagement": 0,
+        "brow_furrow_score": 1.53
+      }
+    },
+    {
+      "frame_number": 540,
+      "timestamp": 21.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 500,
+        "startY": 246,
+        "endX": 749,
+        "endY": 549
+      },
+      "emotions": {
+        "neutral": 15.53,
+        "happy": 2.59,
+        "sad": 15.58,
+        "surprise": 3.63,
+        "fear": 6.68,
+        "disgust": 44.8,
+        "angry": 11.19,
+        "frustration": 5.96,
+        "engagement": 0,
+        "brow_furrow_score": 4.08
+      }
+    },
+    {
+      "frame_number": 545,
+      "timestamp": 21.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 496,
+        "startY": 251,
+        "endX": 742,
+        "endY": 551
+      },
+      "emotions": {
+        "neutral": 15.67,
+        "happy": 2.29,
+        "sad": 23.29,
+        "surprise": 2.29,
+        "fear": 8.65,
+        "disgust": 32.34,
+        "angry": 15.47,
+        "frustration": 4.66,
+        "engagement": 0,
+        "brow_furrow_score": 2.02
+      }
+    },
+    {
+      "frame_number": 550,
+      "timestamp": 22.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 490,
+        "startY": 258,
+        "endX": 751,
+        "endY": 560
+      },
+      "emotions": {
+        "neutral": 15.6,
+        "happy": 6.87,
+        "sad": 32.2,
+        "surprise": 8.93,
+        "fear": 18.7,
+        "disgust": 11.08,
+        "angry": 6.61,
+        "frustration": 4.69,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 555,
+      "timestamp": 22.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 497,
+        "startY": 265,
+        "endX": 739,
+        "endY": 563
+      },
+      "emotions": {
+        "neutral": 16.89,
+        "happy": 4.94,
+        "sad": 31.41,
+        "surprise": 2.76,
+        "fear": 16.48,
+        "disgust": 15.89,
+        "angry": 11.64,
+        "frustration": 4.09,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 560,
+      "timestamp": 22.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 492,
+        "startY": 255,
+        "endX": 734,
+        "endY": 558
+      },
+      "emotions": {
+        "neutral": 10.52,
+        "happy": 3.26,
+        "sad": 31.82,
+        "surprise": 1.59,
+        "fear": 17.0,
+        "disgust": 22.73,
+        "angry": 13.08,
+        "frustration": 4.35,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 565,
+      "timestamp": 22.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 479,
+        "startY": 259,
+        "endX": 725,
+        "endY": 567
+      },
+      "emotions": {
+        "neutral": 7.22,
+        "happy": 4.01,
+        "sad": 13.89,
+        "surprise": 4.65,
+        "fear": 22.9,
+        "disgust": 25.31,
+        "angry": 22.03,
+        "frustration": 5.12,
+        "engagement": 0,
+        "brow_furrow_score": 0.73
+      }
+    },
+    {
+      "frame_number": 570,
+      "timestamp": 22.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 473,
+        "startY": 268,
+        "endX": 718,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 7.21,
+        "happy": 3.72,
+        "sad": 30.54,
+        "surprise": 1.32,
+        "fear": 13.86,
+        "disgust": 33.21,
+        "angry": 10.14,
+        "frustration": 5.05,
+        "engagement": 0,
+        "brow_furrow_score": 1.21
+      }
+    },
+    {
+      "frame_number": 575,
+      "timestamp": 23.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 473,
+        "startY": 265,
+        "endX": 727,
+        "endY": 572
+      },
+      "emotions": {
+        "neutral": 5.57,
+        "happy": 4.58,
+        "sad": 28.98,
+        "surprise": 1.41,
+        "fear": 15.21,
+        "disgust": 37.72,
+        "angry": 6.53,
+        "frustration": 5.88,
+        "engagement": 0,
+        "brow_furrow_score": 2.12
+      }
+    },
+    {
+      "frame_number": 580,
+      "timestamp": 23.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 462,
+        "startY": 267,
+        "endX": 714,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 5.86,
+        "happy": 6.43,
+        "sad": 47.48,
+        "surprise": 1.75,
+        "fear": 12.3,
+        "disgust": 22.46,
+        "angry": 3.73,
+        "frustration": 4.69,
+        "engagement": 0,
+        "brow_furrow_score": 0.46
+      }
+    },
+    {
+      "frame_number": 585,
+      "timestamp": 23.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 463,
+        "startY": 262,
+        "endX": 716,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 10.91,
+        "happy": 9.38,
+        "sad": 41.12,
+        "surprise": 2.3,
+        "fear": 16.71,
+        "disgust": 13.21,
+        "angry": 6.39,
+        "frustration": 4.76,
+        "engagement": 0,
+        "brow_furrow_score": 0.66
+      }
+    },
+    {
+      "frame_number": 590,
+      "timestamp": 23.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 458,
+        "startY": 259,
+        "endX": 716,
+        "endY": 571
+      },
+      "emotions": {
+        "neutral": 9.2,
+        "happy": 5.3,
+        "sad": 34.32,
+        "surprise": 2.16,
+        "fear": 27.81,
+        "disgust": 13.7,
+        "angry": 7.51,
+        "frustration": 5.43,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 595,
+      "timestamp": 23.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 460,
+        "startY": 261,
+        "endX": 723,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 7.57,
+        "happy": 4.11,
+        "sad": 39.53,
+        "surprise": 2.52,
+        "fear": 29.84,
+        "disgust": 9.97,
+        "angry": 6.46,
+        "frustration": 6.58,
+        "engagement": 0,
+        "brow_furrow_score": 1.36
+      }
+    },
+    {
+      "frame_number": 600,
+      "timestamp": 24.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 462,
+        "startY": 259,
+        "endX": 730,
+        "endY": 572
+      },
+      "emotions": {
+        "neutral": 5.91,
+        "happy": 3.15,
+        "sad": 32.05,
+        "surprise": 1.62,
+        "fear": 39.45,
+        "disgust": 11.16,
+        "angry": 6.65,
+        "frustration": 6.59,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 605,
+      "timestamp": 24.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 468,
+        "startY": 260,
+        "endX": 733,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 5.06,
+        "happy": 3.03,
+        "sad": 34.86,
+        "surprise": 1.5,
+        "fear": 39.0,
+        "disgust": 9.66,
+        "angry": 6.88,
+        "frustration": 6.58,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 610,
+      "timestamp": 24.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 471,
+        "startY": 260,
+        "endX": 736,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 4.34,
+        "happy": 2.84,
+        "sad": 34.97,
+        "surprise": 1.33,
+        "fear": 48.28,
+        "disgust": 3.65,
+        "angry": 4.6,
+        "frustration": 7.76,
+        "engagement": 0,
+        "brow_furrow_score": 0.53
+      }
+    },
+    {
+      "frame_number": 615,
+      "timestamp": 24.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 257,
+        "endX": 738,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 4.41,
+        "happy": 2.49,
+        "sad": 37.58,
+        "surprise": 1.95,
+        "fear": 45.92,
+        "disgust": 2.79,
+        "angry": 4.86,
+        "frustration": 7.48,
+        "engagement": 0,
+        "brow_furrow_score": 0.34
+      }
+    },
+    {
+      "frame_number": 620,
+      "timestamp": 24.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 252,
+        "endX": 740,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 4.99,
+        "happy": 2.97,
+        "sad": 28.15,
+        "surprise": 2.11,
+        "fear": 53.6,
+        "disgust": 3.18,
+        "angry": 4.99,
+        "frustration": 8.67,
+        "engagement": 0,
+        "brow_furrow_score": 1.36
+      }
+    },
+    {
+      "frame_number": 625,
+      "timestamp": 25.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 480,
+        "startY": 253,
+        "endX": 742,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 6.47,
+        "happy": 2.47,
+        "sad": 33.93,
+        "surprise": 1.92,
+        "fear": 37.47,
+        "disgust": 2.98,
+        "angry": 14.75,
+        "frustration": 8.51,
+        "engagement": 0,
+        "brow_furrow_score": 3.97
+      }
+    },
+    {
+      "frame_number": 630,
+      "timestamp": 25.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 249,
+        "endX": 741,
+        "endY": 570
+      },
+      "emotions": {
+        "neutral": 5.8,
+        "happy": 3.13,
+        "sad": 30.81,
+        "surprise": 1.73,
+        "fear": 45.42,
+        "disgust": 5.36,
+        "angry": 7.75,
+        "frustration": 9.53,
+        "engagement": 0,
+        "brow_furrow_score": 4.15
+      }
+    },
+    {
+      "frame_number": 635,
+      "timestamp": 25.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 474,
+        "startY": 248,
+        "endX": 742,
+        "endY": 574
+      },
+      "emotions": {
+        "neutral": 6.69,
+        "happy": 4.64,
+        "sad": 21.38,
+        "surprise": 4.33,
+        "fear": 40.57,
+        "disgust": 8.43,
+        "angry": 13.95,
+        "frustration": 7.67,
+        "engagement": 0,
+        "brow_furrow_score": 2.11
+      }
+    },
+    {
+      "frame_number": 640,
+      "timestamp": 25.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 472,
+        "startY": 244,
+        "endX": 741,
+        "endY": 576
+      },
+      "emotions": {
+        "neutral": 7.42,
+        "happy": 3.91,
+        "sad": 20.44,
+        "surprise": 5.53,
+        "fear": 38.79,
+        "disgust": 9.11,
+        "angry": 14.79,
+        "frustration": 6.83,
+        "engagement": 0,
+        "brow_furrow_score": 0.91
+      }
+    },
+    {
+      "frame_number": 645,
+      "timestamp": 25.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 473,
+        "startY": 244,
+        "endX": 736,
+        "endY": 566
+      },
+      "emotions": {
+        "neutral": 7.74,
+        "happy": 5.39,
+        "sad": 35.06,
+        "surprise": 2.39,
+        "fear": 20.57,
+        "disgust": 22.86,
+        "angry": 5.99,
+        "frustration": 4.98,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 650,
+      "timestamp": 26.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 472,
+        "startY": 245,
+        "endX": 738,
+        "endY": 563
+      },
+      "emotions": {
+        "neutral": 7.66,
+        "happy": 4.41,
+        "sad": 39.43,
+        "surprise": 2.77,
+        "fear": 29.74,
+        "disgust": 9.59,
+        "angry": 6.38,
+        "frustration": 5.75,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 655,
+      "timestamp": 26.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 474,
+        "startY": 242,
+        "endX": 736,
+        "endY": 561
+      },
+      "emotions": {
+        "neutral": 8.72,
+        "happy": 4.15,
+        "sad": 42.1,
+        "surprise": 2.83,
+        "fear": 29.25,
+        "disgust": 6.5,
+        "angry": 6.46,
+        "frustration": 5.68,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 660,
+      "timestamp": 26.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 474,
+        "startY": 242,
+        "endX": 738,
+        "endY": 560
+      },
+      "emotions": {
+        "neutral": 7.95,
+        "happy": 3.51,
+        "sad": 38.74,
+        "surprise": 2.98,
+        "fear": 31.05,
+        "disgust": 7.97,
+        "angry": 7.8,
+        "frustration": 6.15,
+        "engagement": 0,
+        "brow_furrow_score": 0.53
+      }
+    },
+    {
+      "frame_number": 665,
+      "timestamp": 26.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 241,
+        "endX": 739,
+        "endY": 560
+      },
+      "emotions": {
+        "neutral": 6.8,
+        "happy": 3.55,
+        "sad": 38.08,
+        "surprise": 3.15,
+        "fear": 32.8,
+        "disgust": 8.34,
+        "angry": 7.28,
+        "frustration": 6.05,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 670,
+      "timestamp": 26.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 476,
+        "startY": 241,
+        "endX": 740,
+        "endY": 570
+      },
+      "emotions": {
+        "neutral": 9.07,
+        "happy": 4.74,
+        "sad": 33.29,
+        "surprise": 5.65,
+        "fear": 17.92,
+        "disgust": 20.9,
+        "angry": 8.44,
+        "frustration": 6.32,
+        "engagement": 0,
+        "brow_furrow_score": 2.58
+      }
+    },
+    {
+      "frame_number": 675,
+      "timestamp": 27.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 240,
+        "endX": 741,
+        "endY": 575
+      },
+      "emotions": {
+        "neutral": 8.48,
+        "happy": 3.56,
+        "sad": 25.96,
+        "surprise": 13.13,
+        "fear": 18.75,
+        "disgust": 16.7,
+        "angry": 13.43,
+        "frustration": 5.01,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 680,
+      "timestamp": 27.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 479,
+        "startY": 239,
+        "endX": 741,
+        "endY": 567
+      },
+      "emotions": {
+        "neutral": 6.87,
+        "happy": 6.93,
+        "sad": 31.45,
+        "surprise": 2.63,
+        "fear": 10.22,
+        "disgust": 37.89,
+        "angry": 4.01,
+        "frustration": 4.21,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 685,
+      "timestamp": 27.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 240,
+        "endX": 743,
+        "endY": 565
+      },
+      "emotions": {
+        "neutral": 8.6,
+        "happy": 48.7,
+        "sad": 16.69,
+        "surprise": 3.59,
+        "fear": 5.72,
+        "disgust": 12.87,
+        "angry": 3.82,
+        "frustration": 2.16,
+        "engagement": 35.16,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 690,
+      "timestamp": 27.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 240,
+        "endX": 745,
+        "endY": 565
+      },
+      "emotions": {
+        "neutral": 8.02,
+        "happy": 50.44,
+        "sad": 15.41,
+        "surprise": 4.45,
+        "fear": 6.28,
+        "disgust": 10.99,
+        "angry": 4.41,
+        "frustration": 2.17,
+        "engagement": 37.45,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 695,
+      "timestamp": 27.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 250,
+        "endX": 744,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 8.75,
+        "happy": 54.2,
+        "sad": 7.62,
+        "surprise": 5.29,
+        "fear": 3.23,
+        "disgust": 17.1,
+        "angry": 3.81,
+        "frustration": 1.8,
+        "engagement": 43.09,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 700,
+      "timestamp": 28.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 479,
+        "startY": 248,
+        "endX": 741,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 12.44,
+        "happy": 17.68,
+        "sad": 12.47,
+        "surprise": 3.57,
+        "fear": 2.39,
+        "disgust": 46.94,
+        "angry": 4.5,
+        "frustration": 2.95,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 705,
+      "timestamp": 28.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 479,
+        "startY": 244,
+        "endX": 741,
+        "endY": 566
+      },
+      "emotions": {
+        "neutral": 5.99,
+        "happy": 7.21,
+        "sad": 25.63,
+        "surprise": 6.3,
+        "fear": 38.9,
+        "disgust": 10.83,
+        "angry": 5.15,
+        "frustration": 6.63,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 710,
+      "timestamp": 28.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 245,
+        "endX": 732,
+        "endY": 567
+      },
+      "emotions": {
+        "neutral": 6.13,
+        "happy": 8.42,
+        "sad": 50.81,
+        "surprise": 3.69,
+        "fear": 18.27,
+        "disgust": 9.31,
+        "angry": 3.38,
+        "frustration": 4.89,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 715,
+      "timestamp": 28.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 472,
+        "startY": 252,
+        "endX": 729,
+        "endY": 569
+      },
+      "emotions": {
+        "neutral": 7.59,
+        "happy": 7.75,
+        "sad": 49.66,
+        "surprise": 4.63,
+        "fear": 22.25,
+        "disgust": 4.87,
+        "angry": 3.25,
+        "frustration": 5.22,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 720,
+      "timestamp": 28.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 471,
+        "startY": 256,
+        "endX": 729,
+        "endY": 572
+      },
+      "emotions": {
+        "neutral": 9.83,
+        "happy": 2.71,
+        "sad": 68.36,
+        "surprise": 2.93,
+        "fear": 10.19,
+        "disgust": 0.88,
+        "angry": 5.1,
+        "frustration": 4.23,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 725,
+      "timestamp": 29.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 473,
+        "startY": 258,
+        "endX": 732,
+        "endY": 575
+      },
+      "emotions": {
+        "neutral": 6.86,
+        "happy": 2.63,
+        "sad": 74.18,
+        "surprise": 2.06,
+        "fear": 6.88,
+        "disgust": 4.24,
+        "angry": 3.14,
+        "frustration": 4.13,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 730,
+      "timestamp": 29.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 265,
+        "endX": 739,
+        "endY": 585
+      },
+      "emotions": {
+        "neutral": 7.24,
+        "happy": 4.77,
+        "sad": 43.39,
+        "surprise": 5.54,
+        "fear": 28.48,
+        "disgust": 6.3,
+        "angry": 4.27,
+        "frustration": 5.85,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 735,
+      "timestamp": 29.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 483,
+        "startY": 261,
+        "endX": 743,
+        "endY": 580
+      },
+      "emotions": {
+        "neutral": 7.29,
+        "happy": 3.46,
+        "sad": 79.22,
+        "surprise": 1.58,
+        "fear": 4.57,
+        "disgust": 1.28,
+        "angry": 2.6,
+        "frustration": 3.89,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 740,
+      "timestamp": 29.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 485,
+        "startY": 262,
+        "endX": 747,
+        "endY": 580
+      },
+      "emotions": {
+        "neutral": 5.97,
+        "happy": 2.99,
+        "sad": 77.96,
+        "surprise": 1.76,
+        "fear": 7.27,
+        "disgust": 1.47,
+        "angry": 2.58,
+        "frustration": 4.19,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 745,
+      "timestamp": 29.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 488,
+        "startY": 262,
+        "endX": 749,
+        "endY": 577
+      },
+      "emotions": {
+        "neutral": 6.53,
+        "happy": 2.94,
+        "sad": 70.47,
+        "surprise": 2.82,
+        "fear": 13.19,
+        "disgust": 1.66,
+        "angry": 2.38,
+        "frustration": 4.69,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 750,
+      "timestamp": 30.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 491,
+        "startY": 259,
+        "endX": 750,
+        "endY": 576
+      },
+      "emotions": {
+        "neutral": 6.19,
+        "happy": 2.96,
+        "sad": 65.15,
+        "surprise": 2.53,
+        "fear": 19.74,
+        "disgust": 1.2,
+        "angry": 2.23,
+        "frustration": 5.22,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 755,
+      "timestamp": 30.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 492,
+        "startY": 252,
+        "endX": 751,
+        "endY": 572
+      },
+      "emotions": {
+        "neutral": 10.6,
+        "happy": 2.83,
+        "sad": 75.57,
+        "surprise": 1.71,
+        "fear": 5.64,
+        "disgust": 0.83,
+        "angry": 2.82,
+        "frustration": 3.87,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 760,
+      "timestamp": 30.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 488,
+        "startY": 244,
+        "endX": 751,
+        "endY": 568
+      },
+      "emotions": {
+        "neutral": 8.59,
+        "happy": 4.63,
+        "sad": 47.93,
+        "surprise": 4.06,
+        "fear": 27.44,
+        "disgust": 3.85,
+        "angry": 3.49,
+        "frustration": 5.69,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 765,
+      "timestamp": 30.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 488,
+        "startY": 239,
+        "endX": 751,
+        "endY": 566
+      },
+      "emotions": {
+        "neutral": 7.07,
+        "happy": 3.3,
+        "sad": 53.13,
+        "surprise": 3.83,
+        "fear": 25.69,
+        "disgust": 3.81,
+        "angry": 3.18,
+        "frustration": 5.67,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 770,
+      "timestamp": 30.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 483,
+        "startY": 242,
+        "endX": 745,
+        "endY": 567
+      },
+      "emotions": {
+        "neutral": 8.9,
+        "happy": 4.93,
+        "sad": 59.05,
+        "surprise": 4.52,
+        "fear": 15.06,
+        "disgust": 4.3,
+        "angry": 3.25,
+        "frustration": 4.7,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 775,
+      "timestamp": 31.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 482,
+        "startY": 238,
+        "endX": 743,
+        "endY": 562
+      },
+      "emotions": {
+        "neutral": 10.59,
+        "happy": 3.46,
+        "sad": 68.03,
+        "surprise": 3.55,
+        "fear": 10.61,
+        "disgust": 1.03,
+        "angry": 2.73,
+        "frustration": 4.32,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 780,
+      "timestamp": 31.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 481,
+        "startY": 240,
+        "endX": 746,
+        "endY": 567
+      },
+      "emotions": {
+        "neutral": 8.77,
+        "happy": 3.19,
+        "sad": 56.18,
+        "surprise": 8.54,
+        "fear": 17.75,
+        "disgust": 2.27,
+        "angry": 3.3,
+        "frustration": 5.15,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 785,
+      "timestamp": 31.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 483,
+        "startY": 240,
+        "endX": 748,
+        "endY": 567
+      },
+      "emotions": {
+        "neutral": 8.44,
+        "happy": 2.7,
+        "sad": 69.91,
+        "surprise": 3.25,
+        "fear": 8.14,
+        "disgust": 4.75,
+        "angry": 2.8,
+        "frustration": 4.22,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 790,
+      "timestamp": 31.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 477,
+        "startY": 239,
+        "endX": 737,
+        "endY": 564
+      },
+      "emotions": {
+        "neutral": 7.78,
+        "happy": 2.54,
+        "sad": 82.99,
+        "surprise": 1.24,
+        "fear": 3.31,
+        "disgust": 0.65,
+        "angry": 1.48,
+        "frustration": 3.84,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 795,
+      "timestamp": 31.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 474,
+        "startY": 242,
+        "endX": 737,
+        "endY": 562
+      },
+      "emotions": {
+        "neutral": 20.05,
+        "happy": 3.66,
+        "sad": 57.36,
+        "surprise": 5.23,
+        "fear": 5.95,
+        "disgust": 3.67,
+        "angry": 4.09,
+        "frustration": 3.57,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 800,
+      "timestamp": 32.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 472,
+        "startY": 231,
+        "endX": 729,
+        "endY": 544
+      },
+      "emotions": {
+        "neutral": 53.57,
+        "happy": 10.86,
+        "sad": 21.04,
+        "surprise": 2.97,
+        "fear": 1.77,
+        "disgust": 2.29,
+        "angry": 7.5,
+        "frustration": 1.38,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 805,
+      "timestamp": 32.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 475,
+        "startY": 224,
+        "endX": 723,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 52.97,
+        "happy": 12.98,
+        "sad": 26.84,
+        "surprise": 1.11,
+        "fear": 1.16,
+        "disgust": 1.02,
+        "angry": 3.92,
+        "frustration": 1.34,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 810,
+      "timestamp": 32.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 472,
+        "startY": 221,
+        "endX": 719,
+        "endY": 530
+      },
+      "emotions": {
+        "neutral": 72.01,
+        "happy": 15.68,
+        "sad": 7.09,
+        "surprise": 0.93,
+        "fear": 0.25,
+        "disgust": 0.36,
+        "angry": 3.68,
+        "frustration": 0.4,
+        "engagement": 4.67,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 815,
+      "timestamp": 32.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 466,
+        "startY": 221,
+        "endX": 714,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 45.18,
+        "happy": 12.72,
+        "sad": 12.65,
+        "surprise": 9.67,
+        "fear": 2.85,
+        "disgust": 9.02,
+        "angry": 7.92,
+        "frustration": 1.98,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 820,
+      "timestamp": 32.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 464,
+        "startY": 220,
+        "endX": 712,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 39.8,
+        "happy": 9.12,
+        "sad": 12.96,
+        "surprise": 16.07,
+        "fear": 2.82,
+        "disgust": 11.99,
+        "angry": 7.25,
+        "frustration": 2.62,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 825,
+      "timestamp": 33.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 462,
+        "startY": 219,
+        "endX": 713,
+        "endY": 533
+      },
+      "emotions": {
+        "neutral": 75.83,
+        "happy": 5.71,
+        "sad": 7.49,
+        "surprise": 0.76,
+        "fear": 0.36,
+        "disgust": 0.68,
+        "angry": 9.18,
+        "frustration": 0.43,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 830,
+      "timestamp": 33.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 462,
+        "startY": 220,
+        "endX": 711,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 58.99,
+        "happy": 2.38,
+        "sad": 19.33,
+        "surprise": 1.76,
+        "fear": 1.54,
+        "disgust": 2.24,
+        "angry": 13.76,
+        "frustration": 1.19,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 835,
+      "timestamp": 33.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 461,
+        "startY": 226,
+        "endX": 709,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 40.14,
+        "happy": 2.52,
+        "sad": 27.6,
+        "surprise": 6.0,
+        "fear": 5.09,
+        "disgust": 10.18,
+        "angry": 8.48,
+        "frustration": 2.6,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 840,
+      "timestamp": 33.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 464,
+        "startY": 227,
+        "endX": 713,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 59.33,
+        "happy": 2.52,
+        "sad": 25.48,
+        "surprise": 2.58,
+        "fear": 1.65,
+        "disgust": 2.47,
+        "angry": 5.97,
+        "frustration": 1.52,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 845,
+      "timestamp": 33.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 464,
+        "startY": 227,
+        "endX": 714,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 74.24,
+        "happy": 2.27,
+        "sad": 14.75,
+        "surprise": 0.45,
+        "fear": 0.29,
+        "disgust": 0.39,
+        "angry": 7.6,
+        "frustration": 0.68,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 850,
+      "timestamp": 34.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 463,
+        "startY": 229,
+        "endX": 715,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 74.92,
+        "happy": 1.8,
+        "sad": 15.82,
+        "surprise": 0.32,
+        "fear": 0.21,
+        "disgust": 0.26,
+        "angry": 6.67,
+        "frustration": 0.69,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 855,
+      "timestamp": 34.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 464,
+        "startY": 229,
+        "endX": 715,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 69.63,
+        "happy": 1.8,
+        "sad": 20.04,
+        "surprise": 0.39,
+        "fear": 0.33,
+        "disgust": 0.27,
+        "angry": 7.55,
+        "frustration": 0.88,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 860,
+      "timestamp": 34.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 463,
+        "startY": 230,
+        "endX": 714,
+        "endY": 534
+      },
+      "emotions": {
+        "neutral": 71.63,
+        "happy": 1.71,
+        "sad": 17.12,
+        "surprise": 0.3,
+        "fear": 0.26,
+        "disgust": 0.32,
+        "angry": 8.67,
+        "frustration": 0.75,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 865,
+      "timestamp": 34.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 231,
+        "endX": 716,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 71.75,
+        "happy": 1.66,
+        "sad": 17.84,
+        "surprise": 0.37,
+        "fear": 0.31,
+        "disgust": 0.3,
+        "angry": 7.77,
+        "frustration": 0.79,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 870,
+      "timestamp": 34.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 231,
+        "endX": 716,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 66.23,
+        "happy": 1.54,
+        "sad": 21.34,
+        "surprise": 0.3,
+        "fear": 0.3,
+        "disgust": 0.43,
+        "angry": 9.85,
+        "frustration": 0.93,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 875,
+      "timestamp": 35.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 231,
+        "endX": 715,
+        "endY": 536
+      },
+      "emotions": {
+        "neutral": 68.11,
+        "happy": 1.28,
+        "sad": 21.22,
+        "surprise": 0.2,
+        "fear": 0.19,
+        "disgust": 0.3,
+        "angry": 8.7,
+        "frustration": 0.9,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 880,
+      "timestamp": 35.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 230,
+        "endX": 715,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 67.65,
+        "happy": 0.98,
+        "sad": 22.8,
+        "surprise": 0.2,
+        "fear": 0.18,
+        "disgust": 0.29,
+        "angry": 7.91,
+        "frustration": 0.96,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 885,
+      "timestamp": 35.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 464,
+        "startY": 230,
+        "endX": 715,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 67.61,
+        "happy": 0.88,
+        "sad": 22.38,
+        "surprise": 0.19,
+        "fear": 0.18,
+        "disgust": 0.24,
+        "angry": 8.52,
+        "frustration": 0.94,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 890,
+      "timestamp": 35.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 230,
+        "endX": 714,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 69.37,
+        "happy": 0.91,
+        "sad": 19.43,
+        "surprise": 0.18,
+        "fear": 0.16,
+        "disgust": 0.2,
+        "angry": 9.75,
+        "frustration": 0.82,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 895,
+      "timestamp": 35.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 230,
+        "endX": 715,
+        "endY": 535
+      },
+      "emotions": {
+        "neutral": 67.35,
+        "happy": 0.79,
+        "sad": 22.46,
+        "surprise": 0.15,
+        "fear": 0.14,
+        "disgust": 0.16,
+        "angry": 8.94,
+        "frustration": 0.93,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 900,
+      "timestamp": 36.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 465,
+        "startY": 230,
+        "endX": 714,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 66.76,
+        "happy": 1.39,
+        "sad": 24.65,
+        "surprise": 1.17,
+        "fear": 0.49,
+        "disgust": 0.52,
+        "angry": 5.01,
+        "frustration": 1.16,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 905,
+      "timestamp": 36.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 466,
+        "startY": 228,
+        "endX": 715,
+        "endY": 537
+      },
+      "emotions": {
+        "neutral": 63.75,
+        "happy": 1.58,
+        "sad": 26.37,
+        "surprise": 1.73,
+        "fear": 0.81,
+        "disgust": 0.76,
+        "angry": 4.99,
+        "frustration": 1.32,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 910,
+      "timestamp": 36.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 468,
+        "startY": 228,
+        "endX": 717,
+        "endY": 538
+      },
+      "emotions": {
+        "neutral": 59.9,
+        "happy": 2.82,
+        "sad": 26.98,
+        "surprise": 1.85,
+        "fear": 0.65,
+        "disgust": 2.95,
+        "angry": 4.83,
+        "frustration": 1.42,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 915,
+      "timestamp": 36.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 468,
+        "startY": 232,
+        "endX": 717,
+        "endY": 539
+      },
+      "emotions": {
+        "neutral": 35.94,
+        "happy": 2.4,
+        "sad": 17.14,
+        "surprise": 10.4,
+        "fear": 3.41,
+        "disgust": 17.72,
+        "angry": 13.0,
+        "frustration": 2.64,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 920,
+      "timestamp": 36.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 467,
+        "startY": 233,
+        "endX": 718,
+        "endY": 544
+      },
+      "emotions": {
+        "neutral": 46.61,
+        "happy": 4.65,
+        "sad": 15.08,
+        "surprise": 19.74,
+        "fear": 1.69,
+        "disgust": 8.16,
+        "angry": 4.08,
+        "frustration": 2.71,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 925,
+      "timestamp": 37.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 470,
+        "startY": 234,
+        "endX": 721,
+        "endY": 541
+      },
+      "emotions": {
+        "neutral": 43.39,
+        "happy": 5.21,
+        "sad": 13.88,
+        "surprise": 6.94,
+        "fear": 1.3,
+        "disgust": 25.49,
+        "angry": 3.8,
+        "frustration": 2.29,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 930,
+      "timestamp": 37.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 473,
+        "startY": 236,
+        "endX": 726,
+        "endY": 541
+      },
+      "emotions": {
+        "neutral": 35.49,
+        "happy": 12.28,
+        "sad": 14.59,
+        "surprise": 4.97,
+        "fear": 1.32,
+        "disgust": 27.63,
+        "angry": 3.71,
+        "frustration": 2.25,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 935,
+      "timestamp": 37.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 476,
+        "startY": 241,
+        "endX": 728,
+        "endY": 543
+      },
+      "emotions": {
+        "neutral": 13.13,
+        "happy": 17.96,
+        "sad": 13.69,
+        "surprise": 7.58,
+        "fear": 4.05,
+        "disgust": 39.49,
+        "angry": 4.1,
+        "frustration": 3.22,
+        "engagement": 0,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 940,
+      "timestamp": 37.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 482,
+        "startY": 267,
+        "endX": 726,
+        "endY": 562
+      },
+      "emotions": {
+        "neutral": 9.77,
+        "happy": 60.65,
+        "sad": 8.57,
+        "surprise": 6.39,
+        "fear": 4.47,
+        "disgust": 5.67,
+        "angry": 4.47,
+        "frustration": 1.62,
+        "engagement": 51.82,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 945,
+      "timestamp": 37.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 485,
+        "startY": 297,
+        "endX": 719,
+        "endY": 577
+      },
+      "emotions": {
+        "neutral": 9.75,
+        "happy": 66.15,
+        "sad": 6.71,
+        "surprise": 4.35,
+        "fear": 3.37,
+        "disgust": 5.1,
+        "angry": 4.57,
+        "frustration": 1.23,
+        "engagement": 58.46,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 950,
+      "timestamp": 38.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 493,
+        "startY": 324,
+        "endX": 716,
+        "endY": 591
+      },
+      "emotions": {
+        "neutral": 8.73,
+        "happy": 64.94,
+        "sad": 11.01,
+        "surprise": 3.66,
+        "fear": 5.17,
+        "disgust": 2.81,
+        "angry": 3.69,
+        "frustration": 1.47,
+        "engagement": 56.37,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 955,
+      "timestamp": 38.2,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 498,
+        "startY": 336,
+        "endX": 717,
+        "endY": 596
+      },
+      "emotions": {
+        "neutral": 7.23,
+        "happy": 77.49,
+        "sad": 4.94,
+        "surprise": 3.28,
+        "fear": 2.79,
+        "disgust": 1.48,
+        "angry": 2.79,
+        "frustration": 0.85,
+        "engagement": 72.6,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 960,
+      "timestamp": 38.4,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 502,
+        "startY": 345,
+        "endX": 716,
+        "endY": 599
+      },
+      "emotions": {
+        "neutral": 8.14,
+        "happy": 68.34,
+        "sad": 8.7,
+        "surprise": 3.46,
+        "fear": 4.71,
+        "disgust": 3.7,
+        "angry": 2.95,
+        "frustration": 1.34,
+        "engagement": 60.75,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 965,
+      "timestamp": 38.6,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 505,
+        "startY": 351,
+        "endX": 716,
+        "endY": 603
+      },
+      "emotions": {
+        "neutral": 10.23,
+        "happy": 63.88,
+        "sad": 10.37,
+        "surprise": 3.12,
+        "fear": 5.21,
+        "disgust": 3.49,
+        "angry": 3.7,
+        "frustration": 1.43,
+        "engagement": 55.14,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 970,
+      "timestamp": 38.8,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 510,
+        "startY": 357,
+        "endX": 718,
+        "endY": 606
+      },
+      "emotions": {
+        "neutral": 10.82,
+        "happy": 55.19,
+        "sad": 12.89,
+        "surprise": 2.1,
+        "fear": 3.93,
+        "disgust": 10.94,
+        "angry": 4.13,
+        "frustration": 1.59,
+        "engagement": 43.74,
+        "brow_furrow_score": 0
+      }
+    },
+    {
+      "frame_number": 975,
+      "timestamp": 39.0,
+      "face_detected": true,
+      "face_bbox": {
+        "startX": 511,
+        "startY": 360,
+        "endX": 718,
+        "endY": 606
+      },
+      "emotions": {
+        "neutral": 13.01,
+        "happy": 34.55,
+        "sad": 23.55,
+        "surprise": 2.05,
+        "fear": 4.21,
+        "disgust": 19.05,
+        "angry": 3.58,
+        "frustration": 2.37,
+        "engagement": 17.35,
+        "brow_furrow_score": 0
+      }
+    }
+  ],
+  "metadata": {
+    "processed_at": "2025-09-28T04:44:55.647309",
+    "model_used": "FER_static_ResNet50_AffectNet",
+    "processing_version": "1.0"
+  }
+}

@@ -1,132 +1,107 @@
-# VibeB2B
+# Video Analysis Pipeline
 
-A Mastra-based AI assistant for sales insights and CRM management.
+A complete AI-powered video analysis system that processes MP4 meeting recordings to provide transcription, emotion analysis, and actionable feedback.
 
-## Setup
+## 🎯 Features
 
-### Prerequisites
+- **Video Transcription**: Extracts audio and transcribes speech with timestamps
+- **Emotion Analysis**: Analyzes facial emotions every 5th frame using FER model
+- **Data Synchronization**: Combines transcription and emotion data by time ranges
+- **AI Feedback**: Uses Gemini AI to provide actionable meeting performance insights
 
-- Node.js >= 20.9.0
-- npm or yarn
+## 🚀 Quick Start
 
-### Installation
+1. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Place MP4 files** in the `Upload/` folder
+
+3. **Run the complete pipeline**:
+   ```bash
+   python main.py
+   ```
+
+## 📁 Project Structure
+
+```
+ProcessVidApp/
+├── main.py                           # Main pipeline orchestrator
+├── video_processor_ffmpeg.py         # Video transcription (Step 1)
+├── main_emotion_parser.py            # Emotion analysis (Step 2)
+├── json_parser.py                    # Data synchronization (Step 3)
+├── gemini_analyzer.py                # AI feedback (Step 4)
+├── FER_static_ResNet50_AffectNet.pt  # Emotion detection model
+├── requirements.txt                  # Python dependencies
+├── Upload/                           # Place MP4 files here
+├── Output/                           # Analysis results
+└── Output/gemini_output.txt          # AI feedback report
+```
+
+## 🔄 Pipeline Flow
+
+1. **Transcription**: Extracts audio from MP4 → Transcribes speech with timestamps
+2. **Emotion Analysis**: Processes every 5th frame → Detects emotions and calculates engagement/frustration
+3. **Synchronization**: Matches transcription timestamps with emotion data → Creates unified analysis
+4. **AI Analysis**: Sends data to Gemini → Generates actionable feedback report
+
+## 📊 Output Files
+
+- **`Output/gemini_output.txt`**: AI-powered meeting performance feedback
+- **`Output/synchronized_analysis.txt`**: Timestamped transcription with emotion scores
+- **`Output/analysis_summary.txt`**: Statistical summary of emotions
+- **`Output/*_transcription_ffmpeg.json`**: Raw transcription data
+- **`Output/*_emotion_analysis.json`**: Raw emotion analysis data
+
+## 🎛️ Emotion Scoring
+
+- **Engagement (0-100)**: Based on happiness, reduced by negative emotions
+- **Frustration/Confusion (0-100)**: Based on fear, surprise, disgust, and brow furrow analysis
+
+## 📋 Requirements
+
+- Python 3.8+
+- FFmpeg (for audio extraction)
+- Internet connection (for Gemini API and Google Speech Recognition)
+- Sufficient disk space for temporary files
+
+## 🔧 Individual Components
+
+You can also run individual components:
 
 ```bash
-npm install
+# Just transcription
+python video_processor_ffmpeg.py
+
+# Just emotion analysis  
+python main_emotion_parser.py
+
+# Just data synchronization
+python json_parser.py
+
+# Just AI analysis (requires synchronized data)
+python gemini_analyzer.py
 ```
 
-### Environment Variables
+## 📝 Example Output
 
-Copy `.env.example` to `.env` and fill in your API keys:
-
-```bash
-cp .env.example .env
+```
+[00:12 - 00:15] - I'm so confused - Frustration/Confusion: 1.6 - Engagement: 74.6
+[00:19 - 00:24] - what what is happening I'm so confused - Frustration/Confusion: 4.7 - Engagement: 0.0
 ```
 
-## AI Configuration
+## 🤖 AI Feedback
 
-### Google AI Setup
+The Gemini AI analyzes your meeting performance and provides:
+- Top 3-5 highest engagement moments
+- Top 3-5 highest confusion/frustration moments  
+- Specific, actionable feedback for each key point
+- Improvement suggestions based on emotional patterns
 
-1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Create a new API key
-3. Add it to your `.env` file as `GOOGLE_GENERATIVE_AI_API_KEY`
+## ⚠️ Notes
 
-## Slack Bot Setup
-
-### 1. Create Slack App
-
-1. Go to [https://api.slack.com/apps](https://api.slack.com/apps)
-2. Click "Create New App" → "From scratch"
-3. Name it "vibeb2b" and select your workspace
-
-### 2. Configure OAuth Permissions
-
-In your app settings, go to **OAuth & Permissions**:
-
-**Required Scopes:**
-- `chat:write` - Send messages to channels
-
-**Optional Scopes (for public channels):**
-- `chat:write.public` - Send messages to public channels
-
-### 3. Install App & Get Tokens
-
-1. Click **Install to Workspace**
-2. Copy the **Bot User OAuth Token** (starts with `xoxb-`)
-3. Get your channel ID:
-   - Right-click channel → Copy link
-   - ID is the last part (e.g., `C1234567890`)
-
-### 4. Configure Environment
-
-Add to your `.env` file:
-
-```env
-SLACK_BOT_TOKEN=xoxb-your-bot-token-here
-SLACK_CHANNEL_ID=C1234567890
-SLACK_SIGNING_SECRET=your-signing-secret-here
-```
-
-### 5. Add Bot to Channel
-
-Invite the bot to your desired channel: `@vibeb2b`
-
-## Attio CRM Setup
-
-### 1. Get Your Attio API Token
-
-1. Go to [Attio](https://attio.com) and sign in to your account
-2. Navigate to **Settings** → **API Tokens**
-3. Click **Create API Token**
-4. Give it a name (e.g., "VibeB2B Integration")
-5. Copy the generated token
-
-### 2. Configure Environment
-
-Add to your `.env` file:
-
-```env
-ATTIO_API_TOKEN=your-attio-api-token-here
-```
-
-### 3. Usage
-
-The AI agents can now:
-- Read people data from Attio CRM
-- Add notes to client records
-- Update CRM information based on insights
-
-## Development
-
-### GUI Application
-
-For an interactive experience managing the Mastra server:
-
-```bash
-npm run electron-dev
-```
-
-This launches the **VibeB2B GUI** with controls to:
-- Start/stop the Mastra AI server
-- Monitor server health and status
-- View real-time logs
-- Manage environment variables
-
-### Individual Services
-
-Run individual services:
-
-```bash
-# Mastra AI development server only
-npm run dev
-
-# GUI application only
-npm run electron-dev
-```
-
-## Build
-
-```bash
-npm run build
-npm start
-```
+- First run will download the FER model (one-time setup)
+- Processing time depends on video length and model complexity
+- Temporary files are automatically cleaned up
+- All analysis is saved locally for privacy
