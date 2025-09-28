@@ -48,7 +48,9 @@ function initializeApp() {
       contextIsolation: false,
       enableRemoteModule: true
     },
-    title: 'VibeB2B - AI Assistant',
+    title: '', // Remove title
+    frame: false, // Remove default title bar for custom white appearance
+    backgroundColor: '#ffffff', // White background
     icon: path.join(__dirname, 'assets', 'icon.png'), // Optional icon
     show: false // Don't show until ready
   });
@@ -220,6 +222,25 @@ function checkServerHealth(port, name) {
 
 // Setup IPC handlers (called from app.whenReady)
 function setupIPCHandlers() {
+  // Window control handlers
+  ipcMain.handle('minimize-window', () => {
+    if (mainWindow) mainWindow.minimize();
+  });
+
+  ipcMain.handle('maximize-window', () => {
+    if (mainWindow) {
+      if (mainWindow.isMaximized()) {
+        mainWindow.unmaximize();
+      } else {
+        mainWindow.maximize();
+      }
+    }
+  });
+
+  ipcMain.handle('close-window', () => {
+    if (mainWindow) mainWindow.close();
+  });
+
   ipcMain.handle('start-mastra', async () => {
     if (!mastraProcess) {
       logToWindow('Starting Mastra server from UI...');
