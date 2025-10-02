@@ -36,10 +36,53 @@ function loadEnvironmentVariables() {
 }
 
 
+// Function to preload API keys from .env file
+function preloadApiKeys() {
+  const fs = require('fs');
+  const path = require('path');
+  const envPath = path.join(__dirname, '.env');
+  const storedEnv = loadEnvironmentVariables();
+
+  // Load API keys from .env file if it exists
+  let envKeys = {};
+  if (fs.existsSync(envPath)) {
+    try {
+      const envContent = fs.readFileSync(envPath, 'utf8');
+      envContent.split('\n').forEach(line => {
+        const [key, value] = line.split('=');
+        if (key && value && !key.startsWith('#')) {
+          envKeys[key.trim()] = value.trim();
+        }
+      });
+    } catch (error) {
+      console.error('Error reading .env file:', error);
+    }
+  }
+
+  // Save the env keys to stored environment if not already stored
+  let needsSave = false;
+  Object.keys(envKeys).forEach(key => {
+    if (!storedEnv[key]) {
+      storedEnv[key] = envKeys[key];
+      needsSave = true;
+    }
+  });
+
+  if (needsSave) {
+    saveEnvironmentVariables(storedEnv);
+    console.log('API keys loaded from .env and saved');
+  }
+
+  return storedEnv;
+}
+
 // Function to initialize the application with GUI
 function initializeApp() {
   console.log('VibeB2B running with GUI - initializing main window');
   logToWindow('VibeB2B application starting...');
+
+  // Preload API keys
+  const apiKeys = preloadApiKeys();
 
   // Create the browser window
   mainWindow = new BrowserWindow({
@@ -67,20 +110,21 @@ function initializeApp() {
     console.log('Main window ready and shown');
     logToWindow('Main window ready and shown');
 
-    // Check if API keys are already configured
-    const storedEnv = loadEnvironmentVariables();
-    const hasApiKeys = storedEnv.GOOGLE_GENERATIVE_AI_API_KEY &&
-                      storedEnv.SLACK_BOT_TOKEN &&
-                      storedEnv.SLACK_CHANNEL_ID &&
-                      storedEnv.SLACK_SIGNING_SECRET &&
-                      storedEnv.ATTIO_API_TOKEN &&
-                      storedEnv.RECALL_AI_API_KEY;
+    // Check if API keys are available (they should be preloaded)
+    const hasApiKeys = apiKeys.GOOGLE_GENERATIVE_AI_API_KEY &&
+                      apiKeys.SLACK_BOT_TOKEN &&
+                      apiKeys.SLACK_CHANNEL_ID &&
+                      apiKeys.SLACK_SIGNING_SECRET &&
+                      apiKeys.ATTIO_API_TOKEN &&
+                      apiKeys.RECALL_AI_API_KEY;
 
-    // Send message to renderer to show appropriate interface
+    // Always show main interface since keys are preloaded
     if (hasApiKeys) {
       mainWindow.webContents.send('show-main-interface');
+      logToWindow('API keys preloaded successfully');
     } else {
-      mainWindow.webContents.send('show-setup-page');
+      logToWindow('Warning: Some API keys may be missing');
+      mainWindow.webContents.send('show-main-interface'); // Still show main interface
     }
   });
 
@@ -595,51 +639,19 @@ function setupIPCHandlers() {
     return loadEnvironmentVariables();
   });
 
-  // API keys management
+  // API keys management (legacy - keys are now preloaded)
   ipcMain.handle('save-api-keys', async (event, apiKeys) => {
-    try {
-      // Convert API keys to environment variable format
-      const envVars = {
-        GOOGLE_GENERATIVE_AI_API_KEY: apiKeys.geminiApiKey,
-        SLACK_BOT_TOKEN: apiKeys.slackBotToken,
-        SLACK_CHANNEL_ID: apiKeys.slackChannelId,
-        SLACK_SIGNING_SECRET: apiKeys.slackSigningSecret,
-        ATTIO_API_TOKEN: apiKeys.attioToken,
-        RECALL_AI_API_KEY: apiKeys.recallApiKey
-      };
+    // API keys are preloaded, just acknowledge
+    logToWindow('API keys are preloaded and ready');
 
-      const success = saveEnvironmentVariables(envVars);
-      if (success) {
-        logToWindow('API keys saved successfully');
-
-        // Start webhook server and setup svix relay
-        setTimeout(async () => {
-          if (!webhookProcess) {
-            startWebhookServer();
-          }
-
-          // Wait a moment for webhook server to start, then setup svix
-          setTimeout(async () => {
-            try {
-              const svixResult = await setupSvixRelay();
-              if (svixResult.success && mainWindow) {
-                mainWindow.webContents.send('svix-relay-ready', svixResult.relayUrl);
-              }
-            } catch (error) {
-              console.error('Failed to setup svix relay:', error);
-              logToWindow('Failed to setup webhook relay');
-            }
-          }, 3000);
-        }, 1000);
-
-        return { success: true };
-      } else {
-        return { success: false, message: 'Failed to save API keys' };
-      }
-    } catch (error) {
-      console.error('Error saving API keys:', error);
-      return { success: false, message: error.message };
+    // Start webhook server (called during preload)
+    if (!webhookProcess) {
+      setTimeout(() => {
+        startWebhookServer();
+      }, 1000);
     }
+
+    return { success: true };
   });
 }
 

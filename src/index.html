@@ -18,103 +18,9 @@
     </div>
 
     <div class="pt-10">
-    <!-- Setup Page -->
-    <div id="setup-page" class="container mx-auto max-w-lg">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl font-light text-gray-900 mb-3">Welcome to VibeB2B</h1>
-            <p class="text-gray-600">Configure your API keys to get started</p>
-        </div>
 
-        <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
-            <div class="mb-6">
-                <h2 class="text-xl font-light text-gray-900 mb-2">API Configuration</h2>
-                <p class="text-sm text-gray-600">Please enter your API credentials below</p>
-            </div>
-                <form id="api-keys-form" class="space-y-6">
-                    <!-- Attio API Token -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Attio API Token</label>
-                        <input
-                            type="password"
-                            id="attio-token"
-                            placeholder="Enter your Attio API token"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
-                            required
-                        />
-                    </div>
-
-                    <!-- Slack Bot Token -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Slack Bot Token</label>
-                        <input
-                            type="password"
-                            id="slack-bot-token"
-                            placeholder="xoxb-your-bot-token-here"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
-                            required
-                        />
-                    </div>
-
-                    <!-- Slack Channel ID -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Slack Channel ID</label>
-                        <input
-                            type="text"
-                            id="slack-channel-id"
-                            placeholder="C1234567890"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
-                            required
-                        />
-                    </div>
-
-                    <!-- Slack Signing Secret -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Slack Signing Secret</label>
-                        <input
-                            type="password"
-                            id="slack-signing-secret"
-                            placeholder="Enter your Slack signing secret"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
-                            required
-                        />
-                    </div>
-
-                    <!-- Gemini API Key -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Gemini API Key</label>
-                        <input
-                            type="password"
-                            id="gemini-api-key"
-                            placeholder="Enter your Google AI API key"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
-                            required
-                        />
-                    </div>
-
-                    <!-- Recall API Key -->
-                    <div class="space-y-2">
-                        <label class="block text-sm font-medium text-gray-700">Recall API Key</label>
-                        <input
-                            type="password"
-                            id="recall-api-key"
-                            placeholder="Enter your Recall.ai API key"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 bg-white text-gray-900 placeholder:text-gray-400"
-                            required
-                        />
-                    </div>
-
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 shadow-sm hover:shadow-md">
-                            Get Started
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Interface (hidden initially) -->
-    <div id="main-interface" class="container mx-auto pt-20 max-w-6xl" style="display: none;">
+    <!-- Main Interface -->
+    <div id="main-interface" class="container mx-auto pt-20 max-w-6xl">
         <div class="text-center mb-8 my-auto">
             <div class="flex items-center justify-center mb-3">
                 <img src="../Beach_Ball_PNG_Clip_Art_Image-2055932628.png" alt="Beach Ball" class="w-8 h-8 object-contain mr-2">
@@ -195,11 +101,19 @@
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6" id="log-area">
             <div class="flex items-center justify-between mb-6">
                 <h3 class="font-light text-gray-900">Activity Log</h3>
-                <div class="flex items-center text-sm text-gray-500">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    Live Updates
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        Live Updates
+                    </div>
+                    <button onclick="toggleActivityLog()" class="flex items-center text-sm text-gray-600 hover:text-gray-800 transition-colors" id="log-toggle-btn">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="log-toggle-icon">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
+                        <span id="log-toggle-text">Hide</span>
+                    </button>
                 </div>
             </div>
             <div class="max-h-80 overflow-y-auto bg-gray-50 rounded-lg p-4 font-mono text-sm space-y-2" id="log-content">
@@ -212,38 +126,6 @@
     <script>
         // IPC communication with main process
         const { ipcRenderer } = require('electron');
-
-        // Form submission handler
-        document.getElementById('api-keys-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const apiKeys = {
-                attioToken: document.getElementById('attio-token').value,
-                slackBotToken: document.getElementById('slack-bot-token').value,
-                slackChannelId: document.getElementById('slack-channel-id').value,
-                slackSigningSecret: document.getElementById('slack-signing-secret').value,
-                geminiApiKey: document.getElementById('gemini-api-key').value,
-                recallApiKey: document.getElementById('recall-api-key').value
-            };
-
-            try {
-                // Send API keys to main process
-                const result = await ipcRenderer.invoke('save-api-keys', apiKeys);
-                if (result.success) {
-                    // Hide setup page and show main interface
-                    document.getElementById('setup-page').style.display = 'none';
-                    document.getElementById('main-interface').style.display = 'block';
-
-                    // Initialize the main interface
-                    log('API keys saved successfully');
-                    checkHealth();
-                } else {
-                    alert('Failed to save API keys: ' + result.message);
-                }
-            } catch (error) {
-                alert('Error saving API keys: ' + error.message);
-            }
-        });
 
         // Status update functions
         function updateStatus(elementId, status, text) {
@@ -362,6 +244,27 @@
             }
         }
 
+        // Activity Log toggle function
+        function toggleActivityLog() {
+            const logContent = document.getElementById('log-content');
+            const toggleIcon = document.getElementById('log-toggle-icon');
+            const toggleText = document.getElementById('log-toggle-text');
+
+            if (logContent.style.display === 'none') {
+                // Show log
+                logContent.style.display = 'block';
+                toggleIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>';
+                toggleText.textContent = 'Hide';
+                log('Activity log shown');
+            } else {
+                // Hide log
+                logContent.style.display = 'none';
+                toggleIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>';
+                toggleText.textContent = 'Show';
+                log('Activity log hidden');
+            }
+        }
+
         function updateRecallStatus(isRunning) {
             const statusIndicator = document.getElementById('recall-status');
             const statusText = document.getElementById('recall-text');
@@ -403,16 +306,9 @@
 
         // Listen for interface control messages
         ipcRenderer.on('show-main-interface', () => {
-            document.getElementById('setup-page').style.display = 'none';
-            document.getElementById('main-interface').style.display = 'block';
-            log('API keys already configured, showing main interface');
+            // Main interface is already visible
+            log('Main interface ready');
             checkHealth();
-        });
-
-        ipcRenderer.on('show-setup-page', () => {
-            document.getElementById('setup-page').style.display = 'block';
-            document.getElementById('main-interface').style.display = 'none';
-            log('No API keys configured, showing setup page');
         });
 
         // Copy relay URL function
@@ -454,12 +350,11 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             log('VibeB2B interface loaded');
+            checkHealth(); // Initial health check
 
-            // Auto-refresh status every 30 seconds (only when main interface is visible)
+            // Auto-refresh status every 30 seconds
             setInterval(() => {
-                if (document.getElementById('main-interface').style.display !== 'none') {
-                    checkHealth();
-                }
+                checkHealth();
             }, 30000);
         });
 
